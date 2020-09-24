@@ -1,4 +1,56 @@
 vi:
-  views:
-    layouts:
-      title: "OE29RubyHotelManagement"
+  global:
+    app_name: "Monalisa"
+    text_lorem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet ex vel mi laoreet,
+                vitae aliquet libero luctus. Sed non semper diam, eu fringilla urna. Curabitur at odio dolor.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet ex vel mi laoreet, vitae aliquet
+                libero luctus. Sed non semper diam, eu fringilla urna. Curabitur at odio dolor"
+    address: "KM10 Nguyen Trai, Hoc Vien Cong Nghe Buu Chinh Vien Thong, Ha Dong, Ha Noi"
+  layouts:
+    header:
+      contact: "Liên hệ trực tiếp với chúng tôi tại +084 822 2208 98"
+      vi: "VI"
+      en: "EN"
+    menu:
+      home: "TRANG CHỦ"
+      about_us: "GIỚI THIỆU"
+      our_room: "DANH SÁCH PHÒNG"
+      contact: "LIÊN HỆ"
+      account: "TÀI KHOẢN"
+      reservation: "ĐẶT PHÒNG"
+    banner:
+      greeting: "chào mừng tới"
+      hotel_name: "Monalisa Hotel"
+      des: "Nơi để trải nghiệm và thưởng thức cuộc sống"
+    footer:
+      contact: "Liên hệ"
+      follow: "Follow us"
+  static_pages:
+    home:
+      little_about_us: "Một chút về chúng tôi"
+      president: "President"
+      discover_our_rooms: "Tầm nhìn tuyệt vời"
+      luxury_interior: "Nội thất cao cấp"
+      garden_view: "Garden View"
+      sea_view: "Sea View"
+      planet_view: "Planet View"
+      starting_from: "Chỉ từ:"
+      night: "Đêm"
+      appreciate: "Đánh giá cao"
+      what_client_say: "Khách hàng Hài Lòng"
+    about:
+      about_title: "Về Chúng Tôi"
+      since: "Từ"
+      numbers_fact: "Con Số Thực Tế"
+      client: "Khách hàng"
+      room: "Phòng"
+      staff: "Nhân viên"
+      award: "Giải thưởng"
+      appreciate: "Đánh giá cao"
+      what_client_say: "Khách hàng Hài Lòng"
+    contact:
+      contact_title: "Liên Hệ"
+      info: "Thông tin"
+      contact_us: "Liên hệ với chúng tôi"
+      headquarter: "Trụ Sở Chính"
+      call_directly: "Liên hệ trực tiếp"

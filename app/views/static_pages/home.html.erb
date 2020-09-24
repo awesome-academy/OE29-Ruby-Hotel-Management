@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div id="little_about_us">
+    <div class="container">
+      <h2>
+        <%= t ".little_about_us" %>
+      </h2>
+      <div class="wrap_content">
+        <%= image_tag Settings.img_little_about_us %>
+        <div class="content">
+          <h3>
+            <%= t "layouts.banner.des" %>
+          </h3>
+          <p><%= t "global.text_lorem" %></p>
+          <div>
+            <b><%= t ".president" %>:</b> Bui Huu Hoang
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="our_rooms">
+    <div class="wrap_list_room">
+      <h3><%= t ".discover_our_rooms" %></h3>
+      <h2><%= t ".luxury_interior" %></h2>
+      <div id="list_room">
+        <div class="list_room_item">
+          <%= image_tag Settings.img_list_room_item %>
+          <div class="item_info">
+            <h4><%= t ".garden_view" %></h4>
+            <p><%= t ".starting_from" %> $39.00/<%= t ".night" %></p>
+          </div>
+        </div>
+        <div class="list_room_item">
+          <%= image_tag Settings.img_list_room_item %>
+          <div class="item_info">
+            <h4><%= t ".sea_view" %></h4>
+            <p>s<%= t ".starting_from" %> $39.00/<%= t ".night" %></p>
+          </div>
+        </div>
+        <div class="list_room_item">
+          <%= image_tag Settings.img_list_room_item %>
+          <div class="item_info">
+            <h4><%= t ".planet_view" %></h4>
+            <p><%= t ".starting_from" %> $39.00/<%= t ".night" %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="image_room_item">
+      <%= image_tag Settings.img_list_room_item %>
+    </div>
+  </div>
+  <div id="client_evaluate">
+    <div class="container client_say_wrap">
+      <h3><%= t ".appreciate" %></h3>
+      <h2><%= t ".what_client_say" %></h2>
+      <p><%= t "global.text_lorem" %></p>
+    </div>
+  </div>
+</div>

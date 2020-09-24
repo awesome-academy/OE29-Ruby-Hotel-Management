@@ -1,0 +1,21 @@
+<% provide :title, t(".contact_title") %>
+<div class="container-fluid">
+  <div id="contact">
+    <div class="image-map">
+      <%= image_tag Settings.location %>
+    </div>
+    <div class="contact_info">
+      <h3><%= t ".info" %></h3>
+      <h2><%= t ".contact_us" %></h2>
+      <div class="headquarter"><%= t ".headquarter" %></div>
+      <p><%= t "global.address" %></p>
+      <p class="email">
+        <b class="email_label">Email:</b> <%= Settings.mail %>
+      </p>
+      <p class="phone_title"><%= t ".call_directly" %>:</p>
+      <div class="phone_number">
+        <%= Settings.phone %>
+      </div>
+    </div>
+  </div>
+</div>

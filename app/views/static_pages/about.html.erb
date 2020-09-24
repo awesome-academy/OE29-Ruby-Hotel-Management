@@ -1,0 +1,42 @@
+<% provide :title, t(".about_title") %>
+<div class="container-fluid">
+  <div id="about">
+    <div class="container">
+      <h2><%= t ".since" %> 1991</h2>
+      <p><%= t "global.text_lorem" %></p>
+      <h3><%= t ".numbers_fact" %></h3>
+      <div class="number_fact">
+        <div class="number_fact_item">
+          <div class="number">
+            <%= Settings.client %>
+          </div>
+          <p><%= t ".client" %></p>
+        </div>
+        <div class="number_fact_item">
+          <div class="number">
+            <%= Settings.room %>
+          </div>
+          <p><%= t ".room" %></p>
+        </div>
+        <div class="number_fact_item">
+          <div class="number">
+            <%= Settings.staff %>
+          </div>
+          <p><%= t ".staff" %></p>
+        </div><div class="number_fact_item">
+          <div class="number">
+            <%= Settings.award %>
+          </div>
+          <p><%= t ".award" %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="client_evaluate">
+    <div class="container client_say_wrap">
+      <h3><%= t ".appreciate" %></h3>
+      <h2><%= t ".what_client_say" %></h2>
+      <p><%= t "global.text_lorem" %></p>
+    </div>
+  </div>
+</div>
