@@ -1,4 +1,56 @@
 en:
-  views:
-    layouts:
-      title: "OE29RubyHotelManagement"
+  global:
+    app_name: "Monalisa"
+    text_lorem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet ex vel mi laoreet,
+                vitae aliquet libero luctus. Sed non semper diam, eu fringilla urna. Curabitur at odio dolor.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet ex vel mi laoreet, vitae aliquet
+                libero luctus. Sed non semper diam, eu fringilla urna. Curabitur at odio dolor"
+    address: "KM10 Nguyen Trai, Hoc Vien Cong Nghe Buu Chinh Vien Thong, Ha Dong, Ha Noi"
+  layouts:
+    header:
+      contact: "Contact us directly at +084 822 2208 98"
+      vi: "VI"
+      en: "EN"
+    menu:
+      home: "HOME"
+      about_us: "ABOUT US"
+      our_room: "OUR ROOMS"
+      contact: "CONTACT"
+      account: "ACCOUNT"
+      reservation: "RESERVATION"
+    banner:
+      greeting: "welcome to"
+      hotel_name: "Monalisa Hotel"
+      des: "A place to experience and enjoy the life"
+    footer:
+      contact: "Contact"
+      follow: "Follow us"
+  static_pages:
+    home:
+      little_about_us: "little about us"
+      president: "President"
+      discover_our_rooms: "discover our rooms"
+      luxury_interior: "Luxury interior"
+      garden_view: "Garden View"
+      sea_view: "Sea View"
+      planet_view: "Planet View"
+      starting_from: "Starting from:"
+      night: "Night"
+      appreciate: "appreciate"
+      what_client_say: "What Client Say"
+    about:
+      about_title: "About Us"
+      since: "Since"
+      numbers_fact: "Numbers Fact"
+      client: "Clients"
+      room: "Rooms"
+      staff: "Staffs"
+      award: "Awards"
+      appreciate: "appreciate"
+      what_client_say: "What Client Say"
+    contact:
+      contact_title: "Contact"
+      info: "information"
+      contact_us: "Contact us"
+      headquarter: "Headquarter"
+      call_directly: "Call directly"

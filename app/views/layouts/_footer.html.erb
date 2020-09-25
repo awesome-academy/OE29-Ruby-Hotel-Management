@@ -1,0 +1,39 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag "logo.png" %>
+        <p>
+          <%= t "global.text_lorem" %>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h3><%= t ".contact" %></h3>
+        <p><i class="fas fa-map-marker-alt"></i> <%= t "global.address" %></p>
+        <p><i class="fas fa-phone"></i> Phone: <%= Settings.phone %></p>
+        <p><i class="fas fa-envelope"></i> Email: <%= Settings.mail %></p>
+        <p><i class="fab fa-skype"></i> Skype: <%= Settings.skype %></p>
+      </div>
+      <div class="col-md-4">
+        <h3><%= t ".follow" %></h3>
+        <p>
+          <%= link_to "#" do %>
+            <i class="fab fa-facebook"></i>
+          <% end %>
+          <%= link_to "#" do %>
+            <i class="fab fa-twitter"></i>
+          <% end %>
+          <%= link_to "#" do %>
+            <i class="fab fa-google-plus-g"></i>
+          <% end %>
+          <%= link_to "#" do %>
+            <i class="fab fa-instagram"></i>
+          <% end %>
+          <%= link_to "#" do %>
+            <i class="fab fa-pinterest"></i>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
