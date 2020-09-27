@@ -54,3 +54,14 @@ vi:
       contact_us: "Liên hệ với chúng tôi"
       headquarter: "Trụ Sở Chính"
       call_directly: "Liên hệ trực tiếp"
+  admin:
+    layouts:
+      sidebar:
+        user_management: "Quản lý người dùng"
+        client: "Khách hàng"
+        staff: "Nhân viên"
+      header:
+        profile: "Trang cá nhân"
+        settings: "Cài đặt"
+        logout: "Đăng xuất"
+        home: "Trang Chủ"
