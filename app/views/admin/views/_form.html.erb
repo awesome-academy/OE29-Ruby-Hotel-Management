@@ -1,0 +1,14 @@
+<div class="modal" id="viewmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= form_for @view, url: check_url(@view), remote: true do |f| %>
+          <%= render "admin/shared/error_message", object: f.object %>
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control" %>
+          <%= f.submit t(".submit"), class: "btn btn-primary", style: "margin-top: 30px" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
