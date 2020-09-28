@@ -1,6 +1,14 @@
 class ApplicationController < ActionController::Base
+  rescue_from ActionController::RoutingError, with: :render_404
+
   before_action :set_locale
   include SessionsHelper
+
+  def render_404
+    render file: Rails.root.join("public", "404.html").to_s, layout: false,
+           status: :not_found
+  end
+
 
   private
 
@@ -25,7 +33,7 @@ class ApplicationController < ActionController::Base
   end
 
   def find_user
-    @user = User.find_by id: params[:id]
+    @user = User.find id: params[:id]
     return if @user
 
     flash[:danger] = t "global.not_found_user"

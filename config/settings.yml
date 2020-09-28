@@ -33,3 +33,8 @@ service:
   validate:
     name_max: 50
     des_max: 1000
+rooms:
+  room_per_page: 5
+  validate:
+    name_max: 100
+    des: 1000

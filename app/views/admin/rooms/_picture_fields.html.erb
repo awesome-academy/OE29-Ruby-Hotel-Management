@@ -1,0 +1,13 @@
+<tr class="nested-fields picture_room_item">
+  <td class="col-md-10">
+    <%= f.file_field :picture %>
+  </td>
+  <td class="thumb col-md-2">
+    <% if f.object.picture.url.present? %>
+      <%= image_tag f.object.picture.url %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to_remove_association t(".delete"), f %>
+  </td>
+</tr>
