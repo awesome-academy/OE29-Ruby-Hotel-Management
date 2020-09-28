@@ -113,6 +113,7 @@ en:
         client: "Client"
         staff: "Staff"
         room_view: "Room View"
+        room_type: "Room Type"
       header:
         profile: "Profile"
         settings: "Settings"
@@ -133,7 +134,33 @@ en:
     admin:
       views:
         view_created: "View create"
+        add_type: "Add Type"
+        list_type: "List Type"
+        type_name: "Name"
+    types:
+      index:
+        id: "ID"
+        add_type: "Add Type"
+        list_type: "List Type"
+        type_name: "Name"
+        all_types: "All Types"
+      form:
+        submit: "Submit"
+      type:
+        edit: "Edit"
+        delete: "Delete"
+        you_sure: "You sure?"
+  controllers:
+    admin:
+      views:
+        view_created: "View created"
         view_not_created: "View not create"
         view_deleted: "View deleted"
         view_not_deleted: "View not deleted"
         view_not_found: "View not found"
+      types:
+        type_created: "Type created"
+        type_not_created: "Type not create"
+        type_deleted: "Type deleted"
+        type_not_deleted: "Type not deleted"
+        type_not_found: "Type not found"

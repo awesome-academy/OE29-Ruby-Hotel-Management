@@ -10,8 +10,9 @@ Rails.application.routes.draw do
     resources :account_activations, only: [:edit]
     namespace :admin do
       root "dashboard#index"
-      resources :views, except: %i(new, show)
+      resources :views, except: %i(new show)
       resources :users
+      resources :types, except: %i(new show)
     end
   end
 end

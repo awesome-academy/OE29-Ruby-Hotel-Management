@@ -23,3 +23,6 @@ room_view:
 users:
   edit:
     type: "image/jpeg, image/gif, image/png"
+type:
+  validate:
+    name_max: 50
