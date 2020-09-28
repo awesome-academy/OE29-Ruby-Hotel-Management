@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     resources :users
-    resources :account_activations, only: [:edit]
+    resources :account_activations, only: :edit
+    resources :rooms, only: %i(index show)
+
     namespace :admin do
       root "dashboard#index"
       resources :views, except: %i(new show)
@@ -16,7 +18,6 @@ Rails.application.routes.draw do
       resources :unities, except: %i(new show)
       resources :services, except: %i(new show)
       resources :rooms, except: :new
-      resources :pictures, only: :destroy
     end
   end
   match "*unmatched", to: "application#render_404", via: :all

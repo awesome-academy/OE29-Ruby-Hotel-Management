@@ -22,4 +22,5 @@ class Room < ApplicationRecord
 
   delegate :name, to: :type, prefix: true
   delegate :name, to: :view, prefix: true
+  scope :relate_room, ->(type_ids){where type_id: type_ids}
 end

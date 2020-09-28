@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
            status: :not_found
   end
 
-
   private
 
   def set_locale

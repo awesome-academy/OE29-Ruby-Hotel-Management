@@ -348,3 +348,153 @@ footer {
     }
   }
 }
+
+#list_room {
+  margin-bottom: 100px;
+  font-size: 1.3rem;
+
+  .list_room_item_1 {
+    margin-top: 100px;
+    height: 500px;
+    background-color: $back-ground-color-primary;
+
+    .list_room_item_content {
+      padding-top: 30px;
+
+      h3 {
+        font-size: 3.5rem;
+        font-weight: bold;
+      }
+
+      .room_price {
+        margin: 30px 0;
+
+        .price {
+          color: red;
+          font-size: 2rem;
+        }
+      }
+
+      .info {
+        margin: 30px 0;
+      }
+
+      .detail_link {
+        text-transform: uppercase;
+        font-weight: bold;
+
+        a {
+          color: black;
+
+          &:hover {
+            opacity: 0.7;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .list_room_item_image {
+      line-height: 500px;
+
+      img {
+        overflow: hidden;
+        width: 100%;
+        height: 350px;
+        border: 10px white solid;
+      }
+    }
+  }
+  .show_more {
+    color: darkslategray;
+    padding: 10px 50px;
+    border-radius: 5px;
+    background-color: $show_more_btn;
+    display: inline-block;
+    margin-top: 50px;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.show_detail_room {
+  font-size: 1.3rem;
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #room_detail {
+    text-align: center;
+    background-color: $back-ground-color-primary;
+    padding: 50px 0;
+
+    #image {
+      height: 500px;
+
+      img {
+        width: 80%;
+        height: 100%;
+
+        border: 10px white solid;
+      }
+    }
+
+    #price {
+      margin-top: 50px;
+      font-size: 2.5rem;
+
+      .price_room {
+        color: red;
+        font-size: 3rem;
+      }
+    }
+  }
+
+  #description {
+    text-align: center;
+    background-color: $text-color-banner;
+    padding: 50px 0;
+
+    hr {
+      margin: 30px 0;
+    }
+  }
+
+  #book_now {
+    text-align: center;
+
+    button {
+      padding: 10px 50px;
+    }
+  }
+
+  #room_relate {
+    background-color: $back-ground-color-primary;
+    padding: 50px 0;
+    margin-top: 50px;
+
+    .relate_room_item {
+
+      img {
+        width: 100%;
+        height: 300px;
+      }
+
+      .relate_room_item_info {
+        background-color: $text-color-banner;
+        padding: 30px;
+
+        h3 {
+          font-size: 2rem;
+          color: black;
+        }
+      }
+    }
+  }
+}

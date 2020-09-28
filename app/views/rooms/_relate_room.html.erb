@@ -1,0 +1,15 @@
+<div class="col-md-4 relate_room_item">
+  <div>
+    <%= link_to relate_room do %>
+      <%= image_tag relate_room.pictures[0].picture_url %>
+    <% end %>
+  </div>
+  <div class="relate_room_item_info">
+    <%= link_to relate_room do %>
+      <h3><%= relate_room.name %></h3>
+    <% end %>
+    <div><%= t ".deposit" %>: <%= Settings.deposit %>%</div>
+    <div><%= t ".type" %>: <%= relate_room.type_name %></div>
+    <div><%= t ".view" %>: <%= relate_room.view_name %></div>
+  </div>
+</div>

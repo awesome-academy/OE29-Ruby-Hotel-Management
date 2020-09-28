@@ -112,6 +112,31 @@ en:
       contact_us: "Contact us"
       headquarter: "Headquarter"
       call_directly: "Call directly"
+  rooms:
+    show:
+      night: "Night"
+      start_from: "Start from"
+      des: "Description"
+      book_now: "BOOK NOW"
+      relate_room: "Relate Room"
+      type: "Type"
+      view: "View"
+    relate_room:
+      type: "Type"
+      view: "View"
+      deposit: "Deposit"
+      price: "Price"
+    room:
+      type: "Type"
+      view: "View"
+      deposit: "Deposit"
+      price: "Price"
+      night: "Night"
+      start_from: "Start from"
+      view_detail: "View Detail"
+    index:
+      our_rooms: "Our Rooms"
+      show_more: "Show more"
   admin:
     layouts:
       sidebar:
@@ -144,6 +169,8 @@ en:
         add_type: "Add Type"
         list_type: "List Type"
         type_name: "Name"
+      form:
+        submit: "Submit"
     types:
       index:
         id: "ID"
