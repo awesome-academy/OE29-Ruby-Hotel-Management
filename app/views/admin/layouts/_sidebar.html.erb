@@ -31,9 +31,23 @@
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to admin_types_path, class: "nav-link"  do%>
+          <%= link_to admin_types_path, class: "nav-link" do%>
             <p>
               <%= t ".room_type" %>
+            </p>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to admin_unities_path, class: "nav-link" do%>
+            <p>
+              <%= t ".service_unity" %>
+            </p>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to admin_services_path, class: "nav-link" do%>
+            <p>
+              <%= t ".service" %>
             </p>
           <% end %>
         </li>

@@ -1,0 +1,13 @@
+<tr>
+  <td><%= service_counter + 1%></td>
+  <td><%= service.name %></td>
+  <td><%= service.price %></td>
+  <td><%= service.des %></td>
+  <td><%= service.unity.name %></td>
+  <td>
+    <%= link_to t(".edit"), edit_admin_service_path(service), remote: true, class: "btn btn-block btn-primary btn-action" %>
+  </td>
+  <td>
+    <%= link_to t(".delete"), admin_service_path(service), method: :delete, data: {confirm: "You sure?"}, class: "btn btn-block btn-danger btn-action" %>
+  </td>
+</tr>
