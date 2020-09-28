@@ -54,3 +54,14 @@ en:
       contact_us: "Contact us"
       headquarter: "Headquarter"
       call_directly: "Call directly"
+  admin:
+    layouts:
+      sidebar:
+        user_management: "User management"
+        client: "Client"
+        staff: "Staff"
+      header:
+        profile: "Profile"
+        settings: "Settings"
+        logout: "Logout"
+        home: "Home"
