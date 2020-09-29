@@ -3,8 +3,11 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.7.1"
 
+gem "bcrypt", "3.1.13"
 gem "bootstrap-sass", "3.4.1"
 gem "config"
+gem "figaro"
+gem "i18n-js"
 gem "jbuilder", "~> 2.7"
 gem "mysql2"
 gem "puma", "~> 4.1"

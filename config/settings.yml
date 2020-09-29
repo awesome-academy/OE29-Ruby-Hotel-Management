@@ -8,3 +8,10 @@ client: 320
 staff: 50
 room: 24
 award: 12
+home:
+  path_link1: "logo-monalisa-healing-gold.png"
+user:
+  validate:
+    name_max: 50
+    email_max: 255
+    pass_min: 6

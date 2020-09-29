@@ -1,5 +1,8 @@
 vi:
   global:
+    invalidate_activation_link: "link khong hien huu"
+    acc_activated: "xac thuc tai khoan!"
+    text_check_email: "Kiểm tra mail để kích hoạt tài khoản của bạn"
     app_name: "Monalisa"
     text_lorem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet ex vel mi laoreet,
                 vitae aliquet libero luctus. Sed non semper diam, eu fringilla urna. Curabitur at odio dolor.
@@ -11,6 +14,8 @@ vi:
       contact: "Liên hệ trực tiếp với chúng tôi tại +084 822 2208 98"
       vi: "VI"
       en: "EN"
+      signin: "ĐĂNG NHẬP"
+      signup: "ĐĂNG KÝ"
     menu:
       home: "TRANG CHỦ"
       about_us: "GIỚI THIỆU"
@@ -25,6 +30,24 @@ vi:
     footer:
       contact: "Liên hệ"
       follow: "Follow us"
+  mailers:
+    user_mailer:
+      account_activation: "Kích hoạt tài khoản"
+      password_reset: "Đặt lại mật khẩu"
+  shared:
+  user_mailer:
+    account_activation:
+      title: "MonaLisa"
+      hi: "Chào"
+      activate: "Kích hoạt"
+      welcome: "Chào mừng bạn đến với MonaLisa! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn:"
+  users:
+    new:
+      signup: "Đăng ký"
+      text_signup: "Tạo một tài khoản MonaLisa mới!"
+      name: "Họ và tên"
+      pass: "Mật Khẩu "
+      pass_con: "Xác nhận mật khẩu"
   static_pages:
     home:
       little_about_us: "Một chút về chúng tôi"
