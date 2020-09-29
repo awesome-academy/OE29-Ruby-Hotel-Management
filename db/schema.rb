@@ -94,13 +94,18 @@ ActiveRecord::Schema.define(version: 2020_09_24_034901) do
     t.integer "age"
     t.text "address"
     t.string "email"
-    t.integer "gender"
-    t.integer "role"
+    t.integer "gender", default: 0, null: false
+    t.integer "role", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  create_table "views", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "views", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

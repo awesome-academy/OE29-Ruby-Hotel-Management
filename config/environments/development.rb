@@ -36,4 +36,18 @@ Rails.application.configure do
   config.assets.quiet = true
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  config.middleware.use I18n::JS::Middleware
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = {host: ENV["host"]}
+  config.action_mailer.smtp_settings = {
+    user_name: ENV["mailtrap_user_name"],
+    password: ENV["mailtrap_passs"],
+    address: ENV["mailtrap_address"],
+    domain: ENV["mailtrap_domain"],
+    port: ENV["mail_port"],
+    authentication: :cram_md5
+  }
+
 end

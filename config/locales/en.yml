@@ -1,16 +1,38 @@
 en:
   global:
+    acc_activated:  "Account activated!"
+    invalidate_activation_link: "Invalid activation link"
+    text_check_email: "Please check your email to activate your account."
     app_name: "Monalisa"
     text_lorem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet ex vel mi laoreet,
                 vitae aliquet libero luctus. Sed non semper diam, eu fringilla urna. Curabitur at odio dolor.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet ex vel mi laoreet, vitae aliquet
                 libero luctus. Sed non semper diam, eu fringilla urna. Curabitur at odio dolor"
     address: "KM10 Nguyen Trai, Hoc Vien Cong Nghe Buu Chinh Vien Thong, Ha Dong, Ha Noi"
+  mailers:
+    user_mailer:
+      account_activation: "Account Activation"
+      password_reset: "Password Reset"
+  user_mailer:
+    account_activation:
+      title: "MonaLisa"
+      hi: "Hi"
+      activate: "Activate"
+      welcome: "Welcome to the MonaLisa ! Click on the link below to activate your account:"
+  users:
+    new:
+      signup: "Sign up"
+      text_signup: "Create a new MonaLisa Account !"
+      name: "Name"
+      pass: "Password"
+      pass_con: "Password Confirmation"
   layouts:
     header:
       contact: "Contact us directly at +084 822 2208 98"
       vi: "VI"
       en: "EN"
+      signin: "SIGN IN"
+      signup: "SIGN UP"
     menu:
       home: "HOME"
       about_us: "ABOUT US"
