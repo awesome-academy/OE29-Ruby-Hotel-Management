@@ -3,10 +3,12 @@ class AccountActivationsController < ApplicationController
     user = User.find_by email: params[:email]
     if user && !user.activated? && user.authenticated?(:activation, params[:id])
       user.activate
+      log_in user
       flash[:success] = t "global.acc_activated"
+      redirect_to user
     else
-      flash[:danger] = t "global.invalidate_activation_link"
+      flash[:danger] = t "global.invalidatxe_activation_link"
+      redirect_to root_url
     end
-    redirect_to root_url
   end
 end

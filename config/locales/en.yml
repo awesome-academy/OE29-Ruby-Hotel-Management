@@ -1,5 +1,8 @@
 en:
   global:
+    not_found_user: "Not found user"
+    message: "Account not activated.Chec your email for the activation link."
+    log_in_false: "Invalid email/password combination"
     acc_activated:  "Account activated!"
     invalidate_activation_link: "Invalid activation link"
     text_check_email: "Please check your email to activate your account."
@@ -26,6 +29,12 @@ en:
       name: "Name"
       pass: "Password"
       pass_con: "Password Confirmation"
+  sessions:
+    new:
+      pass: "Password"
+      remember: "Remember me"
+      signin: "Sign in"
+      text_signup: "Great to have you back!"
   layouts:
     header:
       contact: "Contact us directly at +084 822 2208 98"
