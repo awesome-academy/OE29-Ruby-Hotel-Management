@@ -1,0 +1,13 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+
+  .checkbox {
+    margin-top: 0;
+  }
+
+  .check_remember {
+    margin-top: 0 !important;
+    margin-left: 56px !important;
+  }
+}

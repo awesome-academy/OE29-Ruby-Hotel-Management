@@ -2,7 +2,7 @@
 @import 'bootstrap';
 @import 'valiables';
 @import 'signup';
-
+@import 'login';
 * {
   box-sizing: border-box;
   padding: 0;
@@ -27,7 +27,7 @@ p {
   }
 }
 
-#menu {
+#menu{
   display: flex;
   justify-content: space-between;
   height: 80px;
@@ -39,8 +39,18 @@ p {
 
   ul {
     list-style-type: none;
+    .show{
+      display:inline-block !important;
+    }
 
+    .drop-btn{
+      background-color: transparent;
+      border: 1px solid transparent;
+      font-weight: bold;
+    }
     li {
+      height: 20px;
+      line-height: 20px;
       display: inline-block;
       padding-left: 20px;
 

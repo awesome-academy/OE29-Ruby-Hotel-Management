@@ -8,6 +8,26 @@
   <ul>
     <li><%= link_to t(".reservation"), "#" %></li>
     <li><%= link_to t(".contact"), contact_path %></li>
-    <li><%= link_to t(".account"), "#" %></li>
+    <% if logged_in? %>
+        <li class="nav-item dropdown" id="show_drop">
+          <button type="button" class="nav-link dropdown-toggle drop-btn" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.name %>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "#", class: "dropdown-item has-icon" do %>
+              <i class="far fa-user"></i> <%= t ".profile" %>
+            <% end %>
+            <%= link_to "#", class: "dropdown-item has-icon" do %>
+              <i class="far fa-cog"></i> <%= t ".settings" %>
+            <% end %>
+            <div class="dropdown-divider"></div>
+            <%= link_to logout_path, method: :delete, class: "dropdown-item has-icon text-danger" do %>
+              <i class="fas fa-sign-out-alt"></i> <%= t ".logout" %>
+            <% end %>
+          </div>
+        </li>
+      <% else %>
+        <li><%= link_to t(".account"), "#" %></li>
+      <% end %>
   </ul>
 </div>

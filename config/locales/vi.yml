@@ -1,5 +1,8 @@
 vi:
   global:
+    log_in_false: "Invalid email/password combination"
+    not_found_user: "Khong tim thay nguoi dung"
+    message: "Tài khoản chưa được kích hoạt. Hãy kiểm tra email của bạn để biết liên kết kích hoạt."
     invalidate_activation_link: "link khong hien huu"
     acc_activated: "xac thuc tai khoan!"
     text_check_email: "Kiểm tra mail để kích hoạt tài khoản của bạn"
@@ -48,6 +51,12 @@ vi:
       name: "Họ và tên"
       pass: "Mật Khẩu "
       pass_con: "Xác nhận mật khẩu"
+  sessions:
+    new:
+      pass: "Mật Khẩu"
+      remember: "Nhớ tôi "
+      signin: "Đăng nhập"
+      text_signup: "Thật tuyệt khi có bạn trở lại!"
   static_pages:
     home:
       little_about_us: "Một chút về chúng tôi"

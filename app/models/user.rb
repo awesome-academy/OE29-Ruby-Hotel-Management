@@ -45,8 +45,17 @@ class User < ApplicationRecord
     end
   end
 
+  def remember
+    self.remember_token = User.new_token
+    update_attribute :remember_digest, User.digest(remember_token)
+  end
+
   def activate
     update_columns activated: true, activated_at: Time.zone.now
+  end
+
+  def forget
+    update_attribute :remember_digest, nil
   end
 
   def authenticated? attribute, token

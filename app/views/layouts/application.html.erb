@@ -19,9 +19,11 @@
       <%= render "layouts/header" %>
       <%= render "layouts/menu" %>
     </div>
+    <% if !logged_in? %>
     <div class="container-fluid">
       <%= render "layouts/banner" %>
     </div>
+    <% end %>
     <%= yield %>
     <div class="container-fluid">
       <%= render "layouts/footer" %>
