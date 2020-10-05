@@ -113,6 +113,7 @@ vi:
         client: "Khách hàng"
         staff: "Nhân viên"
         room_view: "Room View"
+        room_type: "Room Type"
       header:
         profile: "Trang cá nhân"
         settings: "Cài đặt"
@@ -129,6 +130,22 @@ vi:
       view:
         edit: "Edit"
         delete: "Delete"
+        add_type: "Add Type"
+        list_type: "List Type"
+        type_name: "Name"
+    types:
+      index:
+        id: "ID"
+        add_type: "Add Type"
+        list_type: "List Type"
+        type_name: "Name"
+        all_types: "All Types"
+      form:
+        submit: "Submit"
+      type:
+        edit: "Edit"
+        delete: "Delete"
+        you_sure: "You sure?"
   controllers:
     admin:
       views:
@@ -137,3 +154,9 @@ vi:
         view_deleted: "View đã được xóa"
         view_not_deleted: "View chưa được xóa"
         view_not_found: "Không tìm thấy view"
+      types:
+        type_created: "Tạo type thành công"
+        type_not_created: "Tạo type không thành công"
+        type_deleted: "Type đã được xóa"
+        type_not_deleted: "Type chưa được xóa"
+        type_not_found: "Không tìm thấy type"
