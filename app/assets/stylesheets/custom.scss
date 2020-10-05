@@ -3,6 +3,7 @@
 @import 'valiables';
 @import 'signup';
 @import 'login';
+@import 'profile';
 * {
   box-sizing: border-box;
   padding: 0;
@@ -18,7 +19,7 @@ p {
   justify-content: space-between;
 
   a {
-    color: black;
+    color: $black;
     font-weight: bold;
 
     &:hover {
@@ -59,7 +60,7 @@ p {
       }
 
       a {
-        color: black;
+        color: $black;
         font-weight: bold;
 
         &:hover {
@@ -333,7 +334,7 @@ footer {
       color: $text-color-footer;
 
       .email_label {
-        color: black;
+        color: $black;
       }
     }
 

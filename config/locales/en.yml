@@ -31,12 +31,31 @@ en:
       name: "Name"
       pass: "Password"
       pass_con: "Password Confirmation"
+    edit:
+      name: "Name"
+      add: "Address"
+      age: "Age"
+      pass: "Password"
+      pass_con: "Password Confirm"
+      gender: "Gender"
+      save: "Save"
+      rails_logo: "Rails Logo"
   sessions:
     new:
       pass: "Password"
       remember: "Remember me"
       signin: "Sign in"
       text_signup: "Great to have you back!"
+  shared:
+    edit_form:
+      name: "Name"
+      add: "Address"
+      age: "Age"
+      pass: "Password"
+      pass_con: "Password Confirm"
+      gender: "Gender"
+      save: "Save"
+      rails_logo: "Rails Logo"
   layouts:
     header:
       contact: "Contact us directly at +084 822 2208 98"

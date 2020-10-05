@@ -10,7 +10,6 @@
     <%= javascript_include_tag "i18n" %>
 	  <%= javascript_include_tag "translations", skip_pipeline: true %>
   </head>
-
   <body>
     <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
