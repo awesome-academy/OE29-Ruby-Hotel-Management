@@ -12,6 +12,8 @@ en:
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet ex vel mi laoreet, vitae aliquet
                 libero luctus. Sed non semper diam, eu fringilla urna. Curabitur at odio dolor"
     address: "KM10 Nguyen Trai, Hoc Vien Cong Nghe Buu Chinh Vien Thong, Ha Dong, Ha Noi"
+    error: "error"
+    the_form_contain: "the form contain "
   mailers:
     user_mailer:
       account_activation: "Account Activation"
@@ -91,8 +93,28 @@ en:
         user_management: "User management"
         client: "Client"
         staff: "Staff"
+        room_view: "Room View"
       header:
         profile: "Profile"
         settings: "Settings"
         logout: "Logout"
         home: "Home"
+    views:
+      index:
+        add_view: "Add view"
+        list_view: "List View"
+        id: "ID"
+        view_name: "Name"
+      form:
+        submit: "Submit"
+      view:
+        edit: "Edit"
+        delete: "Delete"
+  controllers:
+    admin:
+      views:
+        view_created: "View create"
+        view_not_created: "View not create"
+        view_deleted: "View deleted"
+        view_not_deleted: "View not deleted"
+        view_not_found: "View not found"

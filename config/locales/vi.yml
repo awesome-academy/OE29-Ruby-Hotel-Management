@@ -12,6 +12,8 @@ vi:
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet ex vel mi laoreet, vitae aliquet
                 libero luctus. Sed non semper diam, eu fringilla urna. Curabitur at odio dolor"
     address: "KM10 Nguyen Trai, Hoc Vien Cong Nghe Buu Chinh Vien Thong, Ha Dong, Ha Noi"
+    error: "error"
+    the_form_contain: "the form contain "
   layouts:
     header:
       contact: "Liên hệ trực tiếp với chúng tôi tại +084 822 2208 98"
@@ -92,8 +94,28 @@ vi:
         user_management: "Quản lý người dùng"
         client: "Khách hàng"
         staff: "Nhân viên"
+        room_view: "Room View"
       header:
         profile: "Trang cá nhân"
         settings: "Cài đặt"
         logout: "Đăng xuất"
         home: "Trang Chủ"
+    views:
+      index:
+        add_view: "Add view"
+        list_view: "List View"
+        id: "ID"
+        view_name: "Name"
+      form:
+        submit: "Submit"
+      view:
+        edit: "Edit"
+        delete: "Delete"
+  controllers:
+    admin:
+      views:
+        view_created: "Tạo view thành công"
+        view_not_created: "Tạo view không thành công"
+        view_deleted: "View đã được xóa"
+        view_not_deleted: "View chưa được xóa"
+        view_not_found: "Không tìm thấy view"
