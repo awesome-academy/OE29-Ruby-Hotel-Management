@@ -1,0 +1,67 @@
+@import 'color';
+.content_profile {
+  height: 400px;
+  background-color: $back-ground-color-primary;
+
+  .content_form {
+    margin: 40px;
+  }
+
+  .content_left {
+    border-radius: 10px;
+    padding: 20px 80px;
+    background-color: white;
+
+    .form_profile {
+
+      .form-input {
+        height:32px;
+        margin-bottom: 20px;
+      }
+
+      .label {
+        color: $gray_light;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .btn-signup {
+        width: 50%;
+        height: 32px;
+        margin: 15px 0 0 66px;
+        background-color: $yellow;
+        color: $black;
+        font-size: 14px;
+        font-weight: bold;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  .content_right {
+    padding: 20px 80px;
+
+    img {
+      width: 180px;
+    }
+
+    .btn-choose {
+      margin-top: 10px;
+      border: 1px solid transparent;
+    }
+  }
+}
+
+.gender {
+  display: flex;
+  justify-content: flex-start;
+  height: 32px;
+  margin-bottom: 20px;
+}
+
+.gender_left {
+  line-height: 27px;
+  margin-right: 15px;
+}

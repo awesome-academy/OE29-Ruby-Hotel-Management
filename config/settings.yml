@@ -10,6 +10,8 @@ room: 24
 award: 12
 home:
   path_link1: "logo-monalisa-healing-gold.png"
+profile:
+    image_ava: "avatar.jpg"
 user:
   validate:
     name_max: 50
@@ -18,3 +20,6 @@ user:
 room_view:
   validate:
     name_max: 50
+users:
+  edit:
+    type: "image/jpeg, image/gif, image/png"

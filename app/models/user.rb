@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  USER_PERMIT = %i(email name password password_confirmation).freeze
+  USER_PERMIT = %i(email name address age password password_confirmation gender)
+                .freeze
   attr_accessor :remember_token, :activation_token
 
   has_many :comments, dependent: :destroy
@@ -23,8 +24,8 @@ class User < ApplicationRecord
   format: {with: URI::MailTo::EMAIL_REGEXP},
   uniqueness: true
   validates :password, presence: true,
-            length: {minimum: Settings.user.validate.pass_min}
-
+            length: {minimum: Settings.user.validate.pass_min},
+            allow_nil: true
   has_secure_password
 
   before_save :downcase_email

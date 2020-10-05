@@ -40,6 +40,15 @@ vi:
       account_activation: "Kích hoạt tài khoản"
       password_reset: "Đặt lại mật khẩu"
   shared:
+    edit:
+      name: "Họ và tên"
+      pass: "Mật Khẩu "
+      pass_con: "Xác nhận mật khẩu"
+      add: "Địa chỉ "
+      age: "Tuổi"
+      gender: "Giới tính"
+      save: "Lưu"
+      rails_logo: "Rails Logo"
   user_mailer:
     account_activation:
       title: "MonaLisa"
@@ -53,6 +62,15 @@ vi:
       name: "Họ và tên"
       pass: "Mật Khẩu "
       pass_con: "Xác nhận mật khẩu"
+    edit:
+      name: "Họ và tên"
+      pass: "Mật Khẩu "
+      pass_con: "Xác nhận mật khẩu"
+      add: "Địa chỉ "
+      age: "Tuổi"
+      gender: "Giới tính"
+      save: "Lưu"
+      rails_logo: "Rails Logo"
   sessions:
     new:
       pass: "Mật Khẩu"

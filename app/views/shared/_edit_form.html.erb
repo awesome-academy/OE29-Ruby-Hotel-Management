@@ -1,0 +1,49 @@
+<% provide :title, current_user.name %>
+<div class="container content_profile">
+  <%= form_for @user, url: link, method: :patch do |f| %>
+    <div class="row content_form">
+      <div class="col-sm-8 content_left">
+        <div class="row form_profile">
+          <div class="col-sm-6">
+            <%= f.label :email, class: "label" %>
+            <%= f.text_field :email, class: "form-control form-input" %>
+            <%= render "shared/show_error", field: :email %>
+            <%= f.label :name, t("admin.users.edit.name"), class: "label " %>
+            <%= f.text_field :name, class: "form-control form-input" %>
+            <%= render "shared/show_error", field: :name %>
+            <%= f.label :address, t(".add"), class: "label" %>
+            <%= f.text_field :address, class: "form-control form-input" %>
+            <%= f.label :age, t(".age"), class: "label" %>
+            <%= f.text_field :age, type: "number",  class: "form-control form-input" %>
+          </div>
+          <div class="col-sm-6">
+            <%= f.label :password, t(".pass"), class: "label" %>
+            <%= f.password_field :password, class: "form-control form-input" %>
+            <%= render "shared/show_error", field: :password %>
+            <%= f.label :password_confirmation, t(".pass_con"), class: "label" %>
+            <%= f.password_field :password_confirmation, class: "form-control form-input" %>
+            <%= render "shared/show_error", field: :password_confirmation %>
+            <%= f.label :gender, t(".gender"), class: "label" %>
+            <div class="gender ml-3 ">
+              <div class="gender_left">
+                <%= f.radio_button :gender, "male" %>
+              </div>
+              <div class="gender_left"><%= t ".nam" %></div>
+              <div class="gender_left">
+                <%= f.radio_button :gender, "female" %>
+              </div>
+              <div class="gender_left"><%= t ".nu" %></div>
+            </div>
+             <%= f.submit t(".save"), class: "btn btn-secondary btn-signup" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 content_right">
+        <%= image_tag Settings.profile.image_ava, alt: t(".rails_logo"), class: "rounded-circle mr-1" %>
+        <span class="image">
+          <%= f.file_field :image, accept: Settings.users.edit.type, class: "btn-choose" %>
+        </span>
+      </div>
+    </div>
+  <% end %>
+</div>

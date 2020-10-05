@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: :show
+  before_action :logged_in_user, except: %i(new show create)
+  before_action :find_user, :check_client, only: %i(show edit update)
+  before_action :correct_user, only: %i(edit update)
+
   def new
     @users = User.all
   end
@@ -18,17 +21,22 @@ class UsersController < ApplicationController
       end
     end
   end
-  private
 
-  def user_params
-    params.required(:user).permit User::USER_PERMIT
+  def edit; end
+
+  def update
+    if @user.update user_params
+      flash[:success] = t "global.update_success"
+      redirect_to @user
+    else
+      flash.now[:danger] = t "global.update_error"
+      render :edit
+    end
   end
 
-  def find_user
-    @user = User.find_by id: params[:id]
-    return if @user
+  private
 
-    flash[:danger] = t "global.not_found_user"
-    redirect_to root_path
+  def check_client
+    redirect_to root_path unless current_user.client?
   end
 end

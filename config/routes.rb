@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     namespace :admin do
       root "dashboard#index"
       resources :views, except: %i(new, show)
+      resources :users
     end
   end
 end

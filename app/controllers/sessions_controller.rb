@@ -21,8 +21,13 @@ class SessionsController < ApplicationController
   def activate_check user
     if user.activated?
       log_in user
-      params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-      redirect_to user
+      remember = params[:session][:remember_me]
+      remember == "1" ? remember(user) : forget(user)
+      if user.admin?
+        redirect_to admin_root_path
+      else
+        redirect_to user
+      end
     else
       flash[:warning] = t "global.message"
       redirect_to root_url
