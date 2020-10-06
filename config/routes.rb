@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       resources :views, except: %i(new show)
       resources :users
       resources :types, except: %i(new show)
+      resources :unities, except: %i(new show)
+      resources :services, except: %i(new show)
     end
   end
 end

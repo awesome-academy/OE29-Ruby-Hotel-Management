@@ -114,6 +114,8 @@ en:
         staff: "Staff"
         room_view: "Room View"
         room_type: "Room Type"
+        service_unity: "Service Unity"
+        service: "Service"
       header:
         profile: "Profile"
         settings: "Settings"
@@ -130,7 +132,6 @@ en:
       view:
         edit: "Edit"
         delete: "Delete"
-  controllers:
     admin:
       views:
         view_created: "View create"

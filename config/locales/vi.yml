@@ -114,6 +114,8 @@ vi:
         staff: "Nhân viên"
         room_view: "Room View"
         room_type: "Room Type"
+        service_unity: "Service Unity"
+        service: "Service"
       header:
         profile: "Trang cá nhân"
         settings: "Cài đặt"

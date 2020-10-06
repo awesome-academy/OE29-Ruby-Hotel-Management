@@ -1,0 +1,10 @@
+<tr>
+  <td><%= unity_counter + 1%></td>
+  <td><%= unity.name %></td>
+  <td>
+    <%= link_to t(".edit"), edit_admin_unity_path(unity), remote: true, class: "btn btn-block btn-primary btn-action" %>
+  </td>
+  <td>
+    <%= link_to t(".delete"), admin_unity_path(unity), method: :delete, data: {confirm: "You sure?"}, class: "btn btn-block btn-danger btn-action" %>
+  </td>
+</tr>
