@@ -1,4 +1,10 @@
 en:
+  pagination:
+    first: "« FIRST"
+    last: "LAST »"
+    previous: "‹ PREV"
+    next: "NEXT ›"
+    truncate: "…"
   global:
     not_found_user: "Not found user"
     message: "Account not activated.Chec your email for the activation link."
@@ -151,6 +157,9 @@ en:
         edit: "Edit"
         delete: "Delete"
         you_sure: "You sure?"
+    rooms:
+      form:
+        submit: "Submit"
   controllers:
     admin:
       views:

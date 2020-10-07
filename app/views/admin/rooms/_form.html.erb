@@ -1,0 +1,33 @@
+<div class="modal" id="roommodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= form_for @room, url: check_url_room(@room), remote: true, html: { multipart: true } do |f| %>
+          <%= render "admin/shared/error_message", object: f.object %>
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control" %>
+          <%= f.label :price %>
+          <%= f.number_field :price, class: "form-control" %>
+          <%= f.label :type_id %>
+          <%= f.select :type_id, @type_arr, {include_blank: t(".select_type")}, {class: "form-control"} %>
+          <%= f.label :view_id %>
+          <%= f.select :view_id, @view_arr, {include_blank: t(".select_view")}, {class: "form-control"} %>
+          <%= f.label :des %>
+          <%= f.text_area :des, class: "form-control" %>
+          <div class="form-group">
+            <%= f.label :pictures, class: "col-md-4 control-label"%>
+            <div class="col-md-8">
+              <table class="user-photo-form">
+                <%= link_to_add_association t(".add_photo"), f, :pictures, class: "btn btn-default" %>
+                <%= f.fields_for :pictures do |picture| %>
+                  <%= render "picture_fields", f: picture %>
+                <% end %>
+              </table>
+            </div>
+          </div>
+          <%= f.submit t(".submit"), class: "btn btn-primary mt-3" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

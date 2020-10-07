@@ -1,4 +1,10 @@
 vi:
+  pagination:
+    first: "« FIRST"
+    last: "LAST »"
+    previous: "‹ PREV"
+    next: "NEXT ›"
+    truncate: "…"
   global:
     log_in_false: "Invalid email/password combination"
     not_found_user: "Khong tim thay nguoi dung"
@@ -148,6 +154,9 @@ vi:
         edit: "Edit"
         delete: "Delete"
         you_sure: "You sure?"
+    rooms:
+      form:
+        submit: "Submit"
   controllers:
     admin:
       views:
