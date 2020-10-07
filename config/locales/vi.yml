@@ -6,6 +6,7 @@ vi:
     next: "NEXT ›"
     truncate: "…"
   global:
+    search_fail: "Checkin, Checkout không thể trống!"
     log_in_false: "Invalid email/password combination"
     not_found_user: "Khong tim thay nguoi dung"
     message: "Tài khoản chưa được kích hoạt. Hãy kiểm tra email của bạn để biết liên kết kích hoạt."
@@ -20,6 +21,17 @@ vi:
     address: "KM10 Nguyen Trai, Hoc Vien Cong Nghe Buu Chinh Vien Thong, Ha Dong, Ha Noi"
     error: "error"
     the_form_contain: "the form contain "
+  reservations:
+    index:
+      title: "Phòng còn trống cho bạn !"
+      rails_logo: "rails logo"
+      price: "Giá thuê : "
+      type: "Kiểu : "
+      view: "View : "
+      select: "CHỌN PHÒNG "
+    new:
+      title: "ĐẶT PHÒNG"
+      title_search: "Đặt chỗ của bạn"
   layouts:
     header:
       contact: "Liên hệ trực tiếp với chúng tôi tại +084 822 2208 98"
@@ -55,6 +67,10 @@ vi:
       gender: "Giới tính"
       save: "Lưu"
       rails_logo: "Rails Logo"
+    search_room_form:
+      checkin: "NGÀY BẮT ĐẦU "
+      checkout: "NGÀY KẾT THÚC "
+      check: "KIỂM TRA PHÒNG TRỐNG"
   user_mailer:
     account_activation:
       title: "MonaLisa"

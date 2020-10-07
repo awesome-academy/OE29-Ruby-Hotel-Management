@@ -6,6 +6,7 @@ en:
     next: "NEXT ›"
     truncate: "…"
   global:
+    search_fail: "Checkin, Checkout can not empty !"
     not_found_user: "Not found user"
     message: "Account not activated.Chec your email for the activation link."
     log_in_false: "Invalid email/password combination"
@@ -62,6 +63,10 @@ en:
       gender: "Gender"
       save: "Save"
       rails_logo: "Rails Logo"
+    search_room_form:
+      checkin: "CHECKIN"
+      checkout: "CHECKOUT"
+      check: "CHECK AVAILABILITY"
   layouts:
     header:
       contact: "Contact us directly at +084 822 2208 98"
@@ -83,6 +88,17 @@ en:
     footer:
       contact: "Contact"
       follow: "Follow us"
+  reservations:
+    index:
+      title: "Rooms available for you !"
+      rails_logo: "rails logo"
+      price: "Price : "
+      type: "Type : "
+      view: "View : "
+      select: "SELECT ROOM "
+    new:
+      title: "RESERVATION"
+      title_search: "Make your reservation"
   static_pages:
     home:
       little_about_us: "little about us"

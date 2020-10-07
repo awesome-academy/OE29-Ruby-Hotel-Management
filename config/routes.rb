@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     resources :users
     resources :account_activations, only: [:edit]
+    resources :reservations
+    resources :bookings
     namespace :admin do
       root "dashboard#index"
       resources :views, except: %i(new show)
@@ -19,5 +21,5 @@ Rails.application.routes.draw do
       resources :pictures, only: :destroy
     end
   end
-  match "*unmatched", to: "application#render_404", via: :all
+  # match "*unmatched", to: "application#render_404", via: :all
 end

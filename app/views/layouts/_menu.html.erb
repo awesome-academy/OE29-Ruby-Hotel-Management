@@ -6,7 +6,7 @@
   </ul>
   <%= image_tag "logo.png" %>
   <ul>
-    <li><%= link_to t(".reservation"), "#" %></li>
+    <li><%= link_to t(".reservation"), new_reservation_path %></li>
     <li><%= link_to t(".contact"), contact_path %></li>
     <% if logged_in? %>
         <li class="nav-item dropdown" id="show_drop">

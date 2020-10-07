@@ -22,4 +22,14 @@ class Room < ApplicationRecord
 
   delegate :name, to: :type, prefix: true
   delegate :name, to: :view, prefix: true
+
+  scope :empty_at, (lambda do |checkin, checkout|
+    where "rooms.id NOT IN (SELECT rooms.id
+    from rooms JOIN bookings
+    ON rooms.id = bookings.room_id
+    WHERE (bookings.checkin < '#{checkin}'
+    AND bookings.checkout > '#{checkout}')
+    OR (bookings.checkout BETWEEN '#{checkin}' AND '#{checkout}')
+    OR (bookings.checkin BETWEEN '#{checkin}' AND '#{checkout}'))"
+  end)
 end
