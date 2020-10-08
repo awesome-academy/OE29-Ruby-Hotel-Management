@@ -1,0 +1,7 @@
+<% provide :title, t(".our_rooms") %>
+<div id="list_room" class="container-fluid">
+  <%= render @rooms %>
+  <div class="container-fluid text-center">
+    <%= link_to t(".show_more"), "#" , class: "show_more"%>
+  </div>
+</div>

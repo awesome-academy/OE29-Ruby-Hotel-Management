@@ -3,7 +3,7 @@ class Admin::RoomsController < AdminController
 
   def index
     @room = Room.new
-    @rooms = Room.all.page(params[:page]).per Settings.rooms.room_per_page
+    @rooms = Room.page(params[:page]).per Settings.rooms.room_per_page
 
     @type_arr = Type.pluck :name, :id
     @view_arr = View.pluck :name, :id

@@ -1,0 +1,56 @@
+<div class="container-fluid show_detail_room">
+  <div id="room_detail" class="container-fluid">
+    <div id="room_main_content" class="container">
+      <div class="row">
+        <div id="image" class="col-md-12">
+          <%= image_tag @room.pictures[0].picture_url %>
+        </div>
+      </div>
+      <div class="row">
+        <div id="price" class="col-md-12">
+          <%= t ".start_from" %> <b class="price_room">$<%= @room.price %></b> / <%= t ".night" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="description" class="container-fluid">
+    <div id="des" class="container">
+      <div class="row">
+        <div  class="col-md-12">
+          <h3><%= t ".des" %></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 offset-3">
+          <%= @room.des %>
+          <hr />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 offset-3">
+          <div><b><%= t ".type" %>:</b> <%= @room.type_name %></div>
+          <div><b><%= t ".view" %>:</b> <%= @room.view_name %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="book_now" class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <button type="button" class="btn btn-success"><%= t ".book_now" %></button>
+      </div>
+    </div>
+  </div>
+  <div id="room_relate" class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div  class="col-md-12">
+          <h3><%= t ".relate_room" %></h3>
+        </div>
+      </div>
+      <div class="row">
+        <%= render partial: "relate_room", collection: @relate_rooms %>
+      </div>
+    </div>
+  </div>
+</div>
