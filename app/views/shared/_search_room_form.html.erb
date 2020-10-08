@@ -1,0 +1,21 @@
+<div class="search_reservation">
+  <div class="main-search row">
+    <%= form_with url: reservations_path, method: :get do |f| %>
+      <div class="col-md-9 form-left">
+        <div class="form-group group-datetime">
+          <%= f.label :checkin, t(".checkin"), class: "label-time" %>
+          <%= f.date_field :checkin, class: "form-control form-input" %>
+        </div>
+        <div class="form-group group-datetime">
+          <%= f.label :checkout, t(".checkout"), class: "label-time" %>
+          <%= f.date_field :checkout, class: "form-control form-input" %>
+        </div>
+      </div>
+      <div class="col-md-3 form-right">
+        <div class="form-search">
+          <button type="submit" class="btn btn-success btn-search"><%= t ".check" %></button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
