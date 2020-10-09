@@ -32,11 +32,8 @@ class ApplicationController < ActionController::Base
   end
 
   def find_user
-    @user = User.find id: params[:id]
+    @user = User.find params[:id]
     return if @user
-
-    flash[:danger] = t "global.not_found_user"
-    redirect_to root_path
   end
 
   def correct_user

@@ -1,0 +1,29 @@
+<div class="container room-search">
+  <%= render "shared/search_room_form" %>
+  <h3 class="title"><%= t ".title" %></h3>
+  <div class="room-main">
+  <% @rooms.each do |room| %>
+    <div class="row list-room">
+      <div class="col-md-3 image">
+        <%= image_tag Settings.profile.image_ava, alt: t(".rails_logo") %></div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class ="room-name"><%= room.name %></h3>
+            <ul class= "room-des">
+              <li><%= t ".price" %><%= room.price %></li>
+              <li><%= t ".type" %> <%= room.type_name %></li>
+              <li><%= t ".view" %> <%= room.view_name %></li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <%= form_for :room do |f| %>
+              <%= f.submit t(".select"), class: "btn btn-success btn-select" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
