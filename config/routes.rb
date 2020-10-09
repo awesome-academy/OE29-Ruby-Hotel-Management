@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :users
     resources :account_activations, only: :edit
     resources :rooms, only: %i(index show)
+    resources :reservations, only: %i(index new)
 
     namespace :admin do
       root "dashboard#index"

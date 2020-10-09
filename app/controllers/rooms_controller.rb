@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   before_action :load_room_by_id, only: :show
   def index
-    @rooms = Room.take Settings.rooms.rooms_to_show
+    @rooms = Room.page(params[:page]).per Settings.rooms.rooms_to_show
   end
 
   def show

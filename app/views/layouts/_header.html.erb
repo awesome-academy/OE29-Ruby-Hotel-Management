@@ -28,7 +28,9 @@
         </button>
       </div>
       <div class="modal-body" id="modal_signup">
-        <%= render "users/new" %>
+        <% if !logged_in? %>
+           <%= render "users/new" %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -64,7 +66,9 @@
         </button>
       </div>
       <div class="modal-body" id="modal_signup">
-        <%= render "users/new" %>
+        <% if !logged_in? %>
+          <%= render "users/new" %>
+        <% end %>
       </div>
     </div>
   </div>
