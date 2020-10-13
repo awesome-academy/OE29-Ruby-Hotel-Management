@@ -3,7 +3,7 @@
     <div id="room_main_content" class="container">
       <div class="row">
         <div id="image" class="col-md-12">
-          <%= image_tag @room.pictures[0].picture_url %>
+          <%= image_tag @room.pictures[0].picture_url if @room.pictures[0].present? %>
         </div>
       </div>
       <div class="row">

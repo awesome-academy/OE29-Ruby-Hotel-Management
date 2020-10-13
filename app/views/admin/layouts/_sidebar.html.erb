@@ -2,26 +2,10 @@
   <div class="sidebar">
     <nav class="mt-2" style="padding-top: 50px">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <li class="nav-item has-treeview menu-open">
-          <%= link_to "#", class: "nav-link active" do %>
-            <i class="fas fa-users"></i>
-            <p>
-              <%= t ".user_management" %>
-              <i class="right fas fa-angle-left"></i>
-            </p>
+        <li class="nav-item">
+          <%= link_to admin_users_path, class: "nav-link" do %>
+            <p><%= t ".client" %></p>
           <% end %>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <%= link_to "#", class: "nav-link" do %>
-                <p><%= t ".client" %></p>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "#", class: "nav-link" do %>
-                <p><%= t ".staff" %></p>
-              <% end %>
-            </li>
-          </ul>
         </li>
         <li class="nav-item">
           <%= link_to admin_views_path, class: "nav-link" do%>

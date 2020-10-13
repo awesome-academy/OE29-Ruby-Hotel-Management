@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     namespace :admin do
       root "dashboard#index"
       resources :views, except: %i(new show)
-      resources :users
+      resources :users do
+        resources :bills do
+          resources :bookings
+        end
+      end
       resources :types, except: %i(new show)
       resources :unities, except: %i(new show)
       resources :services, except: %i(new show)
