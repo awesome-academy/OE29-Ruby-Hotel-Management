@@ -1,7 +1,10 @@
 <% provide :title, t(".our_rooms") %>
-<div id="list_room" class="container-fluid">
-  <%= render @rooms %>
-  <div class="container-fluid text-center">
-    <%= link_to t(".show_more"), "#" , class: "show_more"%>
+<div class="container-fluid">
+  <div id="list_room">
+    <%= render @rooms %>
+  </div>
+  <div id="infinite-scrolling" style="display: none">
+    <%= paginate @rooms, theme: "twitter-bootstrap-3" %>
   </div>
 </div>
+<%= javascript_pack_tag "room_pagination" %>
