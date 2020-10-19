@@ -21,8 +21,8 @@ class User < ApplicationRecord
             length: {maximum: Settings.user.validate.name_max}
   validates :email, presence: true,
             length: {maximum: Settings.user.validate.email_max},
-  format: {with: URI::MailTo::EMAIL_REGEXP},
-  uniqueness: true
+            format: {with: URI::MailTo::EMAIL_REGEXP},
+            uniqueness: {case_sensitive: true}
   validates :password, presence: true,
             length: {minimum: Settings.user.validate.pass_min},
             allow_nil: true

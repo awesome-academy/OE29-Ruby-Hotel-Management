@@ -1,0 +1,4 @@
+<% provide :title, t(".list_view") %>
+<div class="container">
+  <%= render partial: "shared/list_room_booking", collection: @bills, as: :bill %>
+</div>

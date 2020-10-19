@@ -1,10 +1,29 @@
-<% provide :title, current_user.name %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= current_user.name %>
-      </h1>
-    </section>
-  </aside>
+<% provide :title, t(".list_view") %>
+<div class="main-history container" >
+  <div id="main-content" >
+    <%= select_tag "bill_filter",options_for_select(option_status_bill),
+                  { class: "browser-default custom-select select-bill", "data-url" => "#{user_path(current_user.id)}"} %>
+  </div>
+  <div id ="main-show">
+    <h3 class="title mt-5 text-center"><%= t ".list" %></h3>
+    <table class="table text-center" id="table-bill">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col"><%= t ".stt" %></th>
+        <th scope="col"><%= t ".ci" %></th>
+        <th scope="col"><%= t ".co" %></th>
+        <th scope="col"><%= t ".price" %></th>
+        <th scope="col"><%= t ".action" %></th>
+      </tr>
+      </thead>
+      <tbody id="list-booking">
+      <%= render partial: "shared/list_room_booking", collection: @bills, as: :bill %>
+      </tbody>
+    </table>
+    <div id="paginator">
+      <%= paginate @bills, theme: "twitter-bootstrap-3", remote: true %>
+    </div>
+
+  </div>
 </div>
+<%= javascript_pack_tag "booking_history" %>

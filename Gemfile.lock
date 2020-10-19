@@ -357,9 +357,9 @@ DEPENDENCIES
   kaminari
   listen (~> 3.2)
   mini_magick (= 4.9.5)
-  pry
   mysql2
   paranoia (~> 2.2)
+  pry
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   rails-i18n
