@@ -1,0 +1,10 @@
+<% if (params[:term] || params[:filter]) && @rooms.current_page == 1 %>
+  $("#list_room").html("<%= j render @rooms %>");
+<% else %>
+  $("#list_room").append("<%= j render @rooms %>");
+<% end %>
+<% if @rooms.next_page %>
+  $(".pagination").replaceWith("<%= j paginate @rooms, theme: "twitter-bootstrap-3" %>");
+<% else %>
+  $(window).off("scroll");
+<% end %>
