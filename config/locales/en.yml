@@ -6,6 +6,8 @@ en:
     next: "NEXT ›"
     truncate: "…"
   global:
+    book_success: "Success"
+    book_error: "Fail"
     search_fail: "Checkin, Checkout can not empty !"
     not_found_user: "Not found user"
     message: "Account not activated.Chec your email for the activation link."
@@ -64,9 +66,16 @@ en:
       save: "Save"
       rails_logo: "Rails Logo"
     search_room_form:
+      fail: "checkout must be than checkin"
+      error: "You must enter full informationn !"
       checkin: "CHECKIN"
       checkout: "CHECKOUT"
       check: "CHECK AVAILABILITY"
+    list_room:
+      price: "Price : "
+      type: "Type: "
+      view: "View : "
+      vnd: " VNĐ"
   layouts:
     header:
       contact: "Contact us directly at +084 822 2208 98"
@@ -90,15 +99,26 @@ en:
       follow: "Follow us"
   reservations:
     index:
+      total: "Total : "
+      vnd: "  VNĐ"
       title: "Rooms available for you !"
       rails_logo: "rails logo"
       price: "Price : "
       type: "Type : "
       view: "View : "
       select: "SELECT ROOM "
+      book: "RESERVATION"
+      checkin: "Arrival date :"
+      checkout: "Departure date :"
     new:
       title: "RESERVATION"
       title_search: "Make your reservation"
+    room:
+      price: "Price : "
+      type: "Type : "
+      view: "View : "
+      price_book: "Rent"
+      vnd: " VNĐ"
   static_pages:
     home:
       little_about_us: "little about us"

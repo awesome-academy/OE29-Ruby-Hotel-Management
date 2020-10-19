@@ -17,7 +17,7 @@ gem "image_processing", "1.9.3"
 gem "jbuilder", "~> 2.7"
 gem "kaminari"
 gem "mini_magick", "4.9.5"
-gem "mysql2"
+gem "mysql2", "~>0.5.3"
 gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.2"
 gem "rails-i18n"
@@ -33,6 +33,7 @@ end
 
 group :development do
   gem "listen", "~> 3.2"
+  gem "pry"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"

@@ -1,0 +1,4 @@
+$("#list .room-des").html("<%= j render partial: "reservations/room", collection: @list_room, as: :item, locals: {count: @data[:count]}  %>")
+$(".time #checkin").html("<%= @data[:checkin] %>")
+$(".time #checkout").html("<%= @data[:checkout] %>")
+$("#total").html("<%= number_with_delimiter(@data[:total], delimiter: ".") %>")

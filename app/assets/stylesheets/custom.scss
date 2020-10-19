@@ -489,8 +489,8 @@ footer {
 
 .title {
   text-align: center;
-  padding: 50px 0;
-  font-size: 35px;
+  padding: 20px 0;
+  font-size: 30px;
   font-family: 'Lora', serif;
   font-weight: bold;
 }
@@ -560,8 +560,32 @@ footer {
   }
 }
 
+.btn-mona {
+  background-color: $yellow !important;
+  color: $black !important;
+  font-weight: bold !important;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.total-price {
+  text-align: right;
+  padding-right: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .room-search {
   background-color: $back-ground-color-primary;
+  position: relative;
+
+  #reservation {
+    position: absolute;
+    top: 500px;
+    right: 40px;
+  }
 
   .room-main {
 
@@ -570,25 +594,30 @@ footer {
       margin: 15px auto;
       background-color: $white;
       box-shadow: 0 4px 8px 0 $rgb_black, 0 6px 20px 0 $rgb_gray;
-      height: 120px;
+      height: 110px;
 
       form {
         width: 60%;
         margin: 0 auto;
         padding: 45px 0 25px;
+
+        .btn-select {
+          width: 100%;
+        }
       }
 
       .image {
         padding: 0;
 
         img {
-          width: 120px;
+          width: 110px;
+          height: 110px;
         }
       }
 
       .room-name {
         padding-bottom: 15px;
-        font-size: 25px;
+        font-size: 20px;
         font-family: 'Lora', serif;
         font-weight: bold;
       }
@@ -600,4 +629,64 @@ footer {
       }
     }
   }
+}
+
+.time {
+  text-align: center;
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline-block;
+      margin: 20px 0;
+      padding:0 15px;
+
+      &:first-child {
+        border-right: 1px solid $gray;
+      }
+    }
+  }
+}
+
+.modal-reser {
+  max-width: 580px !important;
+}
+
+.room-des {
+  padding: 0 20px;
+
+  li {
+    list-style: none;
+    font-weight: bold;
+
+    .room-name {
+      color: goldenrod;
+    }
+
+    .room-reser {
+
+      li {
+        list-style: none;
+      }
+    }
+
+    .price-cont {
+      text-align: center;
+
+      .room-price {
+        color: $mo;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.room-list-reser > li {
+  padding: 10px 0;
+}
+
+.image-reser {
+  width: 100px;
+  height: 100px;
 }
