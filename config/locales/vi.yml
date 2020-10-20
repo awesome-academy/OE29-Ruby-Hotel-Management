@@ -6,6 +6,8 @@ vi:
     next: "NEXT ›"
     truncate: "…"
   global:
+    book_success: "Đặt phòng thành công"
+    book_error: "Đặt phòng thất bại"
     search_fail: "Checkin, Checkout không thể trống!"
     log_in_false: "Invalid email/password combination"
     not_found_user: "Khong tim thay nguoi dung"
@@ -23,15 +25,26 @@ vi:
     the_form_contain: "the form contain "
   reservations:
     index:
+      total: "Tổng tiền : "
+      vnd: "  VNĐ"
       title: "Phòng còn trống cho bạn !"
       rails_logo: "rails logo"
       price: "Giá thuê : "
       type: "Kiểu : "
       view: "View : "
       select: "CHỌN PHÒNG "
+      book: "ĐẶT PHÒNG"
+      checkin: "Ngày bắt đầu :"
+      checkout: "Ngày kết thúc :"
     new:
       title: "ĐẶT PHÒNG"
       title_search: "Đặt chỗ của bạn"
+    room:
+      price: "Giá thuê : "
+      type: "Kiểu : "
+      view: "View : "
+      price_book: "Tiền thuê"
+      vnd: " VNĐ"
   layouts:
     header:
       contact: "Liên hệ trực tiếp với chúng tôi tại +084 822 2208 98"
@@ -68,9 +81,16 @@ vi:
       save: "Lưu"
       rails_logo: "Rails Logo"
     search_room_form:
+      fail: "checkout phải lớn hơn checkin"
+      error: "Phải nhập đầy đủ thông tin !"
       checkin: "NGÀY BẮT ĐẦU "
       checkout: "NGÀY KẾT THÚC "
       check: "KIỂM TRA PHÒNG TRỐNG"
+    list_room:
+      price: "Giá thuê : "
+      type: "Kiểu : "
+      view: "View : "
+      vnd: " VNĐ"
   user_mailer:
     account_activation:
       title: "MonaLisa"
