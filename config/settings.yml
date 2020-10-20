@@ -41,3 +41,8 @@ rooms:
   validate:
     name_max: 100
     des: 1000
+reservation:
+  page: 3
+bill:
+  mini: 86400
+  day: 1
