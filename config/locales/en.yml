@@ -223,6 +223,9 @@ en:
     rooms:
       form:
         submit: "Submit"
+    dashboard:
+      index:
+        start_date_can_not_bigger_end_date: "Start date can not bigger end date"
   controllers:
     admin:
       views:

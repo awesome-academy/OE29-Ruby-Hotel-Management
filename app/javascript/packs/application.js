@@ -12,4 +12,6 @@ import '../stylesheets/application';
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-require('@nathanvda/cocoon');
+require("@nathanvda/cocoon")
+require("chartkick")
+require("chart.js")
