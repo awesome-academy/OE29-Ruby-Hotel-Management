@@ -4,7 +4,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token
 
   has_many :comments, dependent: :destroy
-  has_many :bill, dependent: :destroy
+  has_many :bills, dependent: :destroy
 
   enum gender: {
     male: 0,

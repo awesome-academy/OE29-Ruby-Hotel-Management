@@ -1,0 +1,71 @@
+<% provide :title, t(".order_history") %>
+<div class="content-header">
+  <div class="container-fluid">
+    <%= link_to t(".back"), _back_url, class: "back_url" %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><%= t ".list_bill" %></h3>
+          </div>
+          <div class="card-body table-responsive p-0">
+            <div class="customer-info">
+              <div class="row">
+                <div class="col-md-2">
+                  <div><%= t ".customer" %>:</div>
+                </div>
+                <div><%= @user.name %></div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <%= t ".bill_total" %>:
+                </div>
+                <div class="col-md-2">
+                  <%= @bills.size %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <%= t ".email" %>:
+                </div>
+                <div class="col-md-2">
+                  <%= @user.email %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <%= t ".email" %>:
+                </div>
+                <div class="col-md-2">
+                  <%= @user.address %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <%= t ".gender" %>:
+                </div>
+                <div class="col-md-6">
+                  <%= @user.gender %>
+                </div>
+              </div>
+            </div>
+            <table class="table table-hover text-center">
+              <thead>
+              <tr>
+                <th></th>
+                <th><%= t ".status" %></th>
+                <th><%= t ".price" %></th>
+                <th class="btn-action"><%= t ".detail" %></th>
+              </tr>
+              </thead>
+              <tbody>
+                <%= render partial: "bill", collection: @bills %>
+              </tbody>
+            </table>
+            <%= paginate @bills, theme: "twitter-bootstrap-3" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

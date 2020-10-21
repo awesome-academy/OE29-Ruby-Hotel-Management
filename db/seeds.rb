@@ -112,12 +112,13 @@ end
 
   10.times do
     status = [0, 1, 2 ,3].sample
+    price = [500000, 600000, 700000, 800000].sample
     create_at = Date.today + (1..10).to_a.sample
 
     Bill.create!(status: status,
+                 price: price,
                  user_id: user_id,
-                 created_at: create_at,
-                 updated_at: create_at)
+                 created_at: create_at)
   end
 end
 

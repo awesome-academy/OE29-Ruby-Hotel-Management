@@ -4,6 +4,8 @@ class Booking < ApplicationRecord
 
   has_many :booking_services, dependent: :destroy
 
+  delegate :price, :name, to: :room, prefix: true
+
   enum status: {
     available: 0,
     unavailable: 1
