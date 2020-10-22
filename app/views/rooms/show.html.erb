@@ -1,6 +1,7 @@
 <div class="container-fluid show_detail_room">
   <div id="room_detail" class="container-fluid">
     <div id="room_main_content" class="container">
+      <h1 class="room_title"><%= @room.name %></h1>
       <div class="row">
         <div id="image" class="col-md-12">
           <%= image_tag @room.pictures[0].picture_url if @room.pictures[0].present? %>

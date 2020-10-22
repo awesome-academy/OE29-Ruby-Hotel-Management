@@ -14,6 +14,11 @@ p {
   font-size: 1.5rem;
 }
 
+.active_menu {
+  border-bottom: 2px solid black;
+  opacity: 0.7;
+}
+
 #header {
   display: flex;
   justify-content: space-between;
@@ -422,6 +427,14 @@ footer {
     background-color: $back-ground-color-primary;
     padding: 50px 0;
 
+    .room_title {
+      text-align: center;
+      font-size: 4rem;
+      font-weight: 700;
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }
+
     #image {
       height: 500px;
 
@@ -482,6 +495,10 @@ footer {
           font-size: 2rem;
           color: black;
         }
+      }
+
+      &:hover {
+        opacity: 0.7;
       }
     }
   }
