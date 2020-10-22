@@ -1,1 +1,154 @@
-<%= t "global.app_name" %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3 col-6">
+      <div class="small-box bg-info">
+        <div class="inner">
+          <h3><%= @bills.size %></h3>
+          <p><%= t ".bills" %></p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-bag"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-6">
+      <div class="small-box bg-success">
+        <div class="inner">
+          <h3><%= @clients.size %></h3>
+          <p><%= t ".clients" %></p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-stats-bars"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-6">
+      <div class="small-box bg-warning">
+        <div class="inner">
+          <h3><%= @rooms.size %></h3>
+          <p><%= t ".rooms" %></p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-person-add"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-6">
+      <div class="small-box bg-danger">
+        <div class="inner">
+          <h3>$<%= @bills.sum(:price) %></h3>
+          <p><%= t ".income" %></p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-pie-graph"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <section class="col-lg-6 connectedSortable ui-sortable">
+      <div class="card bg-gradient-info">
+        <div class="card-header border-0 ui-sortable-handle" style="cursor: move;">
+          <h3 class="card-title">
+            <i class="fas fa-th mr-1"></i>
+            <%= t ".order_history" %>
+          </h3>
+          <div class="card-tools">
+            <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="input-group col-md-6 offset-1">
+              <div class="row">
+                <%= form_with url: admin_bill_history_path, method: :get, id: "form_bill_history" do |f| %>
+                  <div class="col-md-5">
+                    <%= f.date_field :start_date, class: "form-control form-input", id: "start_date" %>
+                  </div>
+                  <div class="col-md-5">
+                    <%= f.date_field :end_date, class: "form-control form-input", id: "end_date" %>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-search">
+                      <button type="submit" class="btn btn-success btn-search"><%= t ".generate" %></button>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-md-4 offset-1">
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="bill_filter">
+                    <%= t ".select_range" %>:
+                  </label>
+                </div>
+                <div class="col-md-9">
+                  <select id="bill_filter" class="custom-select custom-select-lg">
+                    <option value = "1"><%= t "1_week" %></option>
+                    <option value = "2"><%= t ".1_month" %></option>
+                    <option value = "3"><%= t ".3_month" %></option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="chart_bill_history">
+            <%= render "admin/dashboard/chart", bills_history: @_bills_history %>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="col-lg-6 connectedSortable ui-sortable">
+      <div class="card bg-gradient-info">
+        <div class="card-header border-0 ui-sortable-handle" style="cursor: move;">
+          <h3 class="card-title">
+            <i class="fas fa-th mr-1"></i>
+            <%= t ".income" %>
+          </h3>
+          <div class="card-tools">
+            <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="input-group col-md-5 offset-1">
+              <div class="row">
+                <div class="col-md-6">
+                  <%= date_field :bill, :created_at, class: "form-control form-input" %>
+                </div>
+                <div class="col-md-6">
+                  <%= date_field :bill, :created_at, class: "form-control form-input" %>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 offset-1">
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="bill_filter">
+                    <%= t ".select_range" %>:
+                  </label>
+                </div>
+                <div class="col-md-9">
+                  <select id="income_filter_range" class="custom-select custom-select-lg">
+                    <option value = "1"><%= t "1_week" %></option>
+                    <option value = "2"><%= t ".1_month" %></option>
+                    <option value = "3"><%= t ".3_month" %></option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="income_bill_path">
+            <%= column_chart admin_income_bill_path, thousands: "." %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<%= javascript_pack_tag "change_range_history_order" %>

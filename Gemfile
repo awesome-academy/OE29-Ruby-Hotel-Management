@@ -3,15 +3,18 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.7.1"
 
+gem "active_median"
 gem "active_storage_validations", "0.8.2"
 gem "bcrypt", "3.1.13"
 gem "bootstrap-kaminari-views"
 gem "bootstrap-sass", "3.4.1"
 gem "carrierwave"
+gem "chartkick"
 gem "cocoon"
 gem "config"
 gem "faker", "2.1.2"
 gem "figaro"
+gem "groupdate"
 gem "i18n-js"
 gem "image_processing", "1.9.3"
 gem "jbuilder", "~> 2.7"
