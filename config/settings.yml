@@ -18,6 +18,10 @@ user:
     name_max: 50
     email_max: 255
     pass_min: 6
+  page: 5
+  cancel: 3
+  accept: 1
+  complete: 2
 room_view:
   validate:
     name_max: 50
@@ -44,6 +48,7 @@ rooms:
 reservation:
   page: 3
 bill:
+  page: 5
   mini: 86400
   day: 1
 bills_per_page: 5

@@ -603,19 +603,20 @@ footer {
   position: relative;
 
   #reservation {
-    position: absolute;
-    top: 500px;
-    right: 40px;
+    position: fixed;
+    top: 340px;
+    right: 85px;
   }
 
   .room-main {
+    height: 480px;
 
     .list-room {
       width: 60%;
       margin: 15px auto;
       background-color: $white;
       box-shadow: 0 4px 8px 0 $rgb_black, 0 6px 20px 0 $rgb_gray;
-      height: 110px;
+      height: 100px;
 
       form {
         width: 60%;
@@ -631,8 +632,8 @@ footer {
         padding: 0;
 
         img {
-          width: 110px;
-          height: 110px;
+          width: 100px;
+          height: 100px;
         }
       }
 
@@ -712,7 +713,6 @@ footer {
     }
 
     .room-reser {
-
       li {
         list-style: none;
       }
@@ -736,4 +736,71 @@ footer {
 .image-reser {
   width: 100px;
   height: 100px;
+}
+
+.detail {
+  font-size: 20px;
+  color: $yel;
+}
+
+.delete {
+  color: $yel;
+}
+
+.main-history {
+  border-top: 1px solid $bol;
+
+  #main-content {
+    .select-bill {
+      margin-top: 30px;
+      float: right;
+      height: 30px;
+      width: 15%;
+    }
+  }
+}
+
+#main-show {
+  .list-room {
+    width: 70%;
+    background: $white;
+    box-shadow: 0 4px 8px 0 $rgb_black, 0 6px 20px 0 $rgb_gray;
+    margin: 10px auto ;
+
+    .main-room {
+      padding-top: 8px;
+
+      .room-des {
+        li {
+          padding: 1.5px;
+        }
+      }
+    }
+
+    .main-price {
+      padding-top: 10px;
+    }
+
+    img {
+      width: 130px;
+      height: 130px;
+    }
+  }
+
+  .modal-bill {
+    margin: 0 auto;
+    width: 800px ;
+
+    .main-header {
+      background: $white ;
+    }
+
+    .modal-main {
+      margin-top: 30px;
+    }
+
+    .list-room {
+      width: 85% ;
+    }
+  }
 }

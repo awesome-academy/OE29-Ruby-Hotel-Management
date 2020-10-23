@@ -26,15 +26,13 @@ class Room < ApplicationRecord
 
   scope :relate_room, ->(type_ids){where type_id: type_ids}
   scope :by_ids, ->(room_ids){where id: room_ids}
-  scope :empty_at, (lambda do |checkin, checkout|
+  scope :valid_room, (lambda do |checkin, checkout|
     if checkin.present? && checkout.present?
-      where("rooms.id NOT IN (SELECT rooms.id
-      from rooms JOIN bookings
-      ON rooms.id = bookings.room_id
-      WHERE (bookings.checkin < '#{checkin}'
-      AND bookings.checkout > '#{checkout}')
-      OR (bookings.checkout BETWEEN '#{checkin}' AND '#{checkout}')
-      OR (bookings.checkin BETWEEN '#{checkin}' AND '#{checkout}'))")
+      where("rooms.id NOT IN (SELECT DISTINCT rooms.id
+        FROM rooms LEFT OUTER JOIN bookings ON bookings.room_id = rooms.id
+        LEFT OUTER JOIN bills ON bills.id = bookings.bill_id
+        WHERE ((bookings.checkin < '#{checkout}'
+        AND bookings.checkout > '#{checkin}') AND bills.status != 3))")
     end
   end)
   scope :client_search_room, ->(term){where "name LIKE ?", "%#{term}%"}
