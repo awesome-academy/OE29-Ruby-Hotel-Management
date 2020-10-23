@@ -75,16 +75,16 @@
 #   )
 # end
 #
-# 20.times do
-#   name = Faker::Food.dish
-#   unity_id = [1, 2].sample
-#   des = Faker::Lorem.paragraph_by_chars(number: 400)
-#
-#   Service.create!(name: name,
-#                   price: 100000,
-#                   des: des,
-#                   unity_id: unity_id)
-# end
+20.times do
+  name = Faker::Food.dish
+  unity_id = [1, 2].sample
+  des = Faker::Lorem.paragraph_by_chars(number: 400)
+
+  Service.create!(name: name,
+                  price: 100000,
+                  des: des,
+                  unity_id: unity_id)
+end
 #
 # 20.times do
 #   name = Faker::Food.dish
@@ -107,47 +107,47 @@
 #                   remote_picture_url: "https://cf.bstatic.com/images/hotel/max1024x768/109/109697480.jpg")
 # end
 
-10.times do |n|
-  user_id = n + 7 + 26
-
-  10.times do
-    status = [0, 1, 2 ,3].sample
-    price = [500000, 600000, 700000, 800000].sample
-    create_at = Date.today - (1..60).to_a.sample
-
-    Bill.create!(status: status,
-                 price: price,
-                 user_id: user_id,
-                 created_at: create_at)
-  end
-end
-
-100.times do |n|
-  bill_id = n + 1
-  checkin = Date.today + n + (10..15).to_a.sample
-  checkout = Date.today + n + (20..35).to_a.sample
-  status = [0, 1].sample
-  room_id = n + 1
-
-  10.times do
-    price = [150000, 250000, 350000, 450000].sample
-
-    Booking.create!(price: price,
-                    checkin: checkin,
-                    checkout: checkout,
-                    bill_id: bill_id,
-                    status: status,
-                    room_id: room_id)
-  end
-
-end
-
-1000.times do |n|
-  booking_id = n + 1
-  service_id = (1..20).to_a.sample
-  amount = [1, 2 ,3 ,4 ,5].sample
-
-  BookingService.create!(amount: amount,
-                         booking_id: booking_id,
-                         service_id: service_id)
-end
+# 10.times do |n|
+#   user_id = n + 7 + 26
+#
+#   10.times do
+#     status = [0, 1, 2 ,3].sample
+#     price = [500000, 600000, 700000, 800000].sample
+#     create_at = Date.today - (1..60).to_a.sample
+#
+#     Bill.create!(status: status,
+#                  price: price,
+#                  user_id: user_id,
+#                  created_at: create_at)
+#   end
+# end
+#
+# 100.times do |n|
+#   bill_id = n + 1
+#   checkin = Date.today + n + (10..15).to_a.sample
+#   checkout = Date.today + n + (20..35).to_a.sample
+#   status = [0, 1].sample
+#   room_id = n + 1
+#
+#   10.times do
+#     price = [150000, 250000, 350000, 450000].sample
+#
+#     Booking.create!(price: price,
+#                     checkin: checkin,
+#                     checkout: checkout,
+#                     bill_id: bill_id,
+#                     status: status,
+#                     room_id: room_id)
+#   end
+#
+# end
+#
+# 1000.times do |n|
+#   booking_id = n + 1
+#   service_id = (1..20).to_a.sample
+#   amount = [1, 2 ,3 ,4 ,5].sample
+#
+#   BookingService.create!(amount: amount,
+#                          booking_id: booking_id,
+#                          service_id: service_id)
+# end

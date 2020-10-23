@@ -23,6 +23,16 @@ en:
     address: "KM10 Nguyen Trai, Hoc Vien Cong Nghe Buu Chinh Vien Thong, Ha Dong, Ha Noi"
     error: "error"
     the_form_contain: "the form contain "
+    delete_success: "Deleted successfully"
+    delete_unsuccess: "Deletion failed"
+    create_success: "Created successfully"
+    create_unsuccess: "Create failed"
+    update_success: "Updated successfully"
+    update_unsuccess: "Update failed"
+    you_sure: "You sure?"
+    all_room: "All room"
+    all_service: "All service"
+    all_client: "All client"
   mailers:
     user_mailer:
       account_activation: "Account Activation"
