@@ -2,6 +2,11 @@
   <div class="sidebar">
     <nav class="mt-2" style="padding-top: 50px">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item app_title_admin">
+          <%= link_to root_path, class: "nav-link" do %>
+            <p><%= t ".Monalisa" %></p>
+          <% end %>
+        </li>
         <li class="nav-item">
           <%= link_to admin_root_path, class: current_path_admin?(admin_root_path) do %>
             <p><%= t ".dashboard" %></p>

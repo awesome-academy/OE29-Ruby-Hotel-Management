@@ -15,3 +15,4 @@ import '../stylesheets/application';
 require("@nathanvda/cocoon")
 require("chartkick")
 require("chart.js")
+window.toastr = require("toastr")

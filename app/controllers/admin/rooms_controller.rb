@@ -12,18 +12,18 @@ class Admin::RoomsController < AdminController
   def create
     @room = Room.new room_params
     if @room.save
-      flash[:success] = t ".room_created"
+      flash[:success] = t "global.create_success"
     else
-      flash[:danger] = t ".room_not_create"
+      flash[:danger] = t "global.create_unsuccess"
     end
     redirect_to admin_rooms_path
   end
 
   def destroy
     if @room.destroy
-      flash[:success] = t ".room_deleted"
+      flash[:success] = t "global.delete_success"
     else
-      flash[:danger] = t ".room_not_deleted"
+      flash[:danger] = t "global.delete_unsuccess"
     end
     redirect_to admin_rooms_path
   end

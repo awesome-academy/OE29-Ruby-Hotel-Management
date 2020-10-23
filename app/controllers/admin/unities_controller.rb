@@ -9,9 +9,9 @@ class Admin::UnitiesController < AdminController
   def create
     @unity = Unity.new unity_params
     if @unity.save
-      flash[:success] = t ".unity_created"
+      flash[:success] = t "global.create_success"
     else
-      flash[:danger] = t ".unity_not_create"
+      flash[:danger] = t "global.create_unsuccess"
     end
     redirect_to admin_unities_path
   end
@@ -22,18 +22,18 @@ class Admin::UnitiesController < AdminController
 
   def update
     if @unity.update unity_params
-      flash[:success] = t ".unity_updated"
+      flash[:success] = t "global.update_success"
     else
-      flash.now[:danger] = t ".unity_not_update"
+      flash[:danger] = t "global.update_unsuccess"
     end
     redirect_to admin_unities_path
   end
 
   def destroy
     if @unity.destroy
-      flash[:success] = t ".unity_deleted"
+      flash[:success] = t "global.delete_success"
     else
-      flash[:danger] = t ".unity_not_deleted"
+      flash[:danger] = t "global.delete_unsuccess"
     end
     redirect_to admin_unities_path
   end

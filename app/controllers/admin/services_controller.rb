@@ -9,9 +9,9 @@ class Admin::ServicesController < AdminController
   def create
     @service = Service.new service_params
     if @service.save
-      flash[:success] = t ".service_created"
+      flash[:success] = t "global.create_success"
     else
-      flash[:danger] = t ".service_not_create"
+      flash[:danger] = t "global.create_unsuccess"
     end
     redirect_to admin_services_path
   end
@@ -22,18 +22,18 @@ class Admin::ServicesController < AdminController
 
   def update
     if @service.update service_params
-      flash[:success] = t ".service_updated"
+      flash[:success] = t "global.update_success"
     else
-      flash.now[:danger] = t ".service_not_update"
+      flash[:danger] = t "global.update_unsuccess"
     end
     redirect_to admin_services_path
   end
 
   def destroy
     if @service.destroy
-      flash[:success] = t ".service_deleted"
+      flash[:success] = t "global.delete_success"
     else
-      flash[:danger] = t ".service_not_deleted"
+      flash[:danger] = t "global.delete_unsuccess"
     end
     redirect_to admin_services_path
   end
