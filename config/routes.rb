@@ -9,12 +9,20 @@ Rails.application.routes.draw do
     resources :users
     resources :account_activations, only: :edit
     resources :rooms, only: %i(index show)
-    resources :reservations, only: %i(index new)
+    resources :reservations
+    resources :bills
+    resources :bookings
 
     namespace :admin do
       root "dashboard#index"
+      get "/bill_history", to: "dashboard#bill_history"
+      get "/income_bill", to: "dashboard#income_bill"
       resources :views, except: %i(new show)
-      resources :users
+      resources :users do
+        resources :bills do
+          resources :bookings
+        end
+      end
       resources :types, except: %i(new show)
       resources :unities, except: %i(new show)
       resources :services, except: %i(new show)

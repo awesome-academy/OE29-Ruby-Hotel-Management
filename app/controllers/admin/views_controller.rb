@@ -8,9 +8,9 @@ class Admin::ViewsController < AdminController
   def create
     @view = View.new view_params
     if @view.save
-      flash[:success] = t ".view_created"
+      flash[:success] = t "global.create_success"
     else
-      flash[:danger] = t ".view_not_create"
+      flash[:danger] = t "global.create_unsuccess"
     end
     redirect_to admin_views_path
   end
@@ -21,18 +21,18 @@ class Admin::ViewsController < AdminController
 
   def update
     if @view.update view_params
-      flash[:success] = t ".view_updated"
+      flash[:success] = t "global.update_success"
     else
-      flash.now[:danger] = t ".view_not_update"
+      flash[:danger] = t "global.update_unsuccess"
     end
     redirect_to admin_views_path
   end
 
   def destroy
     if @view.destroy
-      flash[:success] = t ".view_deleted"
+      flash[:success] = t "global.delete_success"
     else
-      flash[:danger] = t ".view_not_deleted"
+      flash[:danger] = t "global.delete_unsuccess"
     end
     redirect_to admin_views_path
   end

@@ -1,29 +1,30 @@
 <div class="container room-search">
-  <%= render "shared/search_room_form" %>
+  <%=  render partial:"shared/search_room_form" %>
   <h3 class="title"><%= t ".title" %></h3>
+  <h2></h2>
   <div class="room-main">
-  <% @rooms.each do |room| %>
-    <div class="row list-room">
-      <div class="col-md-3 image">
-        <%= image_tag Settings.profile.image_ava, alt: t(".rails_logo") %></div>
-      <div class="col-md-9">
-        <div class="row">
-          <div class="col-md-6">
-            <h3 class ="room-name"><%= room.name %></h3>
-            <ul class= "room-des">
-              <li><%= t ".price" %><%= room.price %></li>
-              <li><%= t ".type" %> <%= room.type_name %></li>
-              <li><%= t ".view" %> <%= room.view_name %></li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <%= form_for :room do |f| %>
-              <%= f.submit t(".select"), class: "btn btn-success btn-select" %>
-            <% end %>
-          </div>
-        </div>
+    <%=  render partial:"shared/list_room", collection: @rooms, as: :room %>
+    <%= paginate @rooms, theme: "twitter-bootstrap-3" %>
+  </div>
+  <button type="button" class="btn btn-select btn-mona" id= "reservation" data-toggle="modal" data-target="#exampleModal" data-checkin="<%= @checkin %>" data-checkout="<%= @checkout%>" ><%= t ".select"%></button>
+</div>
+<div class="modal " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-reser" role="document">
+    <div class="modal-content">
+      <div class="time">
+        <ul>
+          <li ><%= t ".checkin" %> <span id ="checkin"></span> </li>
+          <li ><%= t ".checkout" %> <span id ="checkout"></span> </li>
+        </ul>
+      </div>
+      <div id="list">
+        <ul class="room-des room-list-reser"></ul>
+        <div class="total-price"><%= t ".total" %> <span id ="total"></span><%= t ".vnd" %></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-mona" id= "book" data-dismiss="modal" data-user ="<%= current_user.id %>"><%= t ".book"%></button>
       </div>
     </div>
-  <% end %>
   </div>
 </div>
+<%= javascript_pack_tag "reservation" %>

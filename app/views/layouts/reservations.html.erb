@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render "layouts/layout_header" %>
+  </head>
+  <body>
+  <%= render "shared/toaster" %>
+  <div class="container">
+      <%= render "layouts/header" %>
+      <%= render "layouts/menu" %>
+    </div>
+    <%= yield %>
+    <script type="text/javascript">
+      I18n.defaultLocale = "<%= I18n.default_locale %>";
+      I18n.locale = "<%= I18n.locale %>";
+    </script>
+  </body>
+</html>

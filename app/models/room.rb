@@ -11,6 +11,8 @@ class Room < ApplicationRecord
 
   accepts_nested_attributes_for :pictures, allow_destroy: true
 
+  acts_as_paranoid
+
   validates :name, presence: true,
             length: {maximum: Settings.rooms.validate.name_max}
   validates :des, presence: true,
@@ -23,6 +25,7 @@ class Room < ApplicationRecord
   delegate :name, to: :view, prefix: true
 
   scope :relate_room, ->(type_ids){where type_id: type_ids}
+  scope :by_ids, ->(room_ids){where id: room_ids}
   scope :empty_at, (lambda do |checkin, checkout|
     if checkin.present? && checkout.present?
       where("rooms.id NOT IN (SELECT rooms.id

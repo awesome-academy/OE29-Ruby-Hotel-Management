@@ -1,0 +1,33 @@
+<% provide :title, t(".list_booking") %>
+<div class="content-header">
+  <div class="container-fluid">
+    <%= link_to t(".back"), _back_url, class: "back_url" %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><%= t ".list_booking" %></h3>
+          </div>
+          <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-center">
+              <thead>
+              <tr>
+                <th></th>
+                <th><%= t ".room_name" %></th>
+                <th><%= t ".price" %></th>
+                <th><%= t ".checkin" %></th>
+                <th><%= t ".checkout" %></th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+                <%= render partial: "booking", collection: @bookings %>
+              </tbody>
+            </table>
+              <%= paginate @bookings, theme: "twitter-bootstrap-3" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

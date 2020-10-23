@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= full_title yield(:title) %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= javascript_include_tag "i18n" %>
-    <%= javascript_include_tag "translations", skip_pipeline: true %>
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
-    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <%= render "layouts/layout_header" %>
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
   </head>
   <body data-scrollbar-auto-hide="n" class="hold-transition sidebar-mini layout-fixed">
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <%= render "shared/toaster" %>
     <div class="wrapper">
       <%= render "admin/layouts/header" %>
       <%= render "admin/layouts/sidebar" %>
       <div class="content-wrapper">
         <div class="content container-fluid">
-          <% flash.each do |message_type, message| %>
-            <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
-          <% end %>
           <div class="container-fluid">
               <%= yield %>
           </div>
