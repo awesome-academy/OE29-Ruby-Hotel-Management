@@ -3,7 +3,8 @@ class Admin::RoomsController < AdminController
 
   def index
     @room = Room.new
-    @rooms = Room.page(params[:page]).per Settings.rooms.room_per_page
+    @rooms = Room.without_deleted.page(params[:page])
+                 .per Settings.rooms.room_per_page
 
     @type_arr = Type.pluck :name, :id
     @view_arr = View.pluck :name, :id
@@ -20,10 +21,11 @@ class Admin::RoomsController < AdminController
   end
 
   def destroy
-    if @room.destroy
-      flash[:success] = t "global.delete_success"
-    else
+    if @room.bookings.available.present?
       flash[:danger] = t "global.delete_unsuccess"
+    else
+      @room.destroy
+      flash[:success] = t "global.delete_success"
     end
     redirect_to admin_rooms_path
   end
@@ -35,10 +37,6 @@ class Admin::RoomsController < AdminController
   end
 
   def load_room_by_id
-    @room = Room.find id: params[:id]
-    return if @room
-
-    flash[:danger] = t ".room_not_found"
-    redirect_to admin_rooms_path
+    @room = Room.find params[:id]
   end
 end
