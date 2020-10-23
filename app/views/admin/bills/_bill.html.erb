@@ -3,6 +3,9 @@
   <td><%= bill.status %></td>
   <td><%= bill.price %></td>
   <td class="btn-action">
-    <%= link_to t(".detail"), admin_user_bill_bookings_path(@user, bill), class: "btn btn-block btn-info btn-action" %>
+    <%= link_to t(".detail"),
+                admin_user_bill_bookings_path(@user, bill),
+                class: "btn btn-block btn-info btn-action"
+    %>
   </td>
 </tr>

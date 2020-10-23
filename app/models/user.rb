@@ -30,7 +30,6 @@ class User < ApplicationRecord
 
   before_save :downcase_email
   before_create :create_activation_digest
-
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost

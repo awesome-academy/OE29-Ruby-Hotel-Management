@@ -12,6 +12,8 @@ class Room < ApplicationRecord
 
   accepts_nested_attributes_for :pictures, allow_destroy: true
 
+  acts_as_paranoid
+
   validates :name, presence: true,
             length: {maximum: Settings.rooms.validate.name_max}
   validates :des, presence: true,

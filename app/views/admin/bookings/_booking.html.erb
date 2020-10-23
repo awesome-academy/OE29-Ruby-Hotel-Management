@@ -5,6 +5,9 @@
   <td><%= booking.checkin %></td>
   <td><%= booking.checkout %></td>
   <td class="btn-action">
-    <%= link_to t(".view"), admin_user_bill_booking_path(@user, @bill, booking), class: "btn btn-block btn-info btn-action" %>
+    <%= link_to t(".view"),
+                admin_user_bill_booking_path(@user, @bill, booking),
+                class: "btn btn-block btn-info btn-action"
+    %>
   </td>
 </tr>
