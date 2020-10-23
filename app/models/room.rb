@@ -2,7 +2,6 @@ class Room < ApplicationRecord
   ROOMS_PARAMS = [:name, :price, :des, :view_id, :type_id,
                   pictures_attributes: [:id, :room_id,
                                         :picture, :_destroy].freeze].freeze
-
   belongs_to :view
   belongs_to :type
 
@@ -38,4 +37,9 @@ class Room < ApplicationRecord
       OR (bookings.checkin BETWEEN '#{checkin}' AND '#{checkout}'))")
     end
   end)
+  scope :client_search_room, ->(term){where "name LIKE ?", "%#{term}%"}
+  scope :by_type_id, ->(type){where type_id: type}
+  scope :by_view_id, ->(view){where view_id: view}
+  scope :by_price_top_to_bot, ->{order price: :desc}
+  scope :by_price_bot_to_top, ->{order price: :asc}
 end

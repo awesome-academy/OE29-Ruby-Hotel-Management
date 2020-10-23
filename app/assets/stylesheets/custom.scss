@@ -363,6 +363,10 @@ footer {
     height: 500px;
     background-color: $back-ground-color-primary;
 
+    &:first-child {
+      margin-top: 30px;
+    }
+
     .list_room_item_content {
       padding-top: 30px;
 
@@ -648,6 +652,31 @@ footer {
   }
 }
 
+.client_search_room {
+  margin-top: 100px;
+
+  button {
+    height: 45px;
+    width: 80%;
+  }
+
+  input, select {
+    height: 45px;
+    font-size: 1.5rem;
+  }
+
+  .wrap-input-search {
+    display: flex;
+
+    .input-submit {
+      flex-basis: 50px;
+    }
+
+    .input-search {
+      flex-grow: 1;
+    }
+  }
+}
 .time {
   text-align: center;
 

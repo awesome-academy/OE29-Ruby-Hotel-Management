@@ -1,4 +1,47 @@
 <% provide :title, t(".our_rooms") %>
+<div class="container-fluid client_search_room">
+  <div class="row">
+    <div class="col-md-2 offset-1">
+      <%= form_with url: rooms_path, method: :get, id: "client_form_search_room" do |f| %>
+        <div class="wrap-input-search">
+          <%= f.text_field :term, class: "form-control form-input input-search", id: "term" %>
+          <button type="submit" class="btn btn-dark btn-search input-submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-9">
+      <%= form_with url: rooms_path, method: :get, id: "client_filter_room_form" do |f| %>
+        <%= hidden_field_tag :filter, 1 %>
+        <%= hidden_field_tag :param_term %>
+        <div class="col-md-2">
+          <%= f.select :type_id, @type_arr, {include_blank: t(".select_type")}, {class: "form-control room_type_id"} %>
+        </div>
+        <div class="col-md-2">
+          <%= f.select :view_id, @view_arr, {include_blank: t(".select_view")}, {class: "form-control room_view_id"} %>
+        </div>
+        <div class="col-md-2">
+          <select class="form-control" id="price_id" name="price_id">
+            <option value><%= t ".select_price_filter" %></option>
+            <option value="1"><%= t ".top_to_bottom" %></option>
+            <option value="2"><%= t ".bottom_to_top" %></option>
+          </select>
+        </div>
+        <div class="col-md-1 offset-3">
+          <button type="submit" class="btn btn-dark btn-search input-submit">
+            <i class="fas fa-filter"></i>
+          </button>
+        </div>
+        <div class="col-md-1">
+          <button type="button" class="btn btn-danger btn-search input-submit" id="btn_reset">
+            <%= t ".clear" %>
+          </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 <div class="container-fluid">
   <div id="list_room" class="row">
     <%= render @rooms %>
@@ -8,3 +51,5 @@
   </div>
 </div>
 <%= javascript_pack_tag "room_pagination" %>
+<%= javascript_pack_tag "client_search_room" %>
+<%= javascript_pack_tag "client_filter_room" %>
