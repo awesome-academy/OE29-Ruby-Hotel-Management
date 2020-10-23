@@ -1,3 +1,4 @@
+
 vi:
   pagination:
     first: "« FIRST"
@@ -6,6 +7,8 @@ vi:
     next: "NEXT ›"
     truncate: "…"
   global:
+    cancel_success: "Bạn đã hủy thành công!"
+    cancel_error: " Không hủy được"
     book_success: "Đặt phòng thành công"
     book_error: "Đặt phòng thất bại"
     search_fail: "Checkin, Checkout không thể trống!"
@@ -34,6 +37,7 @@ vi:
       total: "Tổng tiền : "
       vnd: "  VNĐ"
       title: "Phòng còn trống cho bạn !"
+      not-room: "Không có phòng phù hợp "
       rails_logo: "rails logo"
       price: "Giá thuê : "
       type: "Kiểu : "
@@ -59,7 +63,10 @@ vi:
       signin: "ĐĂNG NHẬP"
       signup: "ĐĂNG KÝ"
     menu:
+      profile: "Trang cá nhân "
+      logout: "Đăng xuất"
       home: "TRANG CHỦ"
+      settings: "Lịch sử đặt phòng "
       about_us: "GIỚI THIỆU"
       our_room: "DANH SÁCH PHÒNG"
       contact: "LIÊN HỆ"
@@ -103,7 +110,29 @@ vi:
       hi: "Chào"
       activate: "Kích hoạt"
       welcome: "Chào mừng bạn đến với MonaLisa! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn:"
+  bookings:
+    list_booking:
+      view: "Cảnh quan: "
+      price: "Giá : "
+      checkin: "Ngày bắt đầu: "
+      checkout: "Ngày kết thúc: "
+      type: "Kiểu : "
+      price_book: "Giá đặt"
+      vnd: "VND"
   users:
+    show:
+      waiting: "Chờ"
+      accept: "Xác nhận "
+      cancelled: "Đã hủy"
+      complete: "Hoàn thành"
+      list: "Danh sách đặt phòng"
+      stt: "STT"
+      ci: "Ngày bắt đầu"
+      co: "Ngày kết thúc"
+      price: "Giá  "
+      status: "Trạng thái "
+      action: "Hành động "
+      sure: " Xóa bill này  ??"
     new:
       signup: "Đăng ký"
       text_signup: "Tạo một tài khoản MonaLisa mới!"

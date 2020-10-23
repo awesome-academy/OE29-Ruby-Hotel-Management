@@ -6,6 +6,8 @@ en:
     next: "NEXT ›"
     truncate: "…"
   global:
+    cancel_success: "Cancelled !"
+    cancel_error: " Fail! "
     book_success: "Success"
     book_error: "Fail"
     search_fail: "Checkin, Checkout can not empty !"
@@ -44,6 +46,20 @@ en:
       activate: "Activate"
       welcome: "Welcome to the MonaLisa ! Click on the link below to activate your account:"
   users:
+    show:
+      waiting: "Waiting"
+      accept: "Accept"
+      cancelled: "Cancelled"
+      complete: "Complete"
+      list: "List Booking"
+      stt: "STT"
+      ci: "Checkin"
+      co: "Checkout"
+      price: "Price "
+      status: "Status"
+      action: "Action"
+      sure: "Are you sure ??"
+
     new:
       signup: "Sign up"
       text_signup: "Create a new MonaLisa Account !"
@@ -76,8 +92,8 @@ en:
       save: "Save"
       rails_logo: "Rails Logo"
     search_room_form:
-      fail: "checkout must be than checkin"
-      error: "You must enter full informationn !"
+      fail: "Checkout must be than checkin!"
+      error: "You must enter full information !"
       checkin: "CHECKIN"
       checkout: "CHECKOUT"
       check: "CHECK AVAILABILITY"
@@ -95,6 +111,9 @@ en:
       signup: "SIGN UP"
     menu:
       home: "HOME"
+      profile: " Profile "
+      logout: "Logout"
+      settings: "Reservation History"
       about_us: "ABOUT US"
       our_room: "OUR ROOMS"
       contact: "CONTACT"
@@ -129,6 +148,15 @@ en:
       view: "View : "
       price_book: "Rent"
       vnd: " VNĐ"
+  bookings:
+    list_booking:
+      view: "View: "
+      price: "Price: "
+      checkin: "Checkin: "
+      checkout: "Checkout: "
+      type: "Type: "
+      price_book: "Rent"
+      vnd: "VND"
   static_pages:
     home:
       little_about_us: "little about us"

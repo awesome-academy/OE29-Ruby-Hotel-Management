@@ -1,0 +1,2 @@
+$("#main-show #list-booking").html("<%= j render partial: "shared/list_room_booking", collection: @bills, as: :bill %>")
+$("#main-show #list-booking").append('<%= j render "shared/toaster" %>');

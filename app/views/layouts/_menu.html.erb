@@ -17,7 +17,7 @@
             <%= link_to edit_user_path(current_user.id), class: "dropdown-item has-icon" do %>
               <i class="far fa-user"></i> <%= t ".profile" %>
             <% end %>
-            <%= link_to "#", class: "dropdown-item has-icon" do %>
+            <%= link_to user_path(current_user.id), class: "dropdown-item has-icon" do %>
               <i class="far fa-cog"></i> <%= t ".settings" %>
             <% end %>
             <div class="dropdown-divider"></div>

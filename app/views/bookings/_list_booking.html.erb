@@ -1,0 +1,23 @@
+<div class="row list-room">
+  <div class="col-md-3 image">
+    <%= image_tag booking.room_pictures[0].picture_url %>
+  </div>
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-md-6 main-room">
+        <h3 class ="room-name"><%= booking.room_name %></h3>
+        <ul class= "room-des">
+          <li><%= t ".view" %> <%= booking.room_view_name %></li>
+          <li><%= t ".price" %><%= number_with_delimiter(booking.room_price, delimiter: ".") %><%= t ".vnd" %></li>
+          <li><%= t ".type" %> <%= booking.room_type_name %></li>
+          <li><%= t ".checkin" %> <%= booking.checkin %></li>
+          <li><%= t ".checkout" %> <%= booking.checkout %></li>
+        </ul>
+      </div>
+      <div class="col-md-6 main-price text-center">
+        <h3 class="price-title"><%= t ".price_book" %></h3>
+        <h4 id ="room-price"><%= number_with_delimiter(booking.price, delimiter: ".") %> <%= t ".vnd" %></h4>
+      </div>
+    </div>
+  </div>
+</div>

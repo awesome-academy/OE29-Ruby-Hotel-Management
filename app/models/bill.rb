@@ -11,7 +11,7 @@ class Bill < ApplicationRecord
 
   enum status: {
     waiting: 0,
-    deposited: 1,
+    accept: 1,
     completed: 2,
     cancelled: 3
   }

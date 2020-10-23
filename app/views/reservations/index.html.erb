@@ -1,20 +1,26 @@
 <div class="container room-search">
   <%=  render partial:"shared/search_room_form" %>
-  <h3 class="title"><%= t ".title" %></h3>
-  <h2></h2>
+
   <div class="room-main">
+    <% if @rooms.present? %>
+      <h3 class="title"><%= t ".title" %></h3>
+    <% end %>
     <%=  render partial:"shared/list_room", collection: @rooms, as: :room %>
     <%= paginate @rooms, theme: "twitter-bootstrap-3" %>
+    <% if @rooms.present? %>
+      <button type="button" class="btn btn-select btn-mona" id= "reservation" data-toggle="modal" data-target="#exampleModal" data-checkin="<%= @checkin %>" data-checkout="<%= @checkout%>" ><%= t ".select" %></button>
+    <% else %>
+      <h3 class="title"><%= t ".not-room" %></h3>
+    <% end %>
   </div>
-  <button type="button" class="btn btn-select btn-mona" id= "reservation" data-toggle="modal" data-target="#exampleModal" data-checkin="<%= @checkin %>" data-checkout="<%= @checkout%>" ><%= t ".select"%></button>
 </div>
-<div class="modal " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-reser" role="document">
     <div class="modal-content">
       <div class="time">
         <ul>
-          <li ><%= t ".checkin" %> <span id ="checkin"></span> </li>
-          <li ><%= t ".checkout" %> <span id ="checkout"></span> </li>
+          <li ><%= t ".checkin" %> <span id ="checkin"></span></li>
+          <li ><%= t ".checkout" %> <span id ="checkout"></span></li>
         </ul>
       </div>
       <div id="list">
@@ -22,7 +28,7 @@
         <div class="total-price"><%= t ".total" %> <span id ="total"></span><%= t ".vnd" %></div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-mona" id= "book" data-dismiss="modal" data-user ="<%= current_user.id %>"><%= t ".book"%></button>
+        <button type="button" class="btn btn-mona" id= "book" data-dismiss="modal" data-user ="<%= current_user.id %>"><%= t ".book" %></button>
       </div>
     </div>
   </div>
