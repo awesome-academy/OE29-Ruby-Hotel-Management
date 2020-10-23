@@ -20,7 +20,7 @@ $(function(){
       $.ajax({
         url: '/rooms',
         method: 'GET',
-        data: data
+        data: $(this).serialize()
       });
     }
   })

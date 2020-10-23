@@ -1,0 +1,16 @@
+<div class="col-md-4 offset-1 list_room_item_content">
+  <div>
+    <h3><%= room1.name %></h3>
+    <div class="room_price"><%= t ".start_from" %> <b class="price">$<%= room1.price %></b> / <%= t ".night" %></div>
+    <div><%= room1.des %></div>
+    <div class="info">
+      <div><%= t ".deposit" %>: <%= Settings.deposit %>%</div>
+      <div><%= t ".type" %>: <%= room1.type_name %></div>
+      <div><%= t ".view" %>: <%= room1.view_name %></div>
+    </div>
+
+    <div class="detail_link">
+      <%= link_to t(".view_detail"), room1 %>
+    </div>
+  </div>
+</div>

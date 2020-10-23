@@ -1,13 +1,13 @@
 <div id="menu">
   <ul>
-    <li><%= link_to t(".home"), root_path %></li>
-    <li><%= link_to t(".about_us"), about_path %></li>
-    <li><%= link_to t(".our_room"), rooms_path %></li>
+    <li><%= link_to t(".home"), root_path, class: current_path?(root_path) %></li>
+    <li><%= link_to t(".about_us"), about_path, class: current_path?(about_path) %></li>
+    <li><%= link_to t(".our_room"), rooms_path, class: current_path?(rooms_path) %></li>
   </ul>
   <%= image_tag "logo.png" %>
   <ul>
-    <li><%= link_to t(".reservation"), new_reservation_path %></li>
-    <li><%= link_to t(".contact"), contact_path %></li>
+    <li><%= link_to t(".reservation"), new_reservation_path, class: current_path?(new_reservation_path) %></li>
+    <li><%= link_to t(".contact"), contact_path, class: current_path?(contact_path) %></li>
     <% if logged_in? %>
         <li class="nav-item dropdown" id="show_drop">
           <button type="button" class="nav-link dropdown-toggle drop-btn" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,8 +26,6 @@
             <% end %>
           </div>
         </li>
-      <% else %>
-        <li><%= link_to t(".account"), "#" %></li>
       <% end %>
   </ul>
 </div>

@@ -8,9 +8,9 @@ class Admin::TypesController < AdminController
   def create
     @type = Type.new type_params
     if @type.save
-      flash[:success] = t ".type_created"
+      flash[:success] = t "global.create_success"
     else
-      flash[:danger] = t ".type_not_create"
+      flash[:danger] = t "global.create_unsuccess"
     end
     redirect_to admin_types_path
   end
@@ -23,18 +23,18 @@ class Admin::TypesController < AdminController
 
   def update
     if @type.update type_params
-      flash[:success] = t ".type_updated"
+      flash[:success] = t "global.update_success"
     else
-      flash.now[:danger] = t ".type_not_update"
+      flash[:danger] = t "global.update_unsuccess"
     end
     redirect_to admin_types_path
   end
 
   def destroy
     if @type.destroy
-      flash[:success] = t ".type_deleted"
+      flash[:success] = t "global.delete_success"
     else
-      flash[:danger] = t ".type_not_deleted"
+      flash[:danger] = t "global.delete_unsuccess"
     end
     redirect_to admin_types_path
   end

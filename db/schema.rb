@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_30_053317) do
+ActiveRecord::Schema.define(version: 2020_10_15_072011) do
 
   create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "status"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price"
     t.index ["user_id"], name: "index_bills_on_user_id"
   end
 
@@ -69,6 +70,8 @@ ActiveRecord::Schema.define(version: 2020_09_30_053317) do
     t.bigint "type_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_rooms_on_deleted_at"
     t.index ["type_id"], name: "index_rooms_on_type_id"
     t.index ["view_id"], name: "index_rooms_on_view_id"
   end

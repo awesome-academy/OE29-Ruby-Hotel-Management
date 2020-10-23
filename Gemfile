@@ -3,21 +3,25 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.7.1"
 
+gem "active_median"
 gem "active_storage_validations", "0.8.2"
 gem "bcrypt", "3.1.13"
 gem "bootstrap-kaminari-views"
 gem "bootstrap-sass", "3.4.1"
 gem "carrierwave"
+gem "chartkick"
 gem "cocoon"
 gem "config"
 gem "faker", "2.1.2"
 gem "figaro"
+gem "groupdate"
 gem "i18n-js"
 gem "image_processing", "1.9.3"
 gem "jbuilder", "~> 2.7"
 gem "kaminari"
 gem "mini_magick", "4.9.5"
 gem "mysql2"
+gem "paranoia", "~> 2.2"
 gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.2"
 gem "rails-i18n"
@@ -33,6 +37,7 @@ end
 
 group :development do
   gem "listen", "~> 3.2"
+  gem "pry"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"

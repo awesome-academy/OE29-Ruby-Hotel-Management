@@ -4,7 +4,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token
 
   has_many :comments, dependent: :destroy
-  has_many :bill, dependent: :destroy
+  has_many :bills, dependent: :destroy
 
   enum gender: {
     male: 0,
@@ -30,7 +30,6 @@ class User < ApplicationRecord
 
   before_save :downcase_email
   before_create :create_activation_digest
-
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
