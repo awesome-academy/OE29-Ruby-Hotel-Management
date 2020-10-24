@@ -16,6 +16,7 @@ class Bill < ApplicationRecord
     cancelled: 3
   }
 
+  scope :bill_created_at, ->{order created_at: :desc}
   scope :select_range_created_at, (lambda do |start_date, end_date|
     if end_date.present? && end_date.present?
       where("created_at > '#{start_date}' AND created_at < '#{end_date}'")

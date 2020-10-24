@@ -1,0 +1,2 @@
+$("#table-admin-bill #admin-list-booking").html("<%= j render partial: "bill", collection: @bills, as: :bill %>")
+$("#paginator").html("<%= j paginate(@bills, theme: "twitter-bootstrap-3", remote: true) %>");

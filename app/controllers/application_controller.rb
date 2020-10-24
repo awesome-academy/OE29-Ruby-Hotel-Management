@@ -39,4 +39,12 @@ class ApplicationController < ActionController::Base
   def correct_user
     redirect_to root_url unless current_user? @user
   end
+
+  def bill_range range
+    range.present? ? select_range(range) : @user.bills
+  end
+
+  def select_range range
+    @user.bills.send range
+  end
 end

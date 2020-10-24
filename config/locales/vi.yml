@@ -7,6 +7,11 @@ vi:
     next: "NEXT ›"
     truncate: "…"
   global:
+    cancelled: "Đã hủy"
+    waiting: "Đang chờ"
+    accept: "Xác nhận"
+    completed: "Hoàn thành"
+    all: "Tất cả"
     cancel_success: "Bạn đã hủy thành công!"
     cancel_error: " Không hủy được"
     book_success: "Đặt phòng thành công"
@@ -210,6 +215,51 @@ vi:
       our_rooms: "Our Rooms"
       show_more: "Show more"
   admin:
+    users:
+      index:
+        list_room: "Danh sách khách hàng"
+        name: "Họ và tên"
+        email: "Email"
+        address: "Địa chỉ"
+        reservation_history: "Lịch sử đặt phòng"
+        client_email: "Nhập email của khách hàng "
+      user:
+        view: "Xem"
+    bookings:
+      booking:
+        view: "Xem"
+      index:
+        list_booking: "Danh sách phòng đặt"
+        room_name: "Tên phòng"
+        price: "Giá đặt"
+        checkin: "Ngày bắt đầu"
+        checkout: "Ngày kết thúc"
+      show:
+        back: "Quay lại"
+        view: " Cảnh quan: "
+        price: "Giá phòng: "
+        type: "Kiểu phòng: "
+        checkin: "Ngày bắt đầu: "
+        checkout: "Ngày kết thúc: "
+        des: "Mô tả phòng: "
+        vnd: "VND"
+    bills:
+      bill:
+        detail: "Chi tiết "
+      index:
+        back: "Quay lại"
+        list_bill: "Danh sách đặt phòng "
+        customer: "Tên khách hàng"
+        bill_total_complete: "Số đơn hoàn thành"
+        bill_total_accept: "Số đơn được phê duyệt"
+        bill_total_cancelled: "Số đơn đã hủy"
+        bill_total_waiting: "Số đơn đang đợi"
+        email: "Email"
+        address: "Địa chỉ"
+        gender: "Giới tính"
+        create: "Ngày đặt"
+        status: "Trạng thái"
+        price: "Giá"
     layouts:
       sidebar:
         user_management: "Quản lý người dùng"

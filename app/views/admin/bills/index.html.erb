@@ -1,4 +1,4 @@
-<% provide :title, t(".order_history") %>
+<% provide :title, t(".list_bill") %>
 <div class="content-header">
   <div class="container-fluid">
     <%= link_to t(".back"), _back_url, class: "back_url" %>
@@ -18,10 +18,34 @@
               </div>
               <div class="row">
                 <div class="col-md-2">
-                  <%= t ".bill_total" %>:
+                  <%= t ".bill_total_waiting" %>:
                 </div>
                 <div class="col-md-2">
-                  <%= @bills.size %>
+                  <%= @total_bill.waiting.size %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <%= t ".bill_total_accept" %>:
+                </div>
+                <div class="col-md-2">
+                  <%= @total_bill.accept.size %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <%= t ".bill_total_cancelled" %>:
+                </div>
+                <div class="col-md-2">
+                  <%= @total_bill.cancelled.size %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <%= t ".bill_total_complete" %>:
+                </div>
+                <div class="col-md-2">
+                  <%= @total_bill.completed.size %>
                 </div>
               </div>
               <div class="row">
@@ -49,23 +73,31 @@
                 </div>
               </div>
             </div>
-            <table class="table table-hover text-center">
+            <div id="main-content-admin" >
+              <%= select_tag "bill_filter",options_for_select(option_status_bill),
+                             { class: "browser-default custom-select select-bill", data: {url: admin_user_bills_path(@user.id)}} %>
+            </div>
+            <table class="table table-hover text-center" id="table-admin-bill">
               <thead>
-              <tr>
-                <th></th>
-                <th><%= t ".status" %></th>
-                <th><%= t ".price" %></th>
-                <th class="btn-action"><%= t ".detail" %></th>
-              </tr>
+                <tr>
+                  <th></th>
+                  <th><%= t ".status" %></th>
+                  <th><%= t ".price" %></th>
+                  <th><%= t ".create" %></th>
+                  <th class="btn-action"><%= t ".detail" %></th>
+                </tr>
               </thead>
-              <tbody>
+              <tbody id="admin-list-booking">
                 <%= render partial: "bill", collection: @bills %>
               </tbody>
             </table>
-              <%= paginate @bills, theme: "twitter-bootstrap-3" %>
+            <div id="paginator">
+              <%= paginate @bills, theme: "twitter-bootstrap-3", remote: true %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<%= javascript_pack_tag "admin_view_type_bill" %>

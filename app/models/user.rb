@@ -70,6 +70,10 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
 
+  scope :by_email, (lambda do |email|
+    where "email LIKE ?", "%#{email}%" if email.present?
+  end)
+
   private
 
   def downcase_email
