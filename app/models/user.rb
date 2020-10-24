@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :bills, dependent: :destroy
+  has_many :rates, dependent: :destroy
 
   enum gender: {
     male: 0,
@@ -68,6 +69,7 @@ class User < ApplicationRecord
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
   end
+
   private
 
   def downcase_email

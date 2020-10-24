@@ -19,6 +19,15 @@ p {
   opacity: 0.7;
 }
 
+.star_total_title {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.on {
+  color: orangered;
+}
+
 #header {
   display: flex;
   justify-content: space-between;
@@ -36,11 +45,11 @@ p {
 #menu{
   display: flex;
   justify-content: space-between;
-  height: 80px;
-  line-height: 80px;
+  height: 6rem;
+  line-height: 6rem;
 
   img {
-    width: 200px;
+    width: 15rem;
   }
 
   ul {
@@ -55,10 +64,10 @@ p {
       font-weight: bold;
     }
     li {
-      height: 20px;
-      line-height: 20px;
+      height: 1.5rem;
+      line-height: 1.5rem;
       display: inline-block;
-      padding-left: 20px;
+      padding-left: 1.5rem;
 
       &:first-child {
         padding-left: 0;
@@ -78,7 +87,7 @@ p {
 }
 
 #banner {
-  height: 500px;
+  height: 38.5rem;
   background-image: asset_url("banner.jpg");
   background-position: center;
   background-size: cover;
@@ -86,10 +95,10 @@ p {
   color: $text-color-banner;
 
   h3 {
-    padding-top: 160px;
+    padding-top: 12rem;
     font-size: 1.5rem;
     font-weight: bold;
-    letter-spacing: 5px;
+    letter-spacing: 0.4rem;
     text-transform: uppercase;
   }
 
@@ -100,18 +109,18 @@ p {
 }
 
 #little_about_us {
-  height: 800px;
+  height: 61.5rem;
   background-color: $back-ground-color-primary;
 
   h2 {
     text-transform: uppercase;
-    padding-top: 160px;
+    padding-top: 12.5rem;
     font-size: 1rem;
     font-weight: bold;
-    letter-spacing: 5px;
+    letter-spacing: 0.4rem;
     color: $title-color;
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 5.4rem;
   }
 
   .wrap_content {
@@ -119,17 +128,17 @@ p {
     justify-content: center;
 
     img {
-      width: 300px;
-      height: 400px;
-      border: 10px solid $text-color-banner;
-      margin-right: 50px;
+      width: 23rem;
+      height: 31rem;
+      border: 0.7rem solid $text-color-banner;
+      margin-right: 3.8rem;
     }
 
     .content {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      flex-basis: 400px;
+      flex-basis: 31rem;
 
       h3 {
         font-size: 3rem;
@@ -140,40 +149,40 @@ p {
 }
 
 #our_rooms {
-  height: 500px;
+  height: 50rem;
   display: flex;
   justify-content: space-between;
 
   .wrap_list_room {
-    width: 700px;
-    padding: 50px;
+    width: 54rem;
+    padding: 3.8rem;
 
     h3 {
       text-transform: uppercase;
       font-size: 1rem;
       font-weight: bold;
-      letter-spacing: 5px;
+      letter-spacing: 0.4rem;
       color: #5e4633;
     }
 
     h2 {
       font-size: 3rem;
       font-weight: bold;
-      margin-bottom: 50px;
+      margin-bottom: 3.8rem;
     }
 
     .list_room_item {
       display: flex;
-      padding: 5px;
+      padding: 0.4rem;
 
       &:hover {
         background-color: $list-room-item-background-hover;
       }
 
       img {
-        flex-basis: 100px;
-        height: 60px;
-        margin-right: 10px;
+        flex-basis: 7.5rem;
+        height: 4.5rem;
+        margin-right: 0.7rem;
       }
 
       .item_info {
@@ -195,14 +204,14 @@ p {
 
     img {
       width: 100%;
-      height: 500px;
+      height: 50rem;
     }
   }
 
 }
 
 #client_evaluate {
-  height: 500px;
+  height: 45rem;
   background-color: $back-ground-color-primary;
   display: flex;
   justify-content: center;
@@ -210,21 +219,21 @@ p {
 
   .client_say_wrap {
     background-color: $text-color-banner;
-    padding: 50px;
+    padding: 4rem;
     text-align: center;
 
     h3 {
       text-transform: uppercase;
       font-size: 1rem;
       font-weight: bold;
-      letter-spacing: 5px;
+      letter-spacing: 0.4rem;
       color: $title-color;
     }
 
     h2 {
       font-size: 3rem;
       font-weight: bold;
-      margin-bottom: 30px;
+      margin-bottom: 2.5rem;
     }
 
     p {
@@ -234,27 +243,27 @@ p {
 }
 
 footer {
-  padding: 60px 0;
+  padding: 5rem 0;
   background: $back-ground-color-footer;
   text-align: left;
   color: $text-color-footer;
 
   img {
-    width: 200px;
-    margin-bottom: 30px;
+    width: 16.5rem;
+    margin-bottom: 2.5rem;
   }
 
   h3 {
     font-size: 2rem;
     font-weight: 300;
-    line-height: 30px;
+    line-height: 2.5rem;
     font-style: italic;
   }
 
   a {
     display: inline-block;
-    margin-right: 20px;
-    margin-bottom: 8px;
+    margin-right: 1.6rem;
+    margin-bottom: 0.65rem;
     color: $text-color-footer-social;
     border: 0;
     font-size: 2rem;
@@ -262,22 +271,22 @@ footer {
 }
 
 #about {
-  height: 500px;
-  padding: 50px 0;
+  height: 41rem;
+  padding: 4rem 0;
 
   h2 {
     text-align: center;
     font-size: 3rem;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 2.5rem;
   }
 
   h3 {
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    margin-top: 2.5rem;
+    margin-bottom: 4.2rem;
   }
 
   .number_fact {
@@ -301,7 +310,7 @@ footer {
 
 #contact {
   display: flex;
-  height: 500px;
+  height: 41rem;
 
   .image-map {
     flex-grow: 1;
@@ -310,28 +319,28 @@ footer {
   }
 
   .contact_info {
-    flex-basis: 700px;
-    padding: 50px;
+    flex-basis: 58rem;
+    padding: 4.2rem;
 
     h3 {
       text-transform: uppercase;
       font-size: 1rem;
       font-weight: bold;
-      letter-spacing: 5px;
+      letter-spacing: 0.4rem;
       color: $title-color;
     }
 
     h2 {
       font-size: 3rem;
       font-weight: bold;
-      margin-bottom: 30px;
+      margin-bottom: 2.5rem;
     }
 
     .headquarter {
       font-size: 1.5rem;
       font-weight: bold;
-      margin-top: 70px;
-      margin-bottom: 20px;
+      margin-top: 5.8rem;
+      margin-bottom: 1.65rem;
     }
 
     p {
@@ -344,7 +353,7 @@ footer {
     }
 
     .phone_title {
-      margin-top: 30px;
+      margin-top: 2.5rem;
     }
 
     .phone_number {
@@ -355,16 +364,16 @@ footer {
 }
 
 #list_room {
-  margin-bottom: 100px;
+  margin-bottom: 8.5rem;
   font-size: 1.3rem;
 
   .list_room_item_1 {
-    margin-top: 100px;
-    height: 500px;
+    margin-top: 8.5rem;
+    height: 42.5rem;
     background-color: $back-ground-color-primary;
 
     .list_room_item_content {
-      padding-top: 30px;
+      padding-top: 2.5rem;
 
       h3 {
         font-size: 3.5rem;
@@ -372,7 +381,7 @@ footer {
       }
 
       .room_price {
-        margin: 30px 0;
+        margin: 2.5rem 0;
 
         .price {
           color: red;
@@ -381,7 +390,7 @@ footer {
       }
 
       .info {
-        margin: 30px 0;
+        margin: 2.5rem 0;
       }
 
       .detail_link {
@@ -390,6 +399,10 @@ footer {
 
         a {
           color: black;
+          padding: 0.4rem 1.3rem;
+          background-color: mediumspringgreen;
+          display: inline-block;
+          border-radius: 0.4rem;
 
           &:hover {
             opacity: 0.7;
@@ -400,13 +413,13 @@ footer {
     }
 
     .list_room_item_image {
-      line-height: 500px;
+      line-height: 42rem;
 
       img {
         overflow: hidden;
         width: 100%;
-        height: 450px;
-        border: 10px white solid;
+        height: 37.5rem;
+        border: 0.8rem white solid;
       }
     }
   }
@@ -417,42 +430,78 @@ footer {
 
   h3 {
     font-size: 2rem;
-    margin-bottom: 30px;
+    margin-bottom: 2.5rem;
     font-weight: bold;
     text-align: center;
   }
 
   #room_detail {
-    text-align: center;
     background-color: $back-ground-color-primary;
-    padding: 50px 0;
+    padding: 8.5rem 0 4rem 0;
 
     .room_title {
       text-align: center;
       font-size: 4rem;
       font-weight: 700;
-      margin-top: 50px;
-      margin-bottom: 20px;
+      margin-bottom: 2.5rem;
     }
 
     #image {
-      height: 500px;
+      height: 41rem;
 
       img {
-        width: 80%;
+        width: 100%;
         height: 100%;
 
-        border: 10px white solid;
+        border: 0.8rem white solid;
       }
     }
 
     #price {
-      margin-top: 50px;
+      margin-top: 8.5rem;
       font-size: 2.5rem;
+      text-align: center;
 
       .price_room {
         color: red;
         font-size: 3rem;
+      }
+    }
+
+    #average_score {
+      text-align: center;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .total_vote {
+        color: black;
+      }
+
+      .rating_star {
+        margin-top: 1.65rem;
+        font-size: 2rem;
+        margin-right: 1.2rem;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+
+      .not_rating {
+        margin-top: 1.65rem;
+        font-size: 2rem;
+        color: sienna;
+      }
+    }
+
+    #book_now {
+      text-align: center;
+      margin: 4rem auto;
+
+      button {
+        padding: 0.8rem 4rem;
       }
     }
   }
@@ -460,40 +509,45 @@ footer {
   #description {
     text-align: center;
     background-color: $text-color-banner;
-    padding: 50px 0;
+    padding: 4rem 0;
 
     hr {
-      margin: 30px 0;
+      margin: 2.5rem 0;
     }
   }
 
-  #book_now {
-    text-align: center;
-
-    button {
-      padding: 10px 50px;
-    }
+  #rating_room {
+    background-color: $text-color-banner;
+    padding: 4rem 0;
+    margin-top: 4rem;
   }
 
   #room_relate {
     background-color: $back-ground-color-primary;
-    padding: 50px 0;
-    margin-top: 50px;
+    padding: 4rem 0;
+    margin-top: 4rem;
 
     .relate_room_item {
 
       img {
         width: 100%;
-        height: 300px;
+        height: 25rem;
       }
 
       .relate_room_item_info {
         background-color: $text-color-banner;
-        padding: 30px;
+        padding: 2.5rem;
+        height: 15.8rem;
 
         h3 {
           font-size: 2rem;
           color: black;
+        }
+
+        .star_relate {
+          font-size: 1.5rem;
+          text-align: center;
+          margin-bottom: 1.65rem;
         }
       }
 
@@ -506,8 +560,8 @@ footer {
 
 .title {
   text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
+  padding: 1.65rem 0;
+  font-size: 2.5rem;
   font-family: 'Lora', serif;
   font-weight: bold;
 }
@@ -515,12 +569,12 @@ footer {
 .reservation-content{
 
   .content-top {
-    height: 400px;
+    height: 33rem;
     background-color: $back-ground-color-primary;
 
     .content-search {
       text-align: center;
-      font-size: 20px;
+      font-size: 1.65rem;
       font-family: 'Lora', serif;
       font-weight: bold;
     }
@@ -528,12 +582,12 @@ footer {
 }
 
 .search_reservation {
-  padding-top: 25px;
+  padding-top: 2rem;
 
   .main-search {
     width: 70%;
-    height: 100px;
-    box-shadow: 0 4px 8px 0 $rgb_black, 0 6px 20px 0 $rgb_gray;
+    height: 8.3rem;
+    box-shadow: 0 0.4rem 0.6rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
     margin: 0 auto;
 
     form {
@@ -548,7 +602,7 @@ footer {
         .form-group {
           width: 48%;
           line-height: 3;
-          margin: 0 15px;
+          margin: 0 1.25rem;
 
           .label-time {
             margin: 0;
@@ -557,7 +611,7 @@ footer {
           }
 
           .form-input {
-            height: 30px;
+            height: 2.5rem;
           }
         }
       }
@@ -569,8 +623,8 @@ footer {
         text-align: center;
 
         .btn-search {
-          height: 30px;
-          font-size: 11px;
+          height: 2.5rem;
+          font-size: 1rem;
         }
       }
     }
@@ -589,9 +643,9 @@ footer {
 
 .total-price {
   text-align: right;
-  padding-right: 20px;
+  padding-right: 1.65rem;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.65rem;
 }
 
 .room-search {
@@ -600,24 +654,24 @@ footer {
 
   #reservation {
     position: fixed;
-    top: 340px;
-    right: 85px;
+    top: 28rem;
+    right: 7rem;
   }
 
   .room-main {
-    height: 480px;
+    height: 40rem;
 
     .list-room {
       width: 60%;
-      margin: 15px auto;
+      margin: 1.25rem auto;
       background-color: $white;
-      box-shadow: 0 4px 8px 0 $rgb_black, 0 6px 20px 0 $rgb_gray;
+      box-shadow: 0 0.3rem 0.65rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
       height: 100px;
 
       form {
         width: 60%;
         margin: 0 auto;
-        padding: 45px 0 25px;
+        padding: 3.75rem 0 2rem;
 
         .btn-select {
           width: 100%;
@@ -628,14 +682,14 @@ footer {
         padding: 0;
 
         img {
-          width: 100px;
-          height: 100px;
+          width: 8.3rem;
+          height: 8.3rem;
         }
       }
 
       .room-name {
-        padding-bottom: 15px;
-        font-size: 20px;
+        padding-bottom: 1.25rem;
+        font-size: 1.65rem;
         font-family: 'Lora', serif;
         font-weight: bold;
       }
@@ -657,8 +711,8 @@ footer {
 
     li {
       display: inline-block;
-      margin: 20px 0;
-      padding:0 15px;
+      margin: 1.65rem 0;
+      padding:0 1.25rem;
 
       &:first-child {
         border-right: 1px solid $gray;
@@ -668,11 +722,11 @@ footer {
 }
 
 .modal-reser {
-  max-width: 580px !important;
+  max-width: 48rem !important;
 }
 
 .room-des {
-  padding: 0 20px;
+  padding: 0 1.65rem;
 
   li {
     list-style: none;
@@ -700,16 +754,16 @@ footer {
 }
 
 .room-list-reser > li {
-  padding: 10px 0;
+  padding: 0.8rem 0;
 }
 
 .image-reser {
-  width: 100px;
-  height: 100px;
+  width: 8.3rem;
+  height: 8.3rem;
 }
 
 .detail {
-  font-size: 20px;
+  font-size: 1.65rem;
   color: $yel;
 }
 
@@ -722,9 +776,9 @@ footer {
 
   #main-content {
     .select-bill {
-      margin-top: 30px;
+      margin-top: 1.25rem;
       float: right;
-      height: 30px;
+      height: 2.5rem;
       width: 15%;
     }
   }
@@ -734,11 +788,11 @@ footer {
   .list-room {
     width: 70%;
     background: $white;
-    box-shadow: 0 4px 8px 0 $rgb_black, 0 6px 20px 0 $rgb_gray;
-    margin: 10px auto ;
+    box-shadow: 0 0.3rem 0.65rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
+    margin: 0.83rem auto ;
 
     .main-room {
-      padding-top: 8px;
+      padding-top: 0.65rem;
 
       .room-des {
         li {
@@ -748,25 +802,25 @@ footer {
     }
 
     .main-price {
-      padding-top: 10px;
+      padding-top: 0.83rem;
     }
 
     img {
-      width: 130px;
-      height: 130px;
+      width: 10.83rem;
+      height: 10.83rem;
     }
   }
 
   .modal-bill {
     margin: 0 auto;
-    width: 800px ;
+    width: 66.6rem ;
 
     .main-header {
       background: $white ;
     }
 
     .modal-main {
-      margin-top: 30px;
+      margin-top: 1.25rem;
     }
 
     .list-room {

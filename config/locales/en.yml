@@ -35,6 +35,7 @@ en:
     all_room: "All room"
     all_service: "All service"
     all_client: "All client"
+    rating: "rating"
   mailers:
     user_mailer:
       account_activation: "Account Activation"

@@ -1,0 +1,6 @@
+<% (1..5).each do |i| %>
+  <i
+    class="<%= room.rates.present? ? add_on_class(i, room.average_score.round) : " " %> fas fa-star rating_star"
+  >
+  </i>
+<% end %>

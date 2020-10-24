@@ -30,4 +30,8 @@ module ApplicationHelper
   def option_status_bill
     Bill.statuses.map{|key, value| [t(".#{key}"), value]}
   end
+
+  def add_on_class number, score
+    number <= score ? "on" : ""
+  end
 end

@@ -1,4 +1,5 @@
-  <div class="row list_room_item_1">
-    <%= render partial: "rooms/room_info", locals: {room1: room} %>
-    <%= render partial: "rooms/room_image", locals: {room1: room} %>
-  </div>
+<div class="row list_room_item_1">
+  <%= render partial: "rooms/room_info", locals: {room: room} if (room_counter %2).eql?0 %>
+  <%= render partial: "rooms/room_image", locals: {room: room} %>
+  <%= render partial: "rooms/room_info", locals: {room: room} if (room_counter %2).eql?1 %>
+</div>

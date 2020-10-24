@@ -32,6 +32,7 @@ vi:
     create_unsuccess: "Create failed"
     update_success: "Updated successfully"
     update_unsuccess: "Update failed"
+    rating: "rating"
   reservations:
     index:
       total: "Tổng tiền : "
