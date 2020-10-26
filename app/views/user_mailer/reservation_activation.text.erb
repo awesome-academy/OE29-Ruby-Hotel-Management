@@ -1,0 +1,14 @@
+<%= t ".title" %>
+<%= t ".hi" %>  <%= @user.name %>
+<%= t ".success" %>
+<%= t ".checkin" %><%= @bill.bookings[0].checkin.strftime Settings.date_time %>
+<%= t ".checkout" %><%= @bill.bookings[0].checkout.strftime Settings.date_time %>
+<%= t ".create" %><%= @bill.created_at %>
+<%  @bill.bookings.each do |book| %>
+  <%= t ".room_name" %><%= book.room_name %>
+  <%= t ".type_name" %><%= book.room_type_name %>
+  <%= t ".view_name" %><%= book.room_view_name %>
+  <%= t ".room_price" %><%= number_with_delimiter book.room_price, delimiter: "." %><%= t ".vnd" %>
+  <%= t ".rent" %><%= number_with_delimiter book.price, delimiter: "." %><%= t ".vnd" %>
+<% end %>
+<%= t ".total" %><%= number_with_delimiter @bill.price, delimiter: "." %><%= t ".vnd" %>

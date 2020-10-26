@@ -13,6 +13,11 @@
           <% end %>
         </li>
         <li class="nav-item">
+          <%= link_to admin_reservations_path, class: current_path_admin?(admin_reservations_path) do %>
+            <p><%= t ".reservation" %></p>
+          <% end %>
+        </li>
+        <li class="nav-item">
           <%= link_to admin_users_path, class: current_path_admin?(admin_users_path) do %>
             <p><%= t ".client" %></p>
           <% end %>

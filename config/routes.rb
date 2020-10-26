@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       get "/bill_history", to: "dashboard#bill_history"
       get "/income_bill", to: "dashboard#income_bill"
       resources :views, except: %i(new show)
+      resources :reservations
       resources :users do
         resources :bills do
           resources :bookings

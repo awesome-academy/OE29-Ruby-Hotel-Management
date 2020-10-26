@@ -1,0 +1,28 @@
+<tr class="admin_room_item">
+  <td><%= index_of_page(@reservations) + reser_counter %></td>
+  <td><%= reser.user_name %></td>
+  <td><%= reser.user_email %></td>
+  <td><%= reser.status %></td>
+  <td><%= reser.bookings[0].checkin.strftime Settings.date_time %></td>
+  <td><%= reser.bookings[0].checkout.strftime Settings.date_time %></td>
+  <td><%= reser.created_at.strftime Settings.date_time %></td>
+  <td><%= number_with_delimiter reser.price, delimiter: "." %></td>
+  <td>
+    <%= link_to admin_reservation_path(reser.id), class:"btn btn-outline-info bill-view" do %>
+      <i class="fa fa-eye" aria-hidden="true"></i>
+    <% end %>
+    <% if reser.waiting? %>
+      <button class="btn btn-outline-danger bill-cancle" data-url="<%= admin_reservation_path(reser.id) %>">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </button>
+      <button class="btn btn-outline-success bill-accept" data-url="<%= admin_reservation_path(reser.id) %>">
+        <i class="fa fa-plus-square" aria-hidden="true"></i>
+      </button>
+    <% end %>
+    <% if reser.accept? %>
+      <button class="btn btn-outline-success bill-cancle" data-url="<%= bill_path(reser.id) %>">
+        <i class="fa fa-check" aria-hidden="true"></i>
+      </button>
+    <% end %>
+  </td>
+</tr>
