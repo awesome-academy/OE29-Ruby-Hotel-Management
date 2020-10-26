@@ -1,0 +1,17 @@
+<% if @comment.errors.any? %>
+  <% if params[:room_id].present? %>
+    $(".comment_form").html("<%= j render partial: "rooms/comments/comment_form", locals: {commentable: @room, comment: @comment} %>")
+    $(".comment-parent-input").val(null);
+  <% else %>
+    $("<%= "#form-reply-#{params[:comment][:comment_id]}"%>").prepend("<%= j render partial: "shared/show_comment_error", locals: {comment: @comment, field: :content} %>")
+    $("<%= "#form-reply-#{params[:comment][:comment_id]}" + " .comment-sub-input" %>").val(null);
+  <% end %>
+<% else %>
+  <% if params[:room_id].present? %>
+    $("#comments-list").append("<%= j render partial: "rooms/comments/comment_item", locals: {comment: @comment} %>");
+    $(".comment-parent-input").val(null);
+  <% else %>
+    $("<%= "#reply-list-#{params[:comment][:comment_id]}" %>").append("<%= j render partial: "rooms/comments/reply_comment_item",locals: {comment: @comment} %>");
+    $("<%= "#form-reply-#{params[:comment][:comment_id]}" + " .comment-sub-input" %>").val(null);
+  <% end %>
+<% end %>

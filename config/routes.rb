@@ -7,12 +7,15 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     resources :account_activations, only: :edit
-    resources :rooms, only: %i(index show)
+    resources :rooms, only: %i(index show) do
+      resources :comments, only: %i(create destroy)
+    end
     resources :reservations
     resources :users
     resources :bills
     resources :bookings
     resources :rates, only: %i(create update)
+    resources :comments, only: %i(create destroy)
 
     namespace :admin do
       root "dashboard#index"

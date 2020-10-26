@@ -37,6 +37,24 @@
         <div class="col-md-6 offset-3">
           <div><b><%= t ".type" %>:</b> <%= @room.type_name %></div>
           <div><b><%= t ".view" %>:</b> <%= @room.view_name %></div>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid" id="comment">
+    <div class="container">
+      <div class="row">
+        <div  class="col-md-12">
+          <h3><%= t ".comment" %></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="comments-container">
+          <%= render partial: "rooms/comments/comments", locals: {commentable: @room} %>
+          <div class="comment_form">
+            <%= render partial: "rooms/comments/comment_form", locals: {commentable: @room}%>
+          </div>
         </div>
       </div>
     </div>
@@ -55,3 +73,4 @@
   </div>
 </div>
 <%= javascript_pack_tag "room_rating" %>
+<%= javascript_pack_tag "comment" %>

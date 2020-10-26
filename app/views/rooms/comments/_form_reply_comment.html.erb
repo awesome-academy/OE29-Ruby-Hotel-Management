@@ -1,0 +1,9 @@
+<%= form_for @comment, remote: true do |f| %>
+  <%= f.hidden_field :comment_id, value: comment.id %>
+  <div class="form-group col-md-11">
+    <%= f.text_field :content, class: "form-control comment-sub-input" %>
+  </div>
+  <%= f.button class: "btn btn-primary col-md-1 comment-button" do %>
+    <i class="fas fa-paper-plane"></i>
+  <% end %>
+<% end %>

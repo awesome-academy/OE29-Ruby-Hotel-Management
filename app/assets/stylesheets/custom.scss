@@ -14,6 +14,14 @@ p {
   font-size: 1.5rem;
 }
 
+ul {
+  list-style-type: none;
+}
+
+.hidden {
+  display: none;
+}
+
 .active_menu {
   border-bottom: 2px solid black;
   opacity: 0.7;
@@ -516,315 +524,520 @@ footer {
     }
   }
 
-  #rating_room {
-    background-color: $text-color-banner;
-    padding: 4rem 0;
-    margin-top: 4rem;
-  }
-
-  #room_relate {
-    background-color: $back-ground-color-primary;
-    padding: 4rem 0;
-    margin-top: 4rem;
-
-    .relate_room_item {
-
-      img {
-        width: 100%;
-        height: 25rem;
-      }
-
-      .relate_room_item_info {
-        background-color: $text-color-banner;
-        padding: 2.5rem;
-        height: 15.8rem;
-
-        h3 {
-          font-size: 2rem;
-          color: black;
-        }
-
-        .star_relate {
-          font-size: 1.5rem;
-          text-align: center;
-          margin-bottom: 1.65rem;
-        }
-      }
-
-      &:hover {
-        opacity: 0.7;
-      }
+  #comment {
+    .comments-container {
+      margin: 60px auto 15px;
+      width: 1024px;
     }
-  }
-}
 
-.title {
-  text-align: center;
-  padding: 1.65rem 0;
-  font-size: 2.5rem;
-  font-family: 'Lora', serif;
-  font-weight: bold;
-}
-
-.reservation-content{
-
-  .content-top {
-    height: 33rem;
-    background-color: $back-ground-color-primary;
-
-    .content-search {
-      text-align: center;
-      font-size: 1.65rem;
-      font-family: 'Lora', serif;
-      font-weight: bold;
+    .comments-list {
+      margin-top: 30px;
+      position: relative;
     }
-  }
-}
 
-.search_reservation {
-  padding-top: 2rem;
+    .comments-list:before {
+      content: '';
+      width: 2px;
+      height: 100%;
+      background: darkgrey;
+      position: absolute;
+      left: 32px;
+      top: 0;
+    }
 
-  .main-search {
-    width: 70%;
-    height: 8.3rem;
-    box-shadow: 0 0.4rem 0.6rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
-    margin: 0 auto;
+    .comments-list:after {
+      content: '';
+      position: absolute;
+      background: darkgrey;
+      bottom: 0;
+      left: 27px;
+      width: 7px;
+      height: 7px;
+      border: 3px solid mediumspringgreen;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+    }
 
-    form {
+    .reply-list:before, .reply-list:after {
+      display: none;
+    }
+
+    .reply-list li:before {
+      content: '';
+      width: 60px;
+      height: 2px;
+      background: mediumspringgreen;
+      position: absolute;
+      top: 25px;
+      left: -55px;
+    }
+
+
+    .comments-list li {
+      margin-bottom: 15px;
+      display: block;
+      position: relative;
+    }
+
+    .comments-list li:after {
+      content: '';
+      display: block;
+      clear: both;
+      height: 0;
+      width: 0;
+    }
+
+    .reply-list {
+      padding-left: 88px;
+      clear: both;
+      margin-top: 15px;
+    }
+
+    .comments-list .comment-avatar {
+      width: 65px;
+      height: 65px;
+      position: relative;
+      z-index: 99;
+      float: left;
+      border: 3px solid white;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .comments-list .comment-avatar img {
       width: 100%;
+      height: 100%;
+    }
 
-      .form-left {
-        background-color: $white;
-        display: flex;
-        flex-direction: row;
-        height: 100%;
+    .reply-list .comment-avatar {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
 
-        .form-group {
-          width: 48%;
-          line-height: 3;
-          margin: 0 1.25rem;
+    .comment-main-level:after {
+      content: '';
+      width: 0;
+      height: 0;
+      display: block;
+      clear: both;
+    }
 
-          .label-time {
-            margin: 0;
-            text-align: left !important;
-            color: $gray;
-          }
+    .comments-list .comment-box {
+      width: 920px;
+      float: right;
+      position: relative;
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    }
 
-          .form-input {
-            height: 2.5rem;
-          }
-        }
-      }
+    .comments-list .comment-box:before, .comments-list .comment-box:after {
+      content: '';
+      height: 0;
+      width: 0;
+      position: absolute;
+      display: block;
+      border-width: 10px 12px 10px 0;
+      border-style: solid;
+      border-color: transparent $text-color-banner;
+      top: 8px;
+      left: -11px;
+    }
 
-      .form-right {
-        background-color: $grayy;
-        line-height: 9;
-        height: 100%;
-        text-align: center;
+    .comments-list .comment-box:before {
+      border-width: 11px 13px 11px 0;
+      border-color: transparent rgba(0, 0, 0, 0.05);
+      left: -12px;
+    }
 
-        .btn-search {
-          height: 2.5rem;
-          font-size: 1rem;
-        }
-      }
+    .reply-list .comment-box {
+      width: 850px;
+    }
+
+    .form-reply {
+      width: 850px;
+      float: right;
+    }
+
+    .comment-box .comment-head {
+      background: $text-color-banner;
+      padding: 10px 12px;
+      border-bottom: 1px solid lightcyan;
+      overflow: hidden;
+      -webkit-border-radius: 4px 4px 0 0;
+      -moz-border-radius: 4px 4px 0 0;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .comment-box .comment-name {
+      color: #283035;
+      font-size: 14px;
+      font-weight: 700;
+      float: left;
+      margin-right: 10px;
+    }
+
+    .comment-box .comment-head span {
+      float: left;
+      color: darkgrey;
+      font-size: 13px;
+      position: relative;
+      top: 1px;
+    }
+
+    .comment-box .comment-content {
+      background: white;
+      padding: 12px;
+      font-size: 15px;
+      color: gray;
+      -webkit-border-radius: 0 0 4px 4px;
+      -moz-border-radius: 0 0 4px 4px;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .comment_form {
+      float: right;
+      margin-top: 50px;
+      width: 90%;
+    }
+
+    .btn-comment-action {
+      margin-right: 10px;
+      float: right;
+    }
+
+    .comment-button {
+      height: 50px;
+      float: right;
+      width: 50px;
+    }
+
+    .form-control {
+      height: 50px;
+    }
+
+    .comment-parent-input {
+      float: right;
     }
   }
-}
 
-.btn-mona {
-  background-color: $yellow !important;
-  color: $black !important;
-  font-weight: bold !important;
+    #rating_room {
+      background-color: $text-color-banner;
+      padding: 4rem 0;
+      margin-top: 4rem;
+    }
 
-  &:hover {
-    opacity: 0.7;
-  }
-}
+    #room_relate {
+      background-color: $back-ground-color-primary;
+      padding: 4rem 0;
+      margin-top: 4rem;
 
-.total-price {
-  text-align: right;
-  padding-right: 1.65rem;
-  font-weight: bold;
-  font-size: 1.65rem;
-}
-
-.room-search {
-  background-color: $back-ground-color-primary;
-  position: relative;
-
-  #reservation {
-    position: fixed;
-    top: 28rem;
-    right: 7rem;
-  }
-
-  .room-main {
-    height: 40rem;
-
-    .list-room {
-      width: 60%;
-      margin: 1.25rem auto;
-      background-color: $white;
-      box-shadow: 0 0.3rem 0.65rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
-      height: 100px;
-
-      form {
-        width: 60%;
-        margin: 0 auto;
-        padding: 3.75rem 0 2rem;
-
-        .btn-select {
-          width: 100%;
-        }
-      }
-
-      .image {
-        padding: 0;
+      .relate_room_item {
 
         img {
-          width: 8.3rem;
-          height: 8.3rem;
+          width: 100%;
+          height: 25rem;
+        }
+
+        .relate_room_item_info {
+          background-color: $text-color-banner;
+          padding: 2.5rem;
+          height: 15.8rem;
+
+          h3 {
+            font-size: 2rem;
+            color: black;
+          }
+
+          .star_relate {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.65rem;
+          }
+        }
+
+        &:hover {
+          opacity: 0.7;
         }
       }
+    }
+  }
 
-      .room-name {
-        padding-bottom: 1.25rem;
+  .title {
+    text-align: center;
+    padding: 1.65rem 0;
+    font-size: 2.5rem;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+  }
+
+  .reservation-content {
+
+    .content-top {
+      height: 33rem;
+      background-color: $back-ground-color-primary;
+
+      .content-search {
+        text-align: center;
         font-size: 1.65rem;
         font-family: 'Lora', serif;
         font-weight: bold;
       }
-
-      .room-des li {
-        font-weight: bold;
-        font-family: 'Lora', serif;
-        list-style: none;
-      }
     }
   }
-}
 
-.time {
-  text-align: center;
+  .search_reservation {
+    padding-top: 2rem;
 
-  ul {
-    list-style: none;
+    .main-search {
+      width: 70%;
+      height: 8.3rem;
+      box-shadow: 0 0.4rem 0.6rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
+      margin: 0 auto;
 
-    li {
-      display: inline-block;
-      margin: 1.65rem 0;
-      padding:0 1.25rem;
+      form {
+        width: 100%;
 
-      &:first-child {
-        border-right: 1px solid $gray;
-      }
-    }
-  }
-}
+        .form-left {
+          background-color: $white;
+          display: flex;
+          flex-direction: row;
+          height: 100%;
 
-.modal-reser {
-  max-width: 48rem !important;
-}
+          .form-group {
+            width: 48%;
+            line-height: 3;
+            margin: 0 1.25rem;
 
-.room-des {
-  padding: 0 1.65rem;
+            .label-time {
+              margin: 0;
+              text-align: left !important;
+              color: $gray;
+            }
 
-  li {
-    list-style: none;
-    font-weight: bold;
+            .form-input {
+              height: 2.5rem;
+            }
+          }
+        }
 
-    .room-name {
-      color: goldenrod;
-    }
+        .form-right {
+          background-color: $grayy;
+          line-height: 9;
+          height: 100%;
+          text-align: center;
 
-    .room-reser {
-      li {
-        list-style: none;
-      }
-    }
-
-    .price-cont {
-      text-align: center;
-
-      .room-price {
-        color: $mo;
-        font-weight: bold;
-      }
-    }
-  }
-}
-
-.room-list-reser > li {
-  padding: 0.8rem 0;
-}
-
-.image-reser {
-  width: 8.3rem;
-  height: 8.3rem;
-}
-
-.detail {
-  font-size: 1.65rem;
-  color: $yel;
-}
-
-.delete {
-  color: $yel;
-}
-
-.main-history {
-  border-top: 1px solid $bol;
-
-  #main-content {
-    .select-bill {
-      margin-top: 1.25rem;
-      float: right;
-      height: 2.5rem;
-      width: 15%;
-    }
-  }
-}
-
-#main-show {
-  .list-room {
-    width: 70%;
-    background: $white;
-    box-shadow: 0 0.3rem 0.65rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
-    margin: 0.83rem auto ;
-
-    .main-room {
-      padding-top: 0.65rem;
-
-      .room-des {
-        li {
-          padding: 1.5px;
+          .btn-search {
+            height: 2.5rem;
+            font-size: 1rem;
+          }
         }
       }
     }
+  }
 
-    .main-price {
-      padding-top: 0.83rem;
-    }
+  .btn-mona {
+    background-color: $yellow !important;
+    color: $black !important;
+    font-weight: bold !important;
 
-    img {
-      width: 10.83rem;
-      height: 10.83rem;
+    &:hover {
+      opacity: 0.7;
     }
   }
 
-  .modal-bill {
-    margin: 0 auto;
-    width: 66.6rem ;
+  .total-price {
+    text-align: right;
+    padding-right: 1.65rem;
+    font-weight: bold;
+    font-size: 1.65rem;
+  }
 
-    .main-header {
-      background: $white ;
+  .room-search {
+    background-color: $back-ground-color-primary;
+    position: relative;
+
+    #reservation {
+      position: fixed;
+      top: 28rem;
+      right: 7rem;
     }
 
-    .modal-main {
-      margin-top: 1.25rem;
-    }
+    .room-main {
+      height: 40rem;
 
+      .list-room {
+        width: 60%;
+        margin: 1.25rem auto;
+        background-color: $white;
+        box-shadow: 0 0.3rem 0.65rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
+        height: 100px;
+
+        form {
+          width: 60%;
+          margin: 0 auto;
+          padding: 3.75rem 0 2rem;
+
+          .btn-select {
+            width: 100%;
+          }
+        }
+
+        .image {
+          padding: 0;
+
+          img {
+            width: 8.3rem;
+            height: 8.3rem;
+          }
+        }
+
+        .room-name {
+          padding-bottom: 1.25rem;
+          font-size: 1.65rem;
+          font-family: 'Lora', serif;
+          font-weight: bold;
+        }
+
+        .room-des li {
+          font-weight: bold;
+          font-family: 'Lora', serif;
+          list-style: none;
+        }
+      }
+    }
+  }
+
+  .time {
+    text-align: center;
+
+    ul {
+      list-style: none;
+
+      li {
+        display: inline-block;
+        margin: 1.65rem 0;
+        padding: 0 1.25rem;
+
+        &:first-child {
+          border-right: 1px solid $gray;
+        }
+      }
+    }
+  }
+
+  .modal-reser {
+    max-width: 48rem !important;
+  }
+
+  .room-des {
+    padding: 0 1.65rem;
+
+    li {
+      list-style: none;
+      font-weight: bold;
+
+      .room-name {
+        color: goldenrod;
+      }
+
+      .room-reser {
+        li {
+          list-style: none;
+        }
+      }
+
+      .price-cont {
+        text-align: center;
+
+        .room-price {
+          color: $mo;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .room-list-reser > li {
+    padding: 0.8rem 0;
+  }
+
+  .image-reser {
+    width: 8.3rem;
+    height: 8.3rem;
+  }
+
+  .detail {
+    font-size: 1.65rem;
+    color: $yel;
+  }
+
+  .delete {
+    color: $yel;
+  }
+
+  .main-history {
+    border-top: 1px solid $bol;
+
+    #main-content {
+      .select-bill {
+        margin-top: 1.25rem;
+        float: right;
+        height: 2.5rem;
+        width: 15%;
+      }
+    }
+  }
+
+  #main-show {
     .list-room {
-      width: 85% ;
+      width: 70%;
+      background: $white;
+      box-shadow: 0 0.3rem 0.65rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
+      margin: 0.83rem auto;
+
+      .main-room {
+        padding-top: 0.65rem;
+
+        .room-des {
+          li {
+            padding: 1.5px;
+          }
+        }
+      }
+
+      .main-price {
+        padding-top: 0.83rem;
+      }
+
+      img {
+        width: 10.83rem;
+        height: 10.83rem;
+      }
+    }
+
+    .modal-bill {
+      margin: 0 auto;
+      width: 66.6rem;
+
+      .main-header {
+        background: $white;
+      }
+
+      .modal-main {
+        margin-top: 1.25rem;
+      }
+
+      .list-room {
+        width: 85%;
+      }
     }
   }
-}
+
