@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :users
     resources :bills
     resources :bookings
+    resources :rates, only: %i(create update)
 
     namespace :admin do
       root "dashboard#index"

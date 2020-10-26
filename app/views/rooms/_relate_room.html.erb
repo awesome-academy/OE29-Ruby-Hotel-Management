@@ -8,7 +8,9 @@
     <%= link_to relate_room do %>
       <h3><%= relate_room.name %></h3>
     <% end %>
-    <div><%= t ".deposit" %>: <%= Settings.deposit %>%</div>
+    <div class="star_relate">
+      <%= render partial: "rooms/star_total", locals: {room: relate_room} %>
+    </div>
     <div><%= t ".type" %>: <%= relate_room.type_name %></div>
     <div><%= t ".view" %>: <%= relate_room.view_name %></div>
   </div>

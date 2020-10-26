@@ -9,6 +9,7 @@ class Room < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :pictures, dependent: :destroy
+  has_many :rates, dependent: :destroy
 
   accepts_nested_attributes_for :pictures, allow_destroy: true
 
@@ -36,4 +37,11 @@ class Room < ApplicationRecord
         AND bookings.checkout > '#{checkin}') AND bills.status != 3))")
     end
   end)
+  scope :all_not_current_room, (lambda do |current_room|
+    where("rooms.id != #{current_room}")
+  end)
+
+  def average_score
+    rates.average(:score).round(1, :truncate)
+  end
 end

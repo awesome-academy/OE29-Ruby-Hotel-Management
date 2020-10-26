@@ -1,11 +1,12 @@
 class RoomsController < ApplicationController
-  before_action :load_room_by_id, only: :show
+  before_action :load_room_by_id, :get_star, only: :show
   def index
     @rooms = Room.page(params[:page]).per Settings.rooms.rooms_to_show
   end
 
   def show
-    @relate_rooms = Room.relate_room(@room.type_id)
+    @relate_rooms = Room.all_not_current_room(@room.id)
+                        .relate_room(@room.type_id)
                         .take Settings.rooms.relate_rooms
   end
 
@@ -13,9 +14,9 @@ class RoomsController < ApplicationController
 
   def load_room_by_id
     @room = Room.find params[:id]
-    return if @room
+  end
 
-    flash[:danger] = t ".room_not_found"
-    redirect_to rooms_path
+  def get_star
+    @rate = current_user.rates.by_room_id(@room.id).first
   end
 end
