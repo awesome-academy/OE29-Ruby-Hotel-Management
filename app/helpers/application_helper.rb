@@ -28,7 +28,8 @@ module ApplicationHelper
   end
 
   def option_status_bill
-    Bill.statuses.map{|key, value| [t(".#{key}"), value]}
+    bill = Bill.statuses.map{|key, _value| [t("global.#{key}"), key]}
+    bill.push [t("global.all"), t("global.all").downcase]
   end
 
   def add_on_class number, score

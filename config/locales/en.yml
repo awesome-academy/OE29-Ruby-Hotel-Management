@@ -6,6 +6,11 @@ en:
     next: "NEXT ›"
     truncate: "…"
   global:
+    all: "All"
+    cancelled: "Cancelled"
+    waiting: "Waiting"
+    accept: "Accept"
+    completed: "Completed"
     cancel_success: "Cancelled !"
     cancel_error: " Fail! "
     book_success: "Success"
@@ -14,7 +19,7 @@ en:
     not_found_user: "Not found user"
     message: "Account not activated.Chec your email for the activation link."
     log_in_false: "Invalid email/password combination"
-    acc_activated:  "Account activated!"
+    acc_activated: "Account activated!"
     invalidate_activation_link: "Invalid activation link"
     text_check_email: "Please check your email to activate your account."
     app_name: "Monalisa"
@@ -213,6 +218,51 @@ en:
       our_rooms: "Our Rooms"
       show_more: "Show more"
   admin:
+    users:
+      index:
+        list_room: "List Client"
+        name: "Full Name"
+        email: "Email"
+        address: "Address"
+        reservation_history: "Reservation history"
+        client_email: "Enter Client's email  "
+      user:
+        view: "View"
+    bookings:
+      booking:
+        view: "View"
+      index:
+        list_booking: "List Booking"
+        room_name: "Room name"
+        price: "Rent"
+        checkin: "Checkin"
+        checkout: "Checkout"
+      show:
+        back: "Back"
+        view: " View: "
+        price: "Price: "
+        type: "Type: "
+        checkin: "Checkin: "
+        checkout: "Checkout: "
+        des: "Description: "
+        vnd: "VND"
+    bills:
+      bill:
+        detail: "Detail "
+      index:
+        back: "Back"
+        list_bill: "List Bill "
+        customer: "Customerr: "
+        bill_total_complete: "Total completed bill"
+        bill_total_accept: "Total accept bill"
+        bill_total_cancelled: "Total cancelled bill"
+        bill_total_waiting: "Total waiting bill"
+        email: "Email: "
+        address: "Address:  "
+        gender: "Gender:  "
+        create: "Create at"
+        status: "Status"
+        price: "Total"
     layouts:
       sidebar:
         user_management: "User management"

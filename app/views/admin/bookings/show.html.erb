@@ -1,42 +1,19 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2 offset-1">
-      <%= t ".room_name" %>:
+  <%= link_to t(".back"), _back_url, class: "back_url" %>
+  <div class="row list-room-admin">
+    <div class="col-md-3 image">
+      <%= image_tag @booking.room_pictures[0].picture_url %>
     </div>
     <div class="col-md-9">
-      <%= @booking.room_name %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 offset-1">
-      <%= t ".price" %>:
-    </div>
-    <div class="col-md-9">
-      <%= @booking.room_price %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 offset-1">
-      <%= t ".created_at" %>:
-    </div>
-    <div class="col-md-9">
-      <%= @booking.created_at %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 offset-1">
-      <%= t ".checkin" %>:
-    </div>
-    <div class="col-md-9">
-      <%= @booking.checkin %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 offset-1">
-      <%= t ".checkout" %>:
-    </div>
-    <div class="col-md-9">
-      <%= @booking.checkout %>
+      <h3 class="room-name"><%= @booking.room_name %></h3>
+      <ul class="room-des">
+        <li><%= t ".view" %> <%= @booking.room_view_name %></li>
+        <li><%= t ".price" %><%= number_with_delimiter @booking.room_price, delimiter: "." %><%= t ".vnd" %></li>
+        <li><%= t ".type" %> <%= @booking.room_type_name %></li>
+        <li><%= t ".checkin" %> <%= @booking.checkin.strftime Settings.date_time %></li>
+        <li><%= t ".checkout" %> <%= @booking.checkout.strftime Settings.date_time %></li>
+        <li><%= t ".des" %> <%= @booking.room_des %></li>
+      </ul>
     </div>
   </div>
 </div>
