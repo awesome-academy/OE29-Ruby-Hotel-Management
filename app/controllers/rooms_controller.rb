@@ -8,6 +8,7 @@ class RoomsController < ApplicationController
     @relate_rooms = Room.all_not_current_room(@room.id)
                         .relate_room(@room.type_id)
                         .take Settings.rooms.relate_rooms
+    @comment = Comment.new
   end
 
   private

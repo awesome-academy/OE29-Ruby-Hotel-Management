@@ -1,0 +1,9 @@
+<div>
+  <% if  @comment.errors[field].present?  %>
+    <ul id="list-unstyled">
+      <% @comment.errors[field].each do |error| %>
+        <li class="red "><%= field + " " + error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
