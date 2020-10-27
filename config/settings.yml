@@ -22,6 +22,7 @@ user:
   cancel: 3
   accept: 1
   complete: 2
+  waiting: 0
 room_view:
   validate:
     name_max: 50
@@ -37,14 +38,14 @@ unity:
 service:
   validate:
     name_max: 50
-    des_max: 1000
+    des_max: 500
 rooms:
   rooms_to_show: 4
   relate_rooms: 3
   room_per_page: 5
   validate:
     name_max: 100
-    des: 1000
+    des: 350
 reservation:
   page: 3
 bill:
@@ -56,3 +57,4 @@ booking_per_page: 10
 users_per_page: 15
 comments:
   comment_content: 200
+date_time: "%d-%m-%Y"

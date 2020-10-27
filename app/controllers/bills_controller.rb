@@ -28,7 +28,7 @@ class BillsController < ApplicationController
     else
       flash[:danger] = t "global.cancel_error"
     end
-    @bills = current_user.bills.waiting.page(params[:page])
+    @bills = current_user.bills.waiting.bill_created_at.page(params[:page])
                          .per Settings.bill.page
     :js
   end

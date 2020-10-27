@@ -10,8 +10,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
-    range = params[:range].to_i
-    @bills = bill_range range
+    @bills = bill_range(params[:range]).bill_created_at.page(params[:page])
+                                       .per Settings.user.page
     respond_to do |format|
       format.js
       format.html
@@ -45,26 +45,5 @@ class UsersController < ApplicationController
 
   def check_client
     redirect_to root_path unless current_user.client?
-  end
-
-  def bill_range range
-    if range.present?
-      select_range(range).page(params[:page]).per Settings.user.page
-    else
-      @user.bills.waiting.page(params[:page]).per Settings.user.page
-    end
-  end
-
-  def select_range range
-    case range
-    when Settings.user.cancel
-      @user.bills.cancelled
-    when Settings.user.accept
-      @user.bills.accept
-    when Settings.user.complete
-      @user.bills.completed
-    else
-      @user.bills.waiting
-    end
   end
 end

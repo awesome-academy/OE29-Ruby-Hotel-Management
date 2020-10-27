@@ -2,6 +2,13 @@
 <div class="content-header">
   <div class="container-fluid">
     <div class="row">
+      <%= form_tag admin_users_path, method: "get" do %>
+        <label>
+          <%= text_field_tag :bill, params[:bill], class: "form-control form-input", placeholder: t(".client_email"),  data: {url: admin_users_path} %>
+        </label>
+      <% end %>
+    </div>
+    <div class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
@@ -18,7 +25,7 @@
                 <th><%= t ".reservation_history" %></th>
               </tr>
               </thead>
-              <tbody>
+              <tbody id ="user_view">
                 <%= render @users %>
               </tbody>
             </table>
@@ -29,3 +36,4 @@
     </div>
   </div>
 </div>
+<%= javascript_pack_tag "view_client" %>

@@ -30,7 +30,7 @@ Rails.application.routes.draw do
       resources :types, except: %i(new show)
       resources :unities, except: %i(new show)
       resources :services, except: %i(new show)
-      resources :rooms, except: :new
+      resources :rooms, except: :show
     end
   end
   match "*unmatched", to: "application#render_404", via: :all

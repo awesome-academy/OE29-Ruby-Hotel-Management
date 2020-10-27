@@ -1,9 +1,9 @@
 <tr class="admin_room_item">
-  <td><%= booking_counter + 1 %></td>
+  <td><%= index_of_page(@bookings) + booking_counter %></td>
   <td><%= booking.room_name %></td>
-  <td><%= booking.price %></td>
-  <td><%= booking.checkin %></td>
-  <td><%= booking.checkout %></td>
+  <td><%= number_with_delimiter booking.price, delimiter: "." %></td>
+  <td><%= booking.checkin.strftime Settings.date_time %></td>
+  <td><%= booking.checkout.strftime Settings.date_time  %></td>
   <td class="btn-action">
     <%= link_to t(".view"),
                 admin_user_bill_booking_path(@user, @bill, booking),
