@@ -19,6 +19,10 @@ vi:
   global:
     all_bill: "Danh sach hóa đơn"
     all_booking: "Danh sách đặt phòng"
+    service_error: "Phải chọn dịch vụ"
+    upate_service_error: "Phải chọn đẩy đủ các trường, phải đúng kiểu dữ liệu "
+    complete: "Thanh toán thành công "
+    complete_error: "Thanh toán thất bại"
     cancelled: "Đã hủy"
     waiting: "Đang chờ"
     accept: "Xác nhận"
@@ -291,6 +295,14 @@ vi:
       user:
         view: "Xem"
     bookings:
+      booking_service:
+        service: "Tên dịch vụ: "
+        price: "Giá: "
+        amount: "Số lượng : "
+        total_service: "Thành tiền : "
+      edit:
+        bill_token: "Mã hóa đơn: "
+        add_service: "Thêm dịch vụ"
       booking:
         view: "Xem"
       index:
@@ -300,6 +312,7 @@ vi:
         checkin: "Ngày bắt đầu"
         checkout: "Ngày kết thúc"
       show:
+        services: "Services"
         back: "Quay lại"
         view: " Cảnh quan: "
         price: "Giá phòng: "
@@ -309,8 +322,29 @@ vi:
         des: "Mô tả phòng: "
         vnd: "VND"
     bills:
-      bill:
-        detail: "Chi tiết "
+      booking:
+        name_room: "Tên phòng: "
+        price_room: "Giá phòng:"
+        price_book: "Giá đặt: "
+        total_bill: "Tổng tiền: "
+        service_name: "Tên dịch vụ "
+        price: "Giá "
+        amount: "Số lượng"
+        total: "Thành tiền"
+      booking_service:
+        vnd: "VND"
+      show:
+        vnd: "VND"
+        hotel: "MONALISA HOTEL"
+        address: "KM10 Nguyen Trai, Hoc Vien Cong Nghe Buu Chinh Vien Thong, Ha Dong, Ha Noi"
+        phone: "Số điện thoại : +084 822 2208 98"
+        bill: "HÓA ĐƠN ĐẶT PHÒNG"
+        staff: " Thu ngân : "
+        bill_token: "Mã hóa đơn : "
+        checkin: "Ngày bắt đầu : "
+        checkout: "Ngày kết thúc : "
+        total_bill: "Tổng hóa đơn: "
+        paid: "Thanh toán"
       index:
         back: "Quay lại"
         list_bill: "Danh sách đặt phòng "

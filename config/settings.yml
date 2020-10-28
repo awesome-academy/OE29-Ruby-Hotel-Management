@@ -62,3 +62,8 @@ asc: "asc"
 desc: "desc"
 cancel: "cancelled"
 accept: "accept"
+mini: 86400
+tm: 1
+destroy: "1"
+inter: 0
+complete: 2

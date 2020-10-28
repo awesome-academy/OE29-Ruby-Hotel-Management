@@ -28,6 +28,9 @@ Rails.application.routes.draw do
           resources :bookings
         end
       end
+      resources :bookings
+      resources :bills
+      resources :booking_services
       resources :types, except: %i(new show)
       resources :unities, except: %i(new show)
       resources :services, except: %i(new show)

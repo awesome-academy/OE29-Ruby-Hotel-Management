@@ -1,7 +1,9 @@
 <li>
   <div class="row list-room">
     <div class="col-md-3 image">
-      <%= image_tag item.pictures[0].picture_url , class: "image-reser" %>
+      <% if item.pictures[0].picture_url %>
+        <%= image_tag item.pictures[0].picture_url , class: "image-reser" %>
+      <% end %>
     </div>
     <div class="col-md-9">
       <div class="row">

@@ -1,0 +1,23 @@
+<div class="row admin-booking">
+  <ul class="admin_room_checkout">
+    <li><%= t ".name_room" %><%= book.room_name %></li>
+    <li><%= t ".price_room" %><%= number_with_delimiter book.room_price, delimiter: "." %><%= t ".vnd" %></li>
+    <li><%= t ".price_book" %><%= number_with_delimiter price_booking(book), delimiter: "." %><%= t ".vnd" %></li>
+    <li><%= t ".total_bill" %><%= number_with_delimiter book.price, delimiter: "." %><%= t ".vnd" %></li>
+  </ul>
+  <% if book.booking_services.present? %>
+    <table class="table table-hover text-center" >
+      <thead>
+        <tr>
+          <th><%= t ".service_name" %></th>
+          <th><%= t ".price" %></th>
+          <th><%= t ".amount" %></th>
+          <th><%= t ".total" %></th>
+        </tr>
+      </thead>
+      <tbody class ="admin_booking_service">
+        <%= render partial: "booking_service", collection: book.booking_services, as: :booking_service %>
+      </tbody>
+    </table>
+    <% end %>
+</div>

@@ -21,6 +21,8 @@ class User < ApplicationRecord
   }
   validates :name, presence: true,
             length: {maximum: Settings.user.validate.name_max}
+  validates :age, presence: true,
+            numericality: {only_integer: true, greater_than: Settings.inter}
   validates :email, presence: true,
             length: {maximum: Settings.user.validate.email_max},
             format: {with: URI::MailTo::EMAIL_REGEXP},

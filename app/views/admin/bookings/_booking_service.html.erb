@@ -1,0 +1,6 @@
+<ul class="text-bold">
+  <li><%= t ".service" %><%= item.service.name %></li>
+  <li><%= t ".price" %><%= number_with_delimiter  item.service.price, delimiter: "." %><%= t ".vnd" %></li>
+  <li><%= t ".amount" %><%= item.amount %></li>
+  <li><%= t ".total_service" %><%= number_with_delimiter item.service.price*item.amount, delimiter: "." %><%= t ".vnd" %></li>
+</ul>

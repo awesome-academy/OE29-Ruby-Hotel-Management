@@ -10,7 +10,7 @@ $(function(){
       }
     });
   });
-  $('#admin-reser').on('click', '.bill-cancle',function() {
+  $('#admin-reser').on('click', '.admin-bill-cancle',function() {
     let sure = confirm(I18n.t('users.show.sure'));
     if (sure == true) {
       let url = $(this).data('url');

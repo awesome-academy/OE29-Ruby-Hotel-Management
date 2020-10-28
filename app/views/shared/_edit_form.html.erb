@@ -14,6 +14,7 @@
             <%= f.label :address, t(".add"), class: "label" %>
             <%= f.text_field :address, class: "form-control form-input" %>
             <%= f.label :age, t(".age"), class: "label" %>
+            <%= render "shared/show_error", field: :age %>
             <%= f.text_field :age, type: "number",  class: "form-control form-input" %>
           </div>
           <div class="col-sm-6">

@@ -1,3 +1,5 @@
+@import 'color';
+
 .customer-info {
   position: relative;
 }
@@ -16,4 +18,72 @@
 
 #admin-reservation {
   margin-bottom: 20px;
+}
+
+.booking_services {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.nested-fields {
+  margin: 10px 0;
+}
+
+.button-service {
+  width: 100px;
+  float: right;
+}
+
+.main-service {
+  padding: 0 1.65rem;
+  .room-name {
+    font-weight: bold;
+  }
+}
+
+.show-book {
+  text-align: center;
+  li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px 90px;
+  }
+}
+
+.main-content-bill {
+  width: 70%;
+  margin: 0 auto;
+  .content-top {
+    margin-bottom: 15px;
+  }
+  .title {
+    color: $brown;
+  }
+  .show-booking {
+    .total-bill {
+      color: $brown;
+    }
+  }
+  .admin-booking {
+    .admin_room_checkout {
+      background: $brown_light;
+      min-height: 30px;
+      width: 100%;
+      display: flex;
+      li {
+        list-style: none;
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+.list-room-admin {
+  img {
+    width: 250px;
+  }
+}
+
+.btn-bill {
+  width: 120px;
 }

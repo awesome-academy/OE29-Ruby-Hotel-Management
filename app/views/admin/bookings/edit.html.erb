@@ -1,0 +1,18 @@
+<div class="container edit-booking">
+  <h2 class="demo text-center text-bold text-info"><%= t ".bill_token" %><%= @booking.id %></h2>
+  <h2 class="text-center text-lightblue"><%= t ".add_service" %></h2>
+
+  <%= form_for @booking, url:  admin_booking_path(@booking.id) do |f| %>
+    <div class="booking_services">
+      <%= f.fields_for :booking_services do |f| %>
+        <%= render 'booking_service_fields', f: f %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association t(".add_service"), f, :booking_services, class:"btn btn-outline-info btn-service" %>
+      </div>
+      <div class="button-service text-right">
+        <%= f.submit class: "btn btn-outline-info" %>
+      </div>
+    </div>
+  <% end %>
+</div>

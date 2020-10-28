@@ -13,7 +13,7 @@
       <i class="fa fa-eye" aria-hidden="true"></i>
     <% end %>
     <% if reser.waiting? %>
-      <button class="btn btn-outline-danger bill-cancle" data-url="<%= admin_reservation_path(reser.id) %>">
+      <button class="btn btn-outline-danger admin-bill-cancle" data-url="<%= admin_reservation_path(reser.id) %>">
         <i class="fa fa-trash" aria-hidden="true"></i>
       </button>
       <button class="btn btn-outline-success bill-accept" data-url="<%= admin_reservation_path(reser.id) %>">

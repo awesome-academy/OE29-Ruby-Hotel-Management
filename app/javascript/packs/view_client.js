@@ -1,5 +1,5 @@
 $(function() {
-  $('#bill').change(function() {
+  $('#bill').keydown(function() {
     let email_client = $(this).val();
     let url = $(this).data('url');
     $.ajax({

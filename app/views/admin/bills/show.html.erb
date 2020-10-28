@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="main-content-bill">
+    <div class="content-top text-center">
+      <h2 class="title text-center text-bold"><%= t ".hotel" %></h2>
+      <h4 class="address"><%= t ".address" %></h4>
+      <p class="phone"><%= t ".phone" %></p>
+      <h3 class="text-bill pt-5 text-bold"><%= t ".bill" %></h3>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <p class="admin-user"><%= t ".staff" %><%= current_user.name %></p>
+      </div>
+      <div class="col-md-6">
+        <p class="bill-token"><%= t ".bill_token" %><%= @bill.id %></p>
+      </div>
+    </div>
+    <% if @bookings.present? %>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="checkin"><%= t ".checkin" %><%= @bookings[0].checkin.strftime Settings.date_time %></p>
+        </div>
+        <div class="col-md-6">
+          <p class="checkout"><%= t ".checkout" %> <%= @bookings[0].checkout.strftime Settings.date_time %></p>
+        </div>
+      </div>
+    <% end %>
+    <div class="show-booking mt-5">
+      <%= render partial: "booking", collection: @bookings, as: :book %>
+      <h2 class="total-bill text-right"><%= t ".total_bill" %><%= number_with_delimiter @bill_total, delimiter: "." %><%= t ".vnd" %></h2>
+    </div>
+    <div class="text-right pt-3 admin-complete">
+      <button class="btn btn-success bill-complete" data-url="<%= admin_bill_path(@bill.id) %>" data-bill= "<%= @bill_total %> ">
+        <%= t ".paid" %>
+      </button>
+    </div>
+  </div>
+</div>
+<%= javascript_pack_tag "client_checkout" %>

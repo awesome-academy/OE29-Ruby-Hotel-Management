@@ -17,8 +17,13 @@ en:
     next: "NEXT ›"
     truncate: "…"
   global:
+    service_error_pre: "Must choose a service"
     all_bill: "List Bill "
     all_booking: "List Booking "
+    service_error: "Must choose service"
+    upate_service_error: "Must choose to push all the fields, must be the correct data type "
+    complete: "Payment success !"
+    complete_error: "Payment failed !"
     all: "All"
     cancelled: "Cancelled"
     waiting: "Waiting"
@@ -291,7 +296,17 @@ en:
       user:
         view: "View"
     bookings:
+      booking_service:
+        vnd: "VND"
+        service: "Service name: "
+        price: "Unit price: "
+        amount: "Quantity : "
+        total_service: "Amount : "
+      edit:
+        bill_token: "Code: "
+        add_service: " Add Service"
       booking:
+        vnd: "VDN"
         view: "View"
       index:
         list_booking: "List Booking"
@@ -310,7 +325,31 @@ en:
         vnd: "VND"
     bills:
       bill:
-        detail: "Detail "
+        vnd: "VND"
+      booking:
+        vnd: "VND"
+        name_room: "Room name: "
+        price_room: "Room price:"
+        price_book: "Amount: "
+        total_bill: "Total Bill: "
+        service_name: "Service name "
+        price: "Unit Price "
+        amount: "Quantity"
+        total: "Amount"
+        booking_service:
+          vnd: "VND"
+      show:
+        vnd: "VND"
+        hotel: "MONALISA HOTEL"
+        address: "KM10 Nguyen Trai, Hoc Vien Cong Nghe Buu Chinh Vien Thong, Ha Dong, Ha Noi"
+        phone: "Phone: +084 822 2208 98"
+        bill: "HÓA ĐƠN ĐẶT PHÒNG"
+        staff: "Cashier : "
+        bill_token: "Code : "
+        checkin: "Checkin : "
+        checkout: "Checkout : "
+        total_bill: "Total Bill: "
+        paid: "Payment"
       index:
         back: "Back"
         list_bill: "List Bill "
