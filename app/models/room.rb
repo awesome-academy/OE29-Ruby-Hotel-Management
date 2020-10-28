@@ -21,7 +21,9 @@ class Room < ApplicationRecord
             length: {maximum: Settings.rooms.validate.des}
   validates :view_id, presence: true
   validates :type_id, presence: true
-  validates :price, presence: true, numericality: {only_integer: true}
+  validates :price,
+            presence: true,
+            numericality: {only_integer: true, other_than: 0}
 
   delegate :name, to: :type, prefix: true
   delegate :name, to: :view, prefix: true
@@ -40,6 +42,7 @@ class Room < ApplicationRecord
   scope :all_not_current_room, (lambda do |current_room|
     where("rooms.id != #{current_room}")
   end)
+  scope :created_at, ->{order created_at: :asc}
 
   def average_score
     rates.average(:score).round(1, :truncate)

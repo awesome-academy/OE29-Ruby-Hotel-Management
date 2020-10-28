@@ -38,14 +38,14 @@ unity:
 service:
   validate:
     name_max: 50
-    des_max: 1000
+    des_max: 500
 rooms:
   rooms_to_show: 4
   relate_rooms: 3
   room_per_page: 5
   validate:
     name_max: 100
-    des: 1000
+    des: 350
 reservation:
   page: 3
 bill:

@@ -1,0 +1,16 @@
+<% provide :title, t(".create_room") %>
+<div class="container form_create_edit_room">
+  <div class="row title-wrap center">
+    <div class="col-md-10 offset-1">
+      <h1 class="title"><%= t ".form_create_room" %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-1">
+      <%= render partial: "admin/rooms/form",
+                 locals: {room: @room,
+                          type_arr: @type_arr,
+                          view_arr: @view_arr} %>
+    </div>
+  </div>
+</div>

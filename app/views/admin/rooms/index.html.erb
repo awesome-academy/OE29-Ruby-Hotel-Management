@@ -1,9 +1,11 @@
 <% provide :title, t("global.all_room") %>
 <div class="content-header">
   <div class="container-fluid">
-    <button type="button" class="btn btn-primary float-sm-right" data-toggle="modal" data-target="#roommodal">
-      <i class="fas fa-plus"></i> <%= t ".add_room" %>
-    </button>
+    <%= link_to new_admin_room_path do %>
+      <%= button_tag class: "btn btn-primary float-sm-right" do %>
+        <i class="fas fa-plus"></i> <%= t ".add_room" %>
+      <% end %>
+    <% end %>
     <div class="row">
       <div class="col-md-12">
         <div class="card">
@@ -13,16 +15,15 @@
           <div class="card-body table-responsive p-0">
             <table class="table table-hover">
               <thead>
-              <tr>
-                <th></th>
-                <th></th>
-                <th><%= t ".room_name" %></th>
-                <th><%= t ".price" %></th>
-                <th><%= t ".des" %></th>
-                <th><%= t ".type" %></th>
-                <th><%= t ".view" %></th>
-                <th></th>
-                <th></th>
+              <tr class="row">
+                <th class="col-md-1"></th>
+                <th class="col-md-2"></th>
+                <th class="col-md-1 center"><%= t ".room_name" %></th>
+                <th class="col-md-1 center"><%= t ".price" %></th>
+                <th class="col-md-4 center"><%= t ".des" %></th>
+                <th class="col-md-1 center"><%= t ".type" %></th>
+                <th class="col-md-1 center"><%= t ".view" %></th>
+                <th class="col-md-1"></th>
               </tr>
               </thead>
               <tbody>
@@ -36,4 +37,3 @@
     </div>
   </div>
 </div>
-<%= render "admin/rooms/form" %>

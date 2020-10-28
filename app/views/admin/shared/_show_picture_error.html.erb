@@ -1,0 +1,5 @@
+<% if @room.errors[:"pictures.picture"].any? %>
+  <ul id="list-unstyled">
+    <li class="red "><%= @room.errors.full_messages[0] %></li>
+  </ul>
+<% end %>

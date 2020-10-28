@@ -24,13 +24,16 @@ ul {
   display: none;
 }
 
+.center {
+  text-align: center;
+}
+
 .active_menu {
   border-bottom: 2px solid black;
   opacity: 0.7;
 }
 
 .star_total_title {
-  font-size: 2.5rem;
   margin-bottom: 2.5rem;
 }
 
@@ -575,7 +578,6 @@ footer {
       left: -55px;
     }
 
-
     .comments-list li {
       margin-bottom: 15px;
       display: block;
@@ -1048,4 +1050,3 @@ footer {
       width: 250px;
     }
   }
-

@@ -1,5 +1,15 @@
-
 vi:
+  activerecord:
+    attributes:
+      picture:
+        picture: "Upload photo"
+      room:
+        name: "Name (*)"
+        des: "Description (*)"
+        type_id: "Type (*)"
+        view_id: "View (*)"
+        pictures: "Pictures (*)"
+        price: "Price (*)"
   pagination:
     first: "« FIRST"
     last: "LAST »"
@@ -37,7 +47,13 @@ vi:
     create_unsuccess: "Create failed"
     update_success: "Updated successfully"
     update_unsuccess: "Update failed"
+    you_sure: "You sure?"
+    all_room: "All room"
+    all_service: "All service"
+    all_client: "All client"
+    validate_picture_max_size: "Picture'size not bigger 5MB"
     rating: "rating"
+    validate_extension_picture: "Only '.jpeg','.jpg', '.png' formats are allowed."
   reservations:
     index:
       total: "Tổng tiền : "
@@ -304,6 +320,11 @@ vi:
     rooms:
       form:
         submit: "Submit"
+        reset: "Reset"
+      new:
+        create_room: "Create Room"
+      edit:
+        edit_room: "Edit Room"
     dashboard:
       index:
         start_date_can_not_bigger_end_date: "Start date can not bigger end date"

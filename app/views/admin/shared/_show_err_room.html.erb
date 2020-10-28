@@ -1,7 +1,8 @@
 <div>
-  <% if  @comment.errors[field].present?  %>
+  <% if  @room.errors[field].present?  %>
+    <% byebug %>
     <ul id="list-unstyled">
-      <% @comment.errors[field].each do |error| %>
+      <% @room.errors[field].each do |error| %>
         <li class="red "><%= "#{field}" + " " + error %></li>
       <% end %>
     </ul>
