@@ -17,6 +17,8 @@ en:
     next: "NEXT ›"
     truncate: "…"
   global:
+    all_bill: "List Bill "
+    all_booking: "List Booking "
     all: "All"
     cancelled: "Cancelled"
     waiting: "Waiting"
@@ -58,7 +60,23 @@ en:
     user_mailer:
       account_activation: "Account Activation"
       password_reset: "Password Reset"
+      reservation_activation: "Reservation success"
   user_mailer:
+    reservation_activation:
+      title: "Monalisa"
+      hi: "Hi"
+      success: "You have successfully booked!"
+      info: "Your reservation"
+      checkin: "Checkin: "
+      checkout: "Checkout: "
+      create: "Create: "
+      room_name: "Room: "
+      type_name: "Type room: "
+      view_name: "View room: "
+      room_price: "Price: "
+      rent: "Rent: "
+      total: "Total: "
+      vnd: "VND"
     account_activation:
       title: "MonaLisa"
       hi: "Hi"
@@ -231,6 +249,31 @@ en:
       our_rooms: "Our Rooms"
       show_more: "Show more"
   admin:
+    reservations:
+      index:
+        list_bill: "List Bill "
+        name: "Client"
+        email: "Email"
+        status: "Status "
+        checkin: "Checkin "
+        checkout: "Checkout "
+        create: "Created at"
+        total: "Total "
+        action: "Action "
+        waiting: "Waiting"
+        accept: "Accept "
+        cancelled: "Cancelled"
+        completed: "Completed"
+        all: "All"
+      show:
+        back: "Back "
+        list_booking: "List Booking"
+        id: "ID"
+        room_name: "Room"
+        type_room: "Type"
+        view_room: "View"
+        price_room: "Price"
+        rent: "Rent"
     users:
       index:
         list_room: "List Client"

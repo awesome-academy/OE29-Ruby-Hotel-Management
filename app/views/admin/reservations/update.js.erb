@@ -1,0 +1,2 @@
+$("#admin-reser #bill_view").html("<%= j render partial: "reservation", collection: @reservations, as: :reser %>")
+$("#admin-reser #bill_view").append('<%= j render "shared/toaster" %>');

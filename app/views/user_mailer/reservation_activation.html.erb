@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet_link_tag "mailer" %>
+  </head>
+  <body>
+  <div class="wrapper">
+    <div class="container">
+      <h1><%= t ".title" %></h1>
+      <p><%= t ".hi" %>  <%= @user.name %>,</p>
+      <p><%= t ".success" %></p>
+      <div class="row">
+        <div class="content-mail">
+          <div class="mail-title"><%= t ".info" %> </div>
+          <div class="main-mail">
+            <div class="content-top">
+              <div><%= t ".checkin" %><%= @bill.bookings[0].checkin.strftime Settings.date_time %></div>
+              <div><%= t ".checkout" %> <%= @bill.bookings[0].checkout.strftime Settings.date_time %></div>
+              <div><%= t ".create" %><%= @bill.created_at.strftime Settings.date_time %></div>
+            </div>
+            <%  @bill.bookings.each do |book| %>
+              <ul class="book-detail">
+                <li> <%= t ".room_name" %><%= book.room_name %></li>
+                <li><%= t ".type_name" %><%= book.room_type_name %></li>
+                <li><%= t ".view_name" %><%= book.room_view_name %></li>
+                <li><%= t ".room_price" %><%= number_with_delimiter book.room_price, delimiter: "." %><%= t ".vnd" %></li>
+                <li><%= t ".rent" %><%= number_with_delimiter book.price, delimiter: "." %><%= t ".vnd" %></li>
+              </ul>
+            <% end %>
+            <p class="total"><%= t ".total" %><%= number_with_delimiter @bill.price, delimiter: "." %><%= t ".vnd" %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

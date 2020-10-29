@@ -1,0 +1,32 @@
+@import 'color';
+
+.content-mail {
+  width: 70%;
+  margin: 0 auto;
+
+  .mail-title {
+    line-height: 30px;
+    background-color: $silver;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .main-mail {
+    background-color: $bol;
+
+    .content-top {
+      padding: 20px 15px;
+      border-bottom: 2px solid $black;
+    }
+
+    .book-detail {
+      list-style: none;
+      border-bottom: 2px solid $black;
+    }
+
+    .total {
+      color: $yell ;
+      font-weight: bold;
+    }
+  }
+}
