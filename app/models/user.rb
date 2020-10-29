@@ -66,6 +66,10 @@ class User < ApplicationRecord
     BCrypt::Password.new(digest).is_password?(token)
   end
 
+  def send_activation_reservation bill
+    UserMailer.reservation_activation(self, bill).deliver_now
+  end
+
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
   end

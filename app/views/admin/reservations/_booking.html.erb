@@ -1,0 +1,9 @@
+<tr class="admin_room_item">
+  <td><%= index_of_page(@bookings) + book_counter %></td>
+  <td><%= book.id %></td>
+  <td><%= book.room_name %></td>
+  <td><%= book.room_type_name %></td>
+  <td><%= book.room_view_name %></td>
+  <td><%= number_with_delimiter(book.room_price, delimiter: ".") %></td>
+  <td><%= number_with_delimiter(book.price, delimiter: ".") %></td>
+</tr>
