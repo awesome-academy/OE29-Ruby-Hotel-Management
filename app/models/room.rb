@@ -24,6 +24,7 @@ class Room < ApplicationRecord
   validates :price,
             presence: true,
             numericality: {only_integer: true, other_than: 0}
+  validates :pictures, presence: true
 
   delegate :name, to: :type, prefix: true
   delegate :name, to: :view, prefix: true
@@ -39,10 +40,16 @@ class Room < ApplicationRecord
         AND bookings.checkout > '#{checkin}') AND bills.status != 3))")
     end
   end)
-  scope :all_not_current_room, (lambda do |current_room|
-    where("rooms.id != #{current_room}")
-  end)
-  scope :created_at, ->{order created_at: :asc}
+  scope :not_current_room, ->(room){where.not id: room if room.present?}
+  scope :created_at, ->{order created_at: :desc}
+  scope :by_type, ->(type_id){where type_id: type_id if type_id.present?}
+  scope :by_view, ->(view_id){where view_id: view_id if view_id.present?}
+  scope :by_name, ->(name){where "name LIKE ?", "%#{name}%" if name.present?}
+  scope :by_price, ->(type){order price: type if type.present?}
+
+  def check_score
+    rates.average :score
+  end
 
   def average_score
     rates.average(:score).round(1, :truncate)

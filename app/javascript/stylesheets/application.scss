@@ -4,33 +4,33 @@
 
 #preview {
   img {
-    margin-right: 15px;
+    margin-right: 1.5rem;
   }
 }
 
 .admin_room_item {
   img {
-    width: 200px;
-    height: 200px;
+    width: 20rem;
+    height: 20rem;
   }
 }
 
 .back_url {
   color: gray;
   font-size: 1.5rem;
-  margin: 20px 0;
+  margin: 2rem 0;
   display: inline-block;
   font-style: italic;
   border-bottom: 1px solid black;
 }
 
 .customer-info {
-  padding: 20px 50px;
+  padding: 2rem 5rem;
   font-size: 1.5rem;
 }
 
 .btn-action {
-  width: 100px;
+  width: 30px;
 }
 
 .app_title_admin {
@@ -39,6 +39,28 @@
   font-size: 2.5rem;
   font-weight: 700;
   background-color: darkslategray;
+}
+
+.admin-list-room {
+  .admin_room_filter {
+    margin-bottom: 2rem;
+
+    .btn-clear {
+      font-size: 1.3rem;
+    }
+
+    button {
+      width: 5rem;
+    }
+
+    .btn-add-room {
+      text-align: right;
+
+      button {
+        width: 12rem;
+      }
+    }
+  }
 }
 
 .form_create_edit_room {
@@ -140,4 +162,19 @@
       border-radius: 0.5rem;
     }
   }
+}
+
+#search_result {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.admin-room-name {
+  font-weight: 600;
+}
+
+
+.arrow-sort {
+  margin-left: 3px;
+  position: absolute;
 }

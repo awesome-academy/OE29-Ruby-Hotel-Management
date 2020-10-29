@@ -368,6 +368,15 @@ vi:
         create_room: "Create Room"
       edit:
         edit_room: "Edit Room"
+      form_search:
+        select_sort_price: "Chọn sắp xếp theo giá"
+        price_desc: "Giá giảm dần"
+        price_asc: "Giá tăng dần"
+        select_room_type: "Chọn kiểu phòng"
+        select_room_view: "Chọn view phòng"
+      index:
+        results: "Kết qủa: "
+        no_result: "Không có kết quả phù hợp"
     dashboard:
       index:
         start_date_can_not_bigger_end_date: "Start date can not bigger end date"

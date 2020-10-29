@@ -373,6 +373,15 @@ en:
         create_room: "Create Room"
       edit:
         edit_room: "Edit Room"
+      form_search:
+        select_sort_price: "Select sort price"
+        price_desc: "Price DESC"
+        price_asc: "Price ASC"
+        select_room_type: "Select Room Type"
+        select_room_view: "Select Room View"
+      index:
+        results: "Results: "
+        no_result: "No Result"
     dashboard:
       index:
         start_date_can_not_bigger_end_date: "Start date can not bigger end date"

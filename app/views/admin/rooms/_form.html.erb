@@ -15,6 +15,7 @@
   <%= f.label :des, class: "control-label label-field" %>
   <%= f.text_area :des, class: "form-control form-input des-text-area", required: true %>
   <%= render "admin/shared/show_picture_error" %>
+  <%= render "admin/shared/show_err_room", field: :pictures %>
   <%= f.label :pictures, class: "control-label label-field"%>
   <div class="image-preview">
     <table class="user-photo-form">
