@@ -17,6 +17,8 @@ vi:
     next: "NEXT ›"
     truncate: "…"
   global:
+    all_bill: "Danh sach hóa đơn"
+    all_booking: "Danh sách đặt phòng"
     cancelled: "Đã hủy"
     waiting: "Đang chờ"
     accept: "Xác nhận"
@@ -105,6 +107,7 @@ vi:
     user_mailer:
       account_activation: "Kích hoạt tài khoản"
       password_reset: "Đặt lại mật khẩu"
+      reservation_activation: "Đặt phòng thành công"
   shared:
     edit:
       name: "Họ và tên"
@@ -127,6 +130,21 @@ vi:
       view: "View : "
       vnd: " VNĐ"
   user_mailer:
+    reservation_activation:
+      title: "Monalisa"
+      hi: "Chào"
+      success: "Bạn đã đặt phòng thành công !"
+      info: "Thông tin đặt phòng của bạn"
+      checkin: "Ngày bắt đầu: "
+      checkout: "Ngày kết thúc: "
+      create: "Ngày đặt: "
+      room_name: "Tên phòng: "
+      type_name: "Loại phòng: "
+      view_name: "Cảnh quan: "
+      room_price: "Giá phòng: "
+      rent: "Giá đặt: "
+      total: "Tổng hóa đơn: "
+      vnd: "VND"
     account_activation:
       title: "MonaLisa"
       hi: "Chào"
@@ -231,6 +249,31 @@ vi:
       our_rooms: "Our Rooms"
       show_more: "Show more"
   admin:
+    reservations:
+      index:
+        list_bill: "Danh sách hóa đơn "
+        name: "Khách hàng"
+        email: "Email"
+        status: "Trạng thái"
+        checkin: "Ngày bắt đầu "
+        checkout: "Ngày kết thúc"
+        create: "Ngày đặt"
+        total: "Tổng tiền "
+        action: "Hành động"
+        waiting: "Đang chờ"
+        accept: "Chấp nhận "
+        cancelled: "Đã hủy "
+        completed: "Hoàn thành"
+        all: "Tất cả"
+      show:
+        back: "Quay lại"
+        list_booking: "Danh sách đặt phòng"
+        id: "Mã"
+        room_name: "Tên phòng"
+        type_room: "Kiểu phòng"
+        view_room: "Cảnh quan"
+        price_room: "Giá phòng"
+        rent: "Giá đặt"
     users:
       index:
         list_room: "Danh sách khách hàng"

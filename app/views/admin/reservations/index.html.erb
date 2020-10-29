@@ -1,0 +1,44 @@
+<% provide :title, t("global.all_bill") %>
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div id="admin-reservation">
+        <%= select_tag "bill_filter",options_for_select(option_status_bill),
+                       { class: "browser-default custom-select select-bill", data: {url: admin_reservations_path}} %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><%= t ".list_bill" %></h3>
+          </div>
+          <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-center admin-accept" id="admin-reser">
+              <thead>
+              <tr>
+                <th></th>
+                <th><%= t ".name" %></th>
+                <th><%= t ".email" %></th>
+                <th><%= t ".status" %></th>
+                <th><%= t ".checkin" %></th>
+                <th><%= t ".checkout" %></th>
+                <th><%= t ".create" %></th>
+                <th><%= t ".total" %></th>
+                <th><%= t ".action" %></th>
+              </tr>
+              </thead>
+              <tbody id ="bill_view">
+              <%= render partial: "admin/reservations/reservation", collection: @reservations, as: :reser %>
+              </tbody>
+            </table>
+            <div id="paginator">
+              <%= paginate @reservations, theme: "twitter-bootstrap-3", remote: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= javascript_pack_tag "admin_reservation" %>

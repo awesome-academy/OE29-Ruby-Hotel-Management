@@ -5,7 +5,6 @@
 @import 'login';
 @import 'profile';
 @import 'admin';
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -44,34 +43,29 @@ ul {
 #header {
   display: flex;
   justify-content: space-between;
-
   a {
     color: $black;
     font-weight: bold;
-
     &:hover {
       text-decoration: none;
     }
   }
 }
 
-#menu{
+#menu {
   display: flex;
   justify-content: space-between;
   height: 6rem;
   line-height: 6rem;
-
   img {
     width: 15rem;
   }
-
   ul {
     list-style-type: none;
-    .show{
-      display:inline-block !important;
+    .show {
+      display: inline-block !important;
     }
-
-    .drop-btn{
+    .drop-btn {
       background-color: transparent;
       border: 1px solid transparent;
       font-weight: bold;
@@ -81,15 +75,12 @@ ul {
       line-height: 1.5rem;
       display: inline-block;
       padding-left: 1.5rem;
-
       &:first-child {
         padding-left: 0;
       }
-
       a {
         color: $black;
         font-weight: bold;
-
         &:hover {
           text-decoration: none;
           opacity: 0.7;
@@ -106,7 +97,6 @@ ul {
   background-size: cover;
   text-align: center;
   color: $text-color-banner;
-
   h3 {
     padding-top: 12rem;
     font-size: 1.5rem;
@@ -114,7 +104,6 @@ ul {
     letter-spacing: 0.4rem;
     text-transform: uppercase;
   }
-
   h1 {
     font-size: 4rem;
     font-weight: bolder;
@@ -124,7 +113,6 @@ ul {
 #little_about_us {
   height: 61.5rem;
   background-color: $back-ground-color-primary;
-
   h2 {
     text-transform: uppercase;
     padding-top: 12.5rem;
@@ -135,24 +123,20 @@ ul {
     text-align: center;
     margin-bottom: 5.4rem;
   }
-
   .wrap_content {
     display: flex;
     justify-content: center;
-
     img {
       width: 23rem;
       height: 31rem;
       border: 0.7rem solid $text-color-banner;
       margin-right: 3.8rem;
     }
-
     .content {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       flex-basis: 31rem;
-
       h3 {
         font-size: 3rem;
         font-weight: bold;
@@ -165,11 +149,9 @@ ul {
   height: 50rem;
   display: flex;
   justify-content: space-between;
-
   .wrap_list_room {
     width: 54rem;
     padding: 3.8rem;
-
     h3 {
       text-transform: uppercase;
       font-size: 1rem;
@@ -177,50 +159,40 @@ ul {
       letter-spacing: 0.4rem;
       color: #5e4633;
     }
-
     h2 {
       font-size: 3rem;
       font-weight: bold;
       margin-bottom: 3.8rem;
     }
-
     .list_room_item {
       display: flex;
       padding: 0.4rem;
-
       &:hover {
         background-color: $list-room-item-background-hover;
       }
-
       img {
         flex-basis: 7.5rem;
         height: 4.5rem;
         margin-right: 0.7rem;
       }
-
       .item_info {
         flex-grow: 1;
-
         h4 {
           font-size: 1.5rem;
           font-weight: bold;
         }
-
         p {
           font-size: 1rem;
         }
       }
     }
   }
-
   #image_room_item {
-
     img {
       width: 100%;
       height: 50rem;
     }
   }
-
 }
 
 #client_evaluate {
@@ -229,12 +201,10 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-
   .client_say_wrap {
     background-color: $text-color-banner;
     padding: 4rem;
     text-align: center;
-
     h3 {
       text-transform: uppercase;
       font-size: 1rem;
@@ -242,13 +212,11 @@ ul {
       letter-spacing: 0.4rem;
       color: $title-color;
     }
-
     h2 {
       font-size: 3rem;
       font-weight: bold;
       margin-bottom: 2.5rem;
     }
-
     p {
       font-style: italic;
     }
@@ -260,19 +228,16 @@ footer {
   background: $back-ground-color-footer;
   text-align: left;
   color: $text-color-footer;
-
   img {
     width: 16.5rem;
     margin-bottom: 2.5rem;
   }
-
   h3 {
     font-size: 2rem;
     font-weight: 300;
     line-height: 2.5rem;
     font-style: italic;
   }
-
   a {
     display: inline-block;
     margin-right: 1.6rem;
@@ -286,14 +251,12 @@ footer {
 #about {
   height: 41rem;
   padding: 4rem 0;
-
   h2 {
     text-align: center;
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 2.5rem;
   }
-
   h3 {
     text-align: center;
     font-size: 1.5rem;
@@ -301,19 +264,15 @@ footer {
     margin-top: 2.5rem;
     margin-bottom: 4.2rem;
   }
-
   .number_fact {
     display: flex;
     justify-content: space-evenly;
-
     .number_fact_item {
       text-align: center;
-
       .number {
         font-size: 4rem;
         font-weight: 500;
       }
-
       p {
         font-size: 1.5rem;
       }
@@ -324,17 +283,13 @@ footer {
 #contact {
   display: flex;
   height: 41rem;
-
   .image-map {
     flex-grow: 1;
     overflow: hidden;
-
   }
-
   .contact_info {
     flex-basis: 58rem;
     padding: 4.2rem;
-
     h3 {
       text-transform: uppercase;
       font-size: 1rem;
@@ -342,33 +297,27 @@ footer {
       letter-spacing: 0.4rem;
       color: $title-color;
     }
-
     h2 {
       font-size: 3rem;
       font-weight: bold;
       margin-bottom: 2.5rem;
     }
-
     .headquarter {
       font-size: 1.5rem;
       font-weight: bold;
       margin-top: 5.8rem;
       margin-bottom: 1.65rem;
     }
-
     p {
       font-size: 1rem;
       color: $text-color-footer;
-
       .email_label {
         color: $black;
       }
     }
-
     .phone_title {
       margin-top: 2.5rem;
     }
-
     .phone_number {
       font-weight: 500;
       font-size: 2rem;
@@ -379,44 +328,35 @@ footer {
 #list_room {
   margin-bottom: 8.5rem;
   font-size: 1.3rem;
-
   .list_room_item_1 {
     margin-top: 8.5rem;
     height: 42.5rem;
     background-color: $back-ground-color-primary;
-
     .list_room_item_content {
       padding-top: 2.5rem;
-
       h3 {
         font-size: 3.5rem;
         font-weight: bold;
       }
-
       .room_price {
         margin: 2.5rem 0;
-
         .price {
           color: red;
           font-size: 2rem;
         }
       }
-
       .info {
         margin: 2.5rem 0;
       }
-
       .detail_link {
         text-transform: uppercase;
         font-weight: bold;
-
         a {
           color: black;
           padding: 0.4rem 1.3rem;
           background-color: mediumspringgreen;
           display: inline-block;
           border-radius: 0.4rem;
-
           &:hover {
             opacity: 0.7;
             text-decoration: none;
@@ -424,10 +364,8 @@ footer {
         }
       }
     }
-
     .list_room_item_image {
       line-height: 42rem;
-
       img {
         overflow: hidden;
         width: 100%;
@@ -440,106 +378,85 @@ footer {
 
 .show_detail_room {
   font-size: 1.3rem;
-
   h3 {
     font-size: 2rem;
     margin-bottom: 2.5rem;
     font-weight: bold;
     text-align: center;
   }
-
   #room_detail {
     background-color: $back-ground-color-primary;
     padding: 8.5rem 0 4rem 0;
-
     .room_title {
       text-align: center;
       font-size: 4rem;
       font-weight: 700;
       margin-bottom: 2.5rem;
     }
-
     #image {
       height: 41rem;
-
       img {
         width: 100%;
         height: 100%;
-
         border: 0.8rem white solid;
       }
     }
-
     #price {
       margin-top: 8.5rem;
       font-size: 2.5rem;
       text-align: center;
-
       .price_room {
         color: red;
         font-size: 3rem;
       }
     }
-
     #average_score {
       text-align: center;
-
       h1 {
         font-size: 2.5rem;
       }
-
       .total_vote {
         color: black;
       }
-
       .rating_star {
         margin-top: 1.65rem;
         font-size: 2rem;
         margin-right: 1.2rem;
-
         &:hover {
           opacity: 0.6;
         }
       }
-
       .not_rating {
         margin-top: 1.65rem;
         font-size: 2rem;
         color: sienna;
       }
     }
-
     #book_now {
       text-align: center;
       margin: 4rem auto;
-
       button {
         padding: 0.8rem 4rem;
       }
     }
   }
-
   #description {
     text-align: center;
     background-color: $text-color-banner;
     padding: 4rem 0;
-
     hr {
       margin: 2.5rem 0;
     }
   }
-
   #comment {
     .comments-container {
       margin: 60px auto 15px;
       width: 1024px;
     }
-
     .comments-list {
       margin-top: 30px;
       position: relative;
     }
-
     .comments-list:before {
       content: '';
       width: 2px;
@@ -549,7 +466,6 @@ footer {
       left: 32px;
       top: 0;
     }
-
     .comments-list:after {
       content: '';
       position: absolute;
@@ -563,11 +479,10 @@ footer {
       -moz-border-radius: 50%;
       border-radius: 50%;
     }
-
-    .reply-list:before, .reply-list:after {
+    .reply-list:before,
+    .reply-list:after {
       display: none;
     }
-
     .reply-list li:before {
       content: '';
       width: 60px;
@@ -577,13 +492,11 @@ footer {
       top: 25px;
       left: -55px;
     }
-
     .comments-list li {
       margin-bottom: 15px;
       display: block;
       position: relative;
     }
-
     .comments-list li:after {
       content: '';
       display: block;
@@ -591,13 +504,11 @@ footer {
       height: 0;
       width: 0;
     }
-
     .reply-list {
       padding-left: 88px;
       clear: both;
       margin-top: 15px;
     }
-
     .comments-list .comment-avatar {
       width: 65px;
       height: 65px;
@@ -613,18 +524,15 @@ footer {
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
       overflow: hidden;
     }
-
     .comments-list .comment-avatar img {
       width: 100%;
       height: 100%;
     }
-
     .reply-list .comment-avatar {
       border-radius: 50%;
       width: 50px;
       height: 50px;
     }
-
     .comment-main-level:after {
       content: '';
       width: 0;
@@ -632,7 +540,6 @@ footer {
       display: block;
       clear: both;
     }
-
     .comments-list .comment-box {
       width: 920px;
       float: right;
@@ -641,8 +548,8 @@ footer {
       -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
     }
-
-    .comments-list .comment-box:before, .comments-list .comment-box:after {
+    .comments-list .comment-box:before,
+    .comments-list .comment-box:after {
       content: '';
       height: 0;
       width: 0;
@@ -654,22 +561,18 @@ footer {
       top: 8px;
       left: -11px;
     }
-
     .comments-list .comment-box:before {
       border-width: 11px 13px 11px 0;
       border-color: transparent rgba(0, 0, 0, 0.05);
       left: -12px;
     }
-
     .reply-list .comment-box {
       width: 850px;
     }
-
     .form-reply {
       width: 850px;
       float: right;
     }
-
     .comment-box .comment-head {
       background: $text-color-banner;
       padding: 10px 12px;
@@ -679,7 +582,6 @@ footer {
       -moz-border-radius: 4px 4px 0 0;
       border-radius: 4px 4px 0 0;
     }
-
     .comment-box .comment-name {
       color: #283035;
       font-size: 14px;
@@ -687,7 +589,6 @@ footer {
       float: left;
       margin-right: 10px;
     }
-
     .comment-box .comment-head span {
       float: left;
       color: darkgrey;
@@ -695,7 +596,6 @@ footer {
       position: relative;
       top: 1px;
     }
-
     .comment-box .comment-content {
       background: white;
       padding: 12px;
@@ -705,348 +605,304 @@ footer {
       -moz-border-radius: 0 0 4px 4px;
       border-radius: 0 0 4px 4px;
     }
-
     .comment_form {
       float: right;
       margin-top: 50px;
       width: 90%;
     }
-
     .btn-comment-action {
       margin-right: 10px;
       float: right;
     }
-
     .comment-button {
       height: 50px;
       float: right;
       width: 50px;
     }
-
     .form-control {
       height: 50px;
     }
-
     .comment-parent-input {
       float: right;
     }
   }
-
-    #rating_room {
-      background-color: $text-color-banner;
-      padding: 4rem 0;
-      margin-top: 4rem;
+  #rating_room {
+    background-color: $text-color-banner;
+    padding: 4rem 0;
+    margin-top: 4rem;
+  }
+  #room_relate {
+    background-color: $back-ground-color-primary;
+    padding: 4rem 0;
+    margin-top: 4rem;
+    .relate_room_item {
+      img {
+        width: 100%;
+        height: 25rem;
+      }
+      .relate_room_item_info {
+        background-color: $text-color-banner;
+        padding: 2.5rem;
+        height: 15.8rem;
+        h3 {
+          font-size: 2rem;
+          color: black;
+        }
+        .star_relate {
+          font-size: 1.5rem;
+          text-align: center;
+          margin-bottom: 1.65rem;
+        }
+      }
+      &:hover {
+        opacity: 0.7;
+      }
     }
+  }
+}
 
-    #room_relate {
-      background-color: $back-ground-color-primary;
-      padding: 4rem 0;
-      margin-top: 4rem;
+.title {
+  text-align: center;
+  padding: 1.65rem 0;
+  font-size: 2.5rem;
+  font-family: 'Lora', serif;
+  font-weight: bold;
+}
 
-      .relate_room_item {
+.reservation-content {
+  .content-top {
+    height: 33rem;
+    background-color: $back-ground-color-primary;
+    .content-search {
+      text-align: center;
+      font-size: 1.65rem;
+      font-family: 'Lora', serif;
+      font-weight: bold;
+    }
+  }
+}
 
-        img {
-          width: 100%;
-          height: 25rem;
-        }
-
-        .relate_room_item_info {
-          background-color: $text-color-banner;
-          padding: 2.5rem;
-          height: 15.8rem;
-
-          h3 {
-            font-size: 2rem;
-            color: black;
+.search_reservation {
+  padding-top: 2rem;
+  .main-search {
+    width: 70%;
+    height: 8.3rem;
+    box-shadow: 0 0.4rem 0.6rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
+    margin: 0 auto;
+    form {
+      width: 100%;
+      .form-left {
+        background-color: $white;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        .form-group {
+          width: 48%;
+          line-height: 3;
+          margin: 0 1.25rem;
+          .label-time {
+            margin: 0;
+            text-align: left !important;
+            color: $gray;
           }
-
-          .star_relate {
-            font-size: 1.5rem;
-            text-align: center;
-            margin-bottom: 1.65rem;
+          .form-input {
+            height: 2.5rem;
           }
         }
-
-        &:hover {
-          opacity: 0.7;
+      }
+      .form-right {
+        background-color: $grayy;
+        line-height: 9;
+        height: 100%;
+        text-align: center;
+        .btn-search {
+          height: 2.5rem;
+          font-size: 1rem;
         }
       }
     }
   }
+}
 
-  .title {
-    text-align: center;
-    padding: 1.65rem 0;
-    font-size: 2.5rem;
-    font-family: 'Lora', serif;
-    font-weight: bold;
+.btn-mona {
+  background-color: $yellow !important;
+  color: $black !important;
+  font-weight: bold !important;
+  &:hover {
+    opacity: 0.7;
   }
+}
 
-  .reservation-content {
+.total-price {
+  text-align: right;
+  padding-right: 1.65rem;
+  font-weight: bold;
+  font-size: 1.65rem;
+}
 
-    .content-top {
-      height: 33rem;
-      background-color: $back-ground-color-primary;
-
-      .content-search {
-        text-align: center;
+.room-search {
+  background-color: $back-ground-color-primary;
+  position: relative;
+  #reservation {
+    position: fixed;
+    top: 28rem;
+    right: 7rem;
+  }
+  .room-main {
+    height: 40rem;
+    .list-room {
+      width: 60%;
+      margin: 1.25rem auto;
+      background-color: $white;
+      box-shadow: 0 0.3rem 0.65rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
+      height: 100px;
+      form {
+        width: 60%;
+        margin: 0 auto;
+        padding: 3.75rem 0 2rem;
+        .btn-select {
+          width: 100%;
+        }
+      }
+      .image {
+        padding: 0;
+        img {
+          width: 8.3rem;
+          height: 8.3rem;
+        }
+      }
+      .room-name {
+        padding-bottom: 1.25rem;
         font-size: 1.65rem;
         font-family: 'Lora', serif;
         font-weight: bold;
       }
-    }
-  }
-
-  .search_reservation {
-    padding-top: 2rem;
-
-    .main-search {
-      width: 70%;
-      height: 8.3rem;
-      box-shadow: 0 0.4rem 0.6rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
-      margin: 0 auto;
-
-      form {
-        width: 100%;
-
-        .form-left {
-          background-color: $white;
-          display: flex;
-          flex-direction: row;
-          height: 100%;
-
-          .form-group {
-            width: 48%;
-            line-height: 3;
-            margin: 0 1.25rem;
-
-            .label-time {
-              margin: 0;
-              text-align: left !important;
-              color: $gray;
-            }
-
-            .form-input {
-              height: 2.5rem;
-            }
-          }
-        }
-
-        .form-right {
-          background-color: $grayy;
-          line-height: 9;
-          height: 100%;
-          text-align: center;
-
-          .btn-search {
-            height: 2.5rem;
-            font-size: 1rem;
-          }
-        }
+      .room-des li {
+        font-weight: bold;
+        font-family: 'Lora', serif;
+        list-style: none;
       }
     }
   }
+}
 
-  .btn-mona {
-    background-color: $yellow !important;
-    color: $black !important;
-    font-weight: bold !important;
-
-    &:hover {
-      opacity: 0.7;
-    }
-  }
-
-  .total-price {
-    text-align: right;
-    padding-right: 1.65rem;
-    font-weight: bold;
-    font-size: 1.65rem;
-  }
-
-  .room-search {
-    background-color: $back-ground-color-primary;
-    position: relative;
-
-    #reservation {
-      position: fixed;
-      top: 28rem;
-      right: 7rem;
-    }
-
-    .room-main {
-      height: 40rem;
-
-      .list-room {
-        width: 60%;
-        margin: 1.25rem auto;
-        background-color: $white;
-        box-shadow: 0 0.3rem 0.65rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
-        height: 100px;
-
-        form {
-          width: 60%;
-          margin: 0 auto;
-          padding: 3.75rem 0 2rem;
-
-          .btn-select {
-            width: 100%;
-          }
-        }
-
-        .image {
-          padding: 0;
-
-          img {
-            width: 8.3rem;
-            height: 8.3rem;
-          }
-        }
-
-        .room-name {
-          padding-bottom: 1.25rem;
-          font-size: 1.65rem;
-          font-family: 'Lora', serif;
-          font-weight: bold;
-        }
-
-        .room-des li {
-          font-weight: bold;
-          font-family: 'Lora', serif;
-          list-style: none;
-        }
-      }
-    }
-  }
-
-  .time {
-    text-align: center;
-
-    ul {
-      list-style: none;
-
-      li {
-        display: inline-block;
-        margin: 1.65rem 0;
-        padding: 0 1.25rem;
-
-        &:first-child {
-          border-right: 1px solid $gray;
-        }
-      }
-    }
-  }
-
-  .modal-reser {
-    max-width: 48rem !important;
-  }
-
-  .room-des {
-    padding: 0 1.65rem;
-
+.time {
+  text-align: center;
+  ul {
+    list-style: none;
     li {
-      list-style: none;
-      font-weight: bold;
-
-      .room-name {
-        color: goldenrod;
+      display: inline-block;
+      margin: 1.65rem 0;
+      padding: 0 1.25rem;
+      &:first-child {
+        border-right: 1px solid $gray;
       }
+    }
+  }
+}
 
-      .room-reser {
+.modal-reser {
+  max-width: 48rem !important;
+}
+
+.room-des {
+  padding: 0 1.65rem;
+  li {
+    list-style: none;
+    font-weight: bold;
+    .room-name {
+      color: goldenrod;
+    }
+    .room-reser {
+      li {
+        list-style: none;
+      }
+    }
+    .price-cont {
+      text-align: center;
+      .room-price {
+        color: $mo;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.room-list-reser>li {
+  padding: 0.8rem 0;
+}
+
+.image-reser {
+  width: 8.3rem;
+  height: 8.3rem;
+}
+
+.detail {
+  font-size: 1.65rem;
+  color: $yel;
+}
+
+.delete {
+  color: $yel;
+}
+
+.main-history {
+  border-top: 1px solid $bol;
+  #main-content {
+    .select-bill {
+      margin-top: 1.25rem;
+      float: right;
+      height: 2.5rem;
+      width: 15%;
+    }
+  }
+}
+
+#main-show {
+  .list-room {
+    width: 70%;
+    background: $white;
+    box-shadow: 0 0.3rem 0.65rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
+    margin: 0.83rem auto;
+    .main-room {
+      padding-top: 0.65rem;
+      .room-des {
         li {
-          list-style: none;
-        }
-      }
-
-      .price-cont {
-        text-align: center;
-
-        .room-price {
-          color: $mo;
-          font-weight: bold;
+          padding: 1.5px;
         }
       }
     }
-  }
-
-  .room-list-reser > li {
-    padding: 0.8rem 0;
-  }
-
-  .image-reser {
-    width: 8.3rem;
-    height: 8.3rem;
-  }
-
-  .detail {
-    font-size: 1.65rem;
-    color: $yel;
-  }
-
-  .delete {
-    color: $yel;
-  }
-
-  .main-history {
-    border-top: 1px solid $bol;
-
-    #main-content {
-      .select-bill {
-        margin-top: 1.25rem;
-        float: right;
-        height: 2.5rem;
-        width: 15%;
-      }
+    .main-price {
+      padding-top: 0.83rem;
     }
-  }
-
-  #main-show {
-    .list-room {
-      width: 70%;
-      background: $white;
-      box-shadow: 0 0.3rem 0.65rem 0 $rgb_black, 0 0.5rem 1.65rem 0 $rgb_gray;
-      margin: 0.83rem auto;
-
-      .main-room {
-        padding-top: 0.65rem;
-
-        .room-des {
-          li {
-            padding: 1.5px;
-          }
-        }
-      }
-
-      .main-price {
-        padding-top: 0.83rem;
-      }
-
-      img {
-        width: 10.83rem;
-        height: 10.83rem;
-      }
-    }
-
-    .modal-bill {
-      margin: 0 auto;
-      width: 66.6rem;
-
-      .main-header {
-        background: $white;
-      }
-
-      .modal-main {
-        margin-top: 1.25rem;
-      }
-
-      .list-room {
-        width: 85%;
-      }
-    }
-  }
-
-  .list-room-admin {
     img {
-      width: 250px;
+      width: 10.83rem;
+      height: 10.83rem;
     }
   }
+  .modal-bill {
+    margin: 0 auto;
+    width: 66.6rem;
+    .main-header {
+      background: $white;
+    }
+    .modal-main {
+      margin-top: 1.25rem;
+    }
+    .list-room {
+      width: 85%;
+    }
+  }
+}
+
+.list-room-admin {
+  img {
+    width: 250px;
+  }
+}
+
+.list-room-admin {
+  img {
+    width: 250px;
+  }
+}

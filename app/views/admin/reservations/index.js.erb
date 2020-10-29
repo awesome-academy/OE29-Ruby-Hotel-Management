@@ -1,0 +1,2 @@
+$("#admin-reser #bill_view").html("<%= j render partial: "reservation", collection: @reservations, as: :reser %>")
+$("#paginator").html("<%= j paginate(@reservations, theme: "twitter-bootstrap-3", remote: true) %>");

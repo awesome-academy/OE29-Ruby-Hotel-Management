@@ -8,4 +8,11 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: user.email, subject: t("mailers.user_mailer.password_reset")
   end
+
+  def reservation_activation user, bill
+    @user = user
+    @bill = bill
+    mail to: user.email,
+         subject: t("mailers.user_mailer.reservation_activation")
+  end
 end
