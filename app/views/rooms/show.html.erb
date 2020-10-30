@@ -10,7 +10,7 @@
           <%= render partial: "average_score", room: @room, rate: @rate %>
         </div>
         <div id="price" class="col-md-12">
-          <%= t ".start_from" %> <b class="price_room">$<%= @room.price %></b> / <%= t ".night" %>
+          <%= t ".start_from" %> <b class="price_room"><%= number_with_delimiter(@room.price, delimiter: ".") %><%= t "global.vnd" %></b> / <%= t ".night" %>
         </div>
         <div class="col-md-12" id="check_room_available">
           <%= render "rooms/form_check_room_available", locals: {room: @room} %>

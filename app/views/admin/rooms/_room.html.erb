@@ -4,7 +4,7 @@
     <%= image_tag room.pictures[0].picture_url %>
   </td>
   <td class="col-md-1 admin-room-name"><%= room.name %></td>
-  <td class="col-md-1 center"><%= room.price %></td>
+  <td class="col-md-1 center"><%= number_with_delimiter(room.price, delimiter: ".") %><%= t "global.vnd" %></td>
   <td class="col-md-3"><%= room.des %></td>
   <td class="col-md-1 center"><%= room.type_name %></td>
   <td class="col-md-1 center"><%= room.view_name %></td>

@@ -4,7 +4,12 @@
     <div class="star_total_title">
       <%= render partial: "rooms/star_total", locals: {room: room} %>
     </div>
-    <div class="room_price"><%= t ".start_from" %> <b class="price">$<%= room.price %></b> / <%= t ".night" %></div>
+    <div class="room_price"><%= t ".start_from" %>
+      <b class="price">
+        <%= number_with_delimiter(room.price, delimiter: ".") %>
+        <%= t "global.vnd" %>
+      </b> / <%= t ".night" %>
+    </div>
     <div><%= room.des %></div>
     <div class="info">
       <div><%= t ".deposit" %>: <%= Settings.deposit %>%</div>

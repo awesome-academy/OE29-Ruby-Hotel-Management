@@ -61,6 +61,7 @@ vi:
     room_not_found: "Room not available!!!"
     checkin: "CHECKIN"
     checkout: "CHECKOUT"
+    vnd: " VNĐ"
   reservations:
     index:
       total: "Tổng tiền : "
