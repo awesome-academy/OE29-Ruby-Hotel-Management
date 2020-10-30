@@ -1,12 +1,20 @@
 <% provide :title, t("global.all_room") %>
-<div class="content-header">
+<div class="content-header admin-list-room">
   <div class="container-fluid">
-    <%= link_to new_admin_room_path do %>
-      <%= button_tag class: "btn btn-primary float-sm-right" do %>
-        <i class="fas fa-plus"></i> <%= t ".add_room" %>
-      <% end %>
-    <% end %>
-    <div class="row">
+    <div class="row admin_room_filter">
+      <div class="col-md-8">
+        <%= render "admin/rooms/form_search" %>
+      </div>
+      <div class="col-md-2" id="search_result"></div>
+      <div class="col-md-2 btn-add-room">
+        <%= link_to new_admin_room_path do %>
+          <%= button_tag class: "btn btn-primary float-sm-right" do %>
+            <i class="fas fa-plus"></i> <%= t ".add_room" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row admin-list-room-table">
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
@@ -18,22 +26,33 @@
               <tr class="row">
                 <th class="col-md-1"></th>
                 <th class="col-md-2"></th>
-                <th class="col-md-1 center"><%= t ".room_name" %></th>
-                <th class="col-md-1 center"><%= t ".price" %></th>
-                <th class="col-md-4 center"><%= t ".des" %></th>
+                <th class="col-md-1"><%= t ".room_name" %></th>
+                <th class="col-md-1 center">
+                  <%= t ".price" %>
+                  <i class="fas fa-sort-up arrow-sort"
+                     id="arrow-sort-price-up"
+                     data-url = "<%= admin_rooms_path %>"></i>
+                  <i class="fas fa-sort-down arrow-sort"
+                     id="arrow-sort-price-down"
+                     data-url = "<%= admin_rooms_path %>"></i>
+                </th>
+                <th class="col-md-3 center"><%= t ".des" %></th>
                 <th class="col-md-1 center"><%= t ".type" %></th>
                 <th class="col-md-1 center"><%= t ".view" %></th>
                 <th class="col-md-1"></th>
               </tr>
               </thead>
-              <tbody>
+              <tbody id="admin-list-room">
                 <%= render @rooms %>
               </tbody>
             </table>
-            <%= paginate @rooms, theme: "twitter-bootstrap-3" %>
+            <div id="admin-pagination-room">
+              <%= paginate @rooms, theme: "twitter-bootstrap-3", remote: true %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<%= javascript_pack_tag "admin_search_filter" %>

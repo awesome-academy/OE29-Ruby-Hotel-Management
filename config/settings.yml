@@ -58,5 +58,7 @@ users_per_page: 15
 comments:
   comment_content: 200
 date_time: "%d-%m-%Y"
+asc: "asc"
+desc: "desc"
 cancel: "cancelled"
 accept: "accept"

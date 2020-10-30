@@ -1,0 +1,7 @@
+<% if params[:name].blank? && params[:type_id].blank? && params[:view_id].blank? %>
+  $("#search_result").html("");
+<% else %>
+  $("#search_result").html("<div> <%= t ".results" %><%= @result_length %></div>");
+<% end %>
+$("#admin-list-room").html("<%= j render @rooms %>");
+$("#admin-pagination-room").html("<%= j paginate @rooms, theme: "twitter-bootstrap-3", remote: true %>");

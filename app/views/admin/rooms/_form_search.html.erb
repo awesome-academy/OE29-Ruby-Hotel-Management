@@ -1,0 +1,35 @@
+<%= form_with url: admin_rooms_path, method: :get, local: false do %>
+  <%= hidden_field_tag :filter, 1 %>
+  <div class="row">
+    <div class="col-md-2">
+      <%= text_field_tag :name, params[:name], class: "form-control"%>
+    </div>
+    <div class="col-md-3">
+      <%= select_tag :type_id, options_for_select(@type_arr,
+                                                  params[:type_id]),{include_blank: t(".select_room_type"),
+                                                                     class: "form-control"} %>
+    </div>
+    <div class="col-md-3">
+      <%= select_tag :view_id, options_for_select(@view_arr,
+                                                  params[:view_id]), {include_blank: t(".select_room_view"),
+                                                                      class: "form-control"} %>
+    </div>
+    <div class="col-md-2">
+      <%= select_tag :price, options_for_select(select_price_sort, params[:price]),
+                     {class: "form-control"} %>
+    </div>
+    <div class="col-md-2">
+      <div class="col-md-6">
+        <%= button_tag type: "submit", class: "form-control btn btn-primary" do %>
+          <i class="fas fa-filter"></i>
+        <% end %>
+      </div>
+      <div class="col-md-6">
+        <%= button_tag class: "form-control btn btn-danger btn-clear",
+                       data: {url: admin_rooms_path} do %>
+          <i class="fas fa-eraser"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

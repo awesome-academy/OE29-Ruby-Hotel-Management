@@ -3,13 +3,19 @@
   <td class="col-md-2">
     <%= image_tag room.pictures[0].picture_url %>
   </td>
-  <td class="col-md-1"><%= room.name %></td>
+  <td class="col-md-1 admin-room-name"><%= room.name %></td>
   <td class="col-md-1 center"><%= room.price %></td>
-  <td class="col-md-4"><%= room.des %></td>
+  <td class="col-md-3"><%= room.des %></td>
   <td class="col-md-1 center"><%= room.type_name %></td>
   <td class="col-md-1 center"><%= room.view_name %></td>
   <td class="col-md-1">
-    <%= link_to t(".edit"), edit_admin_room_path(room), class: "btn btn-block btn-primary btn-action" %>
-    <%= link_to t(".delete"), admin_room_path(room), method: :delete, data: {confirm: t("global.you_sure")}, class: "btn btn-block btn-danger btn-action" %>
-  </td>
-</tr>
+    <div class="col-md-6">
+      <%= link_to edit_admin_room_path(room), class: "btn btn-primary btn-action" do %>
+        <i class="fas fa-pencil-alt"></i>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to admin_room_path(room), method: :delete, data: {confirm: t("global.you_sure")}, class: "btn btn-danger btn-action" do %>
+        <i class="fas fa-trash"></i>
+      <% end %>
+    </div>

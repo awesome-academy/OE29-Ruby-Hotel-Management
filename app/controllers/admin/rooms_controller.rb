@@ -1,11 +1,18 @@
 class Admin::RoomsController < AdminController
   before_action :load_room_by_id, only: %i(destroy edit update)
-  before_action :load_type_view_room, only: %i(edit new create update)
+  before_action :load_type_view_room
 
   def index
-    @rooms = Room.without_deleted.page(params[:page])
-                 .created_at
-                 .per Settings.rooms.room_per_page
+    @rooms = Room.all
+    if params[:filter].blank?
+      @rooms = @rooms.created_at
+                     .page(params[:page])
+                     .per Settings.rooms.room_per_page
+    else
+      admin_search_filter_room
+      @result_length = @rooms.size
+      respond_to :js
+    end
   end
 
   def new
@@ -58,5 +65,15 @@ class Admin::RoomsController < AdminController
   def load_type_view_room
     @type_arr = Type.pluck :name, :id
     @view_arr = View.pluck :name, :id
+  end
+
+  def admin_search_filter_room
+    @rooms = @rooms.by_name(params[:name])
+                   .by_type(params[:type_id])
+                   .by_view(params[:view_id])
+                   .by_price(params[:price])
+                   .created_at
+                   .page(params[:page])
+                   .per Settings.rooms.room_per_page
   end
 end
