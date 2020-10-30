@@ -56,6 +56,11 @@ en:
     validate_picture_max_size: "Picture'size not bigger 5MB"
     rating: "rating"
     validate_extension_picture: "Only '.jpeg','.jpg', '.png' formats are allowed."
+    reservation_to_rate: "Reservation to rate"
+    check_available: "CHECK AVAILABLE"
+    room_not_found: "Room not available!!!"
+    checkin: "CHECKIN"
+    checkout: "CHECKOUT"
   mailers:
     user_mailer:
       account_activation: "Account Activation"

@@ -3,29 +3,45 @@ $(document).on('turbolinks:load', function() {
     headers:
         {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
   });
-  //disable button
 
-  var list = [];
-  var prices =[];
-  var book_prices;
-  var price_bill=0;
-  var countt;
-  var ci;
-  var co;
-  var dem;
+  let prices = [];
+  let list = [];
+  let book_prices;
+  let price_bill = 0;
+  let countt;
+  let ci = $('#checkin').val();
+  let co = $('#checkout').val();
+  let dem;
+  let list_id = ci.concat(co);
+  let prices_id = ci.concat(co).concat('prices_id');
+
+  let room_id = $('#contain_room_id').val();
+
+  if(room_id != null){
+    $('#room-1').prop('checked', true);
+    let price_first = $('#room-1').data('price');
+    list =  JSON.parse(localStorage.getItem(list_id)) || ['1'];
+    prices =  JSON.parse(localStorage.getItem(prices_id)) || [price_first];
+  }
+
+  for(let i = 0; i < list.length; i++){
+    $('#room-' + list[i]).prop('checked', true);
+  }
 
   $('.select').on('change', function() {
-    var data = $(this).prop('value');
-    var price = $(this).data('price');
+    let data = $(this).prop('value');
+    let price = $(this).data('price');
     if ($(this).prop('checked') == true) {
       list.push(data);
       prices.push(price);
     } else {
-      var index_data = list.indexOf(data);
-      var index_price = prices.indexOf(price);
+      let index_data = list.indexOf(data);
+      let index_price = prices.indexOf(price);
       list[index_data] = null;
-      list[index_price] = null;
+      prices[index_price] = null;
     }
+    localStorage.setItem(list_id, JSON.stringify(list));
+    localStorage.setItem(prices_id, JSON.stringify(prices));
   });
 
   $('#reservation').on('click', function() {
@@ -56,8 +72,9 @@ $(document).on('turbolinks:load', function() {
   });
 
   $('#book').on('click', function(){
-    var user_id = $(this).data('user');
-    var book =[];
+    localStorage.clear();
+    let user_id = $(this).data('user');
+    let book = [];
     for(let i=0; i<dem ;i++){
       book[i] = {
         price: book_prices[i],

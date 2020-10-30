@@ -1,22 +1,21 @@
 <div class="container-fluid show_detail_room">
   <div id="room_detail" class="container-fluid">
     <div class="row">
-      <div id="image" class="col-md-7 offset-1">
+      <div id="image" class="col-md-6 offset-1">
         <%= image_tag @room.pictures[0].picture_url if @room.pictures[0].present? %>
       </div>
-      <div class="col-md-4">
-        <div class="row">
-          <h1 class="room_title col-md-12"><%= @room.name %></h1>
-          <div class="col-md-12" id="average_score">
-            <%= render partial: "average_score", room: @room, rate: @rate %>
-          </div>
-          <div id="price" class="col-md-12">
-            <%= t ".start_from" %> <b class="price_room">$<%= @room.price %></b> / <%= t ".night" %>
-          </div>
-          <div class="col-md-12" id="book_now">
-            <button type="button" class="btn btn-success"><%= t ".book_now" %></button>
-          </div>
+      <div class="col-md-5">
+        <h1 class="room_title col-md-12"><%= @room.name %></h1>
+        <div class="col-md-12" id="average_score">
+          <%= render partial: "average_score", room: @room, rate: @rate %>
         </div>
+        <div id="price" class="col-md-12">
+          <%= t ".start_from" %> <b class="price_room">$<%= @room.price %></b> / <%= t ".night" %>
+        </div>
+        <div class="col-md-12" id="check_room_available">
+          <%= render "rooms/form_check_room_available", locals: {room: @room} %>
+        </div>
+        <div class="col-md-12" id="book_now"></div>
       </div>
     </div>
   </div>

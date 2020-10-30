@@ -1,0 +1,5 @@
+<% if @available.eql? true %>
+  $("#book_now").html("<%= j render "rooms/comments/btn_book_now" %>");
+<% else %>
+  $("#book_now").html("<div><%= t "global.room_not_found" %></div>");
+<% end %>

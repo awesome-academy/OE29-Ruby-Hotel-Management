@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :bills, dependent: :destroy
+  has_many :bookings, through: :bills
   has_many :rates, dependent: :destroy
 
   enum gender: {
@@ -31,6 +32,11 @@ class User < ApplicationRecord
 
   before_save :downcase_email
   before_create :create_activation_digest
+
+  scope :by_email, (lambda do |email|
+    where "email LIKE ?", "%#{email}%" if email.present?
+  end)
+
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
@@ -74,9 +80,9 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
 
-  scope :by_email, (lambda do |email|
-    where "email LIKE ?", "%#{email}%" if email.present?
-  end)
+  def booked? room
+    bookings.map(&:room).include? room
+  end
 
   private
 
