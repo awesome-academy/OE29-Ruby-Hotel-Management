@@ -61,6 +61,7 @@ en:
     room_not_found: "Room not available!!!"
     checkin: "CHECKIN"
     checkout: "CHECKOUT"
+    vnd: " VNĐ"
   mailers:
     user_mailer:
       account_activation: "Account Activation"

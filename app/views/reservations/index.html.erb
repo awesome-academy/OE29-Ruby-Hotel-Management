@@ -1,7 +1,6 @@
 <div class="container room-search">
   <%=  render partial:"shared/search_room_form" %>
 
-<!--  <input class="hidden" id="contain_room_id" value="<%#= params[:room_id] %>">-->
   <%= hidden_field_tag :room_id, params[:room_id], {id: "contain_room_id", class: "hidden"} %>
   <div class="room-main">
     <% if @rooms.present? %>

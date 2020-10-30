@@ -11,6 +11,7 @@
     <div class="star_relate">
       <%= render partial: "rooms/star_total", locals: {room: relate_room} %>
     </div>
+    <div><%= t ".price" %>: <%= number_with_delimiter(relate_room.price, delimiter: ".") %><%= t "global.vnd" %> / <%= t ".night" %></div>
     <div><%= t ".type" %>: <%= relate_room.type_name %></div>
     <div><%= t ".view" %>: <%= relate_room.view_name %></div>
   </div>
