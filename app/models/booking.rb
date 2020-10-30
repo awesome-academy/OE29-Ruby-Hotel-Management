@@ -3,6 +3,7 @@ class Booking < ApplicationRecord
   belongs_to :room
 
   has_many :booking_services, dependent: :destroy
+  belongs_to :user
 
   enum status: {
     available: 0,

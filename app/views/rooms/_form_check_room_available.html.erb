@@ -1,0 +1,21 @@
+<div class="search_reservation">
+  <div class="main-search row">
+    <%= form_with url: reservation_path(@room), method: :get, local: false do |f| %>
+      <div class="col-md-9 form-left">
+        <div class="form-group group-datetime">
+          <%= f.label :checkin_room, t("global.checkin"), class: "label-time" %>
+          <%= f.date_field :checkin_room, class: "form-control form-input", value: params[:checkin] %>
+        </div>
+        <div class="form-group group-datetime">
+          <%= f.label :checkout_room, t("global.checkout"), class: "label-time" %>
+          <%= f.date_field :checkout_room, class: "form-control form-input", value: params[:checkout] %>
+        </div>
+      </div>
+      <div class="col-md-3 form-right">
+        <div class="form-search">
+          <button type="submit" class="btn btn-success btn-search" id= "check-form-available"><%= t "global.check_available" %></button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
