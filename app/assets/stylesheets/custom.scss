@@ -101,7 +101,7 @@ ul {
 }
 
 #banner {
-  height: 38.5rem;
+  height: 50rem;
   background-image: asset_url("banner.jpg");
   background-position: center;
   background-size: cover;
@@ -123,12 +123,12 @@ ul {
 }
 
 #little_about_us {
-  height: 61.5rem;
+  height: 50rem;
   background-color: $back-ground-color-primary;
+  padding-top: 5rem;
 
   h2 {
     text-transform: uppercase;
-    padding-top: 12.5rem;
     font-size: 1rem;
     font-weight: bold;
     letter-spacing: 0.4rem;
@@ -413,8 +413,6 @@ footer {
 
         a {
           color: black;
-          padding: 0.4rem 1.3rem;
-          background-color: mediumspringgreen;
           display: inline-block;
           border-radius: 0.4rem;
 
@@ -442,6 +440,17 @@ footer {
 .show_detail_room {
   font-size: 1.3rem;
 
+  .btn-not-available {
+    font-size: 1.8rem;
+    color: orangered;
+  }
+
+  .reservation_to_rate {
+    font-size: 1.8rem;
+    color: olive;
+    font-weight: 500;
+  }
+
   h3 {
     font-size: 2rem;
     margin-bottom: 2.5rem;
@@ -461,7 +470,7 @@ footer {
     }
 
     #image {
-      height: 41rem;
+      height: 50rem;
 
       img {
         width: 100%;
@@ -472,9 +481,10 @@ footer {
     }
 
     #price {
-      margin-top: 8.5rem;
       font-size: 2.5rem;
       text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
 
       .price_room {
         color: red;
@@ -512,10 +522,16 @@ footer {
 
     #book_now {
       text-align: center;
-      margin: 4rem auto;
+      margin: 6rem auto;
+      height: 2rem;
 
-      button {
+      a {
         padding: 0.8rem 4rem;
+      }
+
+      div {
+        color: olive;
+        font-size: 1.8rem;
       }
     }
   }
@@ -799,7 +815,7 @@ footer {
   }
 
   .search_reservation {
-    padding-top: 2rem;
+    margin-top: 2rem;
 
     .main-search {
       width: 70%;

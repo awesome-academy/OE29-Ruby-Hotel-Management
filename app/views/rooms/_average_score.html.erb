@@ -5,7 +5,7 @@
 <div class="total_votes">
   (<%= @room.rates.count %> <%= t "global.rating" %>)
 </div>
-<% if logged_in? %>
+<% if logged_in? && current_user.booked?(@room) %>
   <% (1..5).each do |i| %>
     <i class="<%= @rate ? add_on_class(i, @rate.score) : "" %> fas fa-star rating_star"
        data-stars="<%= i %>"
@@ -15,6 +15,6 @@
        id="<%= "#{@room.id}_#{i}" %>"
     ></i>
   <% end %>
-<% elsif logged_in?.eql?false%>
-  <div><%= t ".login_for_rating" %></div>
+<% else %>
+  <div class="reservation_to_rate"><%= t "global.reservation_to_rate" %></div>
 <%end %>
