@@ -1,12 +1,16 @@
 <tr class="admin_room_item">
   <td><%= index_of_page(@bills) + bill_counter %></td>
   <td><%= bill.status %></td>
-  <td><%= number_with_delimiter bill.price, delimiter: "." %></td>
+  <td><%= number_with_delimiter bill.price, delimiter: "." %><%= t ".vnd" %></td>
   <td><%= bill.created_at.strftime Settings.date_time %></td>
-  <td class="btn-action">
-    <%= link_to t(".detail"),
-                admin_user_bill_bookings_path(@user, bill),
-                class: "btn btn-block btn-info btn-action"
-    %>
+  <td class="btn-bill">
+    <%= link_to admin_user_bill_bookings_path(@user, bill), class:"btn btn-outline-info bill-view" do %>
+      <i class="fa fa-eye" aria-hidden="true"></i>
+    <% end %>
+    <% if bill.accept? %>
+      <%= link_to admin_bill_path(bill.id), class:"btn btn-outline-success bill-view" do %>
+        <i class="fa fa-credit-card" aria-hidden="true"></i>
+      <% end %>
+    <% end %>
   </td>
 </tr>

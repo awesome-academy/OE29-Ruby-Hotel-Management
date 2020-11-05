@@ -14,6 +14,12 @@
         <li><%= t ".checkout" %> <%= @booking.checkout.strftime Settings.date_time %></li>
         <li><%= t ".des" %> <%= @booking.room_des %></li>
       </ul>
+      <% if @booking.booking_services.present?  %>
+        <div class="main-service">
+          <h4 class="room-name"><%= t ".services" %></h4>
+          <%= render partial: "booking_service" , collection: @booking.booking_services, as: :item %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

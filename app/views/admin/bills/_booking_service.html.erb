@@ -1,0 +1,6 @@
+<tr class="">
+  <td><%= booking_service.service_name %></td>
+  <td><%= number_with_delimiter booking_service.service_price, delimiter: "."%><%= t ".vnd" %></td>
+  <td><%= booking_service.amount %></td>
+  <td><%= number_with_delimiter price_bill(booking_service), delimiter: "." %><%= t ".vnd" %></td>
+</tr>

@@ -23,6 +23,15 @@ module ApplicationHelper
     request.path.eql?(path) ? "active nav-link" : "nav-link"
   end
 
+  def price_booking book
+    (((book.checkout - book.checkin) / Settings.mini).to_i + 1) *
+      book.room_price
+  end
+
+  def price_bill booking_service
+    booking_service.service.price * booking_service.amount
+  end
+
   def index_of_page object
     (object.current_page - 1) * object.limit_value + 1
   end
@@ -30,6 +39,11 @@ module ApplicationHelper
   def option_status_bill
     bill = Bill.statuses.map{|key, _value| [t("global.#{key}"), key]}
     bill.push [t("global.all"), t("global.all").downcase]
+  end
+
+  def option_service
+    service = Service.all.map{|key, _value| [t("global.#{key}"), key]}
+    service.push [t("global.all"), t("global.all").downcase]
   end
 
   def add_on_class number, score

@@ -10,4 +10,12 @@ $(function(){
       }
     });
   });
+  $('.admin-complete').on('click','.bill-complete', function() {
+    let url = $(this).data('url');
+    $.ajax({
+      url: url,
+      method: 'PATCH',
+      data: {}
+    });
+  });
 });

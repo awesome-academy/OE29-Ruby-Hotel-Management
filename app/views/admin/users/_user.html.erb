@@ -4,6 +4,8 @@
   <td><%= user.email %></td>
   <td class="btn-action"><%= user.address %></td>
   <td class="btn-action">
-    <%= link_to t(".view"), admin_user_bills_url(user), class: "btn btn-block btn-info btn-action" %>
+    <%= link_to  admin_user_bills_url(user), class:"btn btn-outline-info bill-view" do %>
+      <i class="fa fa-eye" aria-hidden="true"></i>
+    <% end %>
   </td>
 </tr>
