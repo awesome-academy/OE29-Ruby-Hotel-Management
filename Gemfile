@@ -47,10 +47,8 @@ end
 group :test do
   gem "capybara", ">= 2.15"
   gem "database_cleaner", "~> 1.5"
-  gem "factory_bot_rails"
-  gem "ffaker"
+  gem "pry-byebug"
   gem "selenium-webdriver"
-  gem "shoulda-matchers", "~> 3.0", require: false
   gem "simplecov", require: false
   gem "simplecov-json"
   gem "simplecov-rcov"
@@ -65,5 +63,7 @@ group :development, :test do
 end
 
 group :development, :test do
+  gem "factory_bot_rails"
   gem "rspec-rails", "~> 4.0.1"
+  gem "shoulda-matchers"
 end
