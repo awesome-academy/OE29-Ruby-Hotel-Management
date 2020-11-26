@@ -14,6 +14,9 @@ class Booking < ApplicationRecord
     available: 0,
     unavailable: 1
   }
+  validates :price,
+            presence: true,
+            numericality: {only_integer: true, other_than: 0}
   delegate :type_name, :price, :view_name, :name, :des, :pictures, to: :room,
            prefix: true
 

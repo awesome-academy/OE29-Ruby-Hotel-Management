@@ -15,7 +15,9 @@ class Bill < ApplicationRecord
     completed: 2,
     cancelled: 3
   }
-
+  validates :price,
+            presence: true,
+            numericality: {only_integer: true, other_than: 0}
   delegate :name, :email, to: :user, prefix: true
 
   scope :bill_created_at, ->{order created_at: :desc}
