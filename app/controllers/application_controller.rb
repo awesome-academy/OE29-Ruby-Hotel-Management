@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
   before_action :set_locale
-  include SessionsHelper
 
   def render_404
     render file: Rails.root.join("public", "404.html").to_s, layout: false,
@@ -18,14 +17,6 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
-  def logged_in_user
-    return if logged_in?
-
-    store_location
-    flash[:danger] = t "global.please_login"
-    redirect_to login_url
-  end
-
   def user_params
     params.required(:user).permit User::USER_PERMIT
   end
@@ -33,10 +24,6 @@ class ApplicationController < ActionController::Base
   def find_user
     @user = User.find params[:id]
     return if @user
-  end
-
-  def correct_user
-    redirect_to root_url unless current_user? @user
   end
 
   def bill_range range
