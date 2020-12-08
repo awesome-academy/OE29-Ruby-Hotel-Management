@@ -1,7 +1,23 @@
 class User < ApplicationRecord
-  USER_PERMIT = %i(email name address age password password_confirmation gender)
-                .freeze
-  attr_accessor :remember_token, :activation_token
+  USER_PERMIT = %i(email name address age password
+                password_confirmation gender).freeze
+  devise :database_authenticatable, :registerable, :confirmable, :lockable,
+         :recoverable, :rememberable, :validatable, :rememberable,
+         :omniauthable, omniauth_providers: %i(facebook google_oauth2)
+
+  class << self
+    def from_omniauth access_token
+      data = access_token.info
+      where(provider: access_token.provider, uid: access_token.uid)
+        .first_or_create do |user|
+        user.name = data.name
+        user.email = data.email
+        user.password = Devise.friendly_token[0, 16]
+        user.skip_confirmation!
+      end
+    end
+  end
+  attr_accessor :activation_token
 
   has_many :comments, dependent: :destroy
   has_many :bills, dependent: :destroy
@@ -21,8 +37,6 @@ class User < ApplicationRecord
   }
   validates :name, presence: true,
             length: {maximum: Settings.user.validate.name_max}
-  validates :age, presence: true,
-            numericality: {only_integer: true, greater_than: Settings.inter}
   validates :email, presence: true,
             length: {maximum: Settings.user.validate.email_max},
             format: {with: URI::MailTo::EMAIL_REGEXP},
@@ -30,7 +44,6 @@ class User < ApplicationRecord
   validates :password, presence: true,
             length: {minimum: Settings.user.validate.pass_min},
             allow_nil: true
-  has_secure_password
 
   before_save :downcase_email
   before_create :create_activation_digest
@@ -52,11 +65,6 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
-  end
-
-  def remember
-    self.remember_token = User.new_token
-    update_attribute :remember_digest, User.digest(remember_token)
   end
 
   def activate

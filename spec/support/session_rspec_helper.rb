@@ -1,6 +1,7 @@
 module RSpecSessionHelper
-
   def log_in user
-     request.session[:user_id] = user.id
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+    user.confirm
+    sign_in user
   end
 end

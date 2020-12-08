@@ -1,0 +1,9 @@
+<% if resource.errors[field].present? %>
+  <div id="list-unstyled">
+    <ul>
+      <% resource.errors[field].each do |error| %>
+        <li class="red "><%= "#{field} #{error}"%></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

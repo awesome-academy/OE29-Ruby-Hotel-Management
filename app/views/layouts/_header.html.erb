@@ -5,73 +5,10 @@
   <div class="i18n">
     <%= link_to t(".en"), locale: :en %>
     <%= link_to t(".vi"), locale: :vi %>
-    <% if !logged_in? %>
-      <button type="button" class="btn-pri" data-toggle="modal" data-target="#exampleModalCenter1" >
-      <%= t ".signin" %>
-      </button>
-      <button type="button" class="btn-pri" data-toggle="modal" data-target="#exampleModalCenter">
-      <%= t ".signup" %>
-      </button>
-     <% end %>
+    <% if !user_signed_in? %>
+      <%= link_to t(".signup"), new_user_registration_path, class: "sign font-weight-bold" %>
+      <%= link_to t(".signin"), new_user_session_path, class: " sign font-weight-bold" %>
+    <% end %>
   </div>
 </div>
 
-<div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-center " id="exampleModalLongTitle">
-          <%= image_tag(Settings.home.path_link1, alt: "Rails logo", width: "200px") %>
-        </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="modal_signup">
-        <% if !logged_in? %>
-           <%= render "users/new" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-center " id="exampleModalLongTitle">
-          <%= image_tag(Settings.home.path_link1, alt: "Rails logo", width: "200px") %>
-        </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="modal_login">
-        <%= render "sessions/new" %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-center " id="exampleModalLongTitle">
-          <%= image_tag(Settings.home.path_link1, alt: "Rails logo", width: "200px") %>
-        </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="modal_signup">
-        <% if !logged_in? %>
-          <%= render "users/new" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr>
