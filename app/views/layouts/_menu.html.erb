@@ -8,7 +8,7 @@
   <ul>
     <li><%= link_to t(".reservation"), new_reservation_path, class: current_path?(new_reservation_path) %></li>
     <li><%= link_to t(".contact"), contact_path, class: current_path?(contact_path) %></li>
-    <% if logged_in? %>
+    <% if user_signed_in? %>
         <li class="nav-item dropdown" id="show_drop">
           <button type="button" class="nav-link dropdown-toggle drop-btn" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= current_user.name %>
@@ -21,7 +21,7 @@
               <i class="far fa-cog"></i> <%= t ".settings" %>
             <% end %>
             <div class="dropdown-divider"></div>
-            <%= link_to logout_path, method: :delete, class: "dropdown-item has-icon text-danger" do %>
+            <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item has-icon text-danger" do %>
               <i class="fas fa-sign-out-alt"></i> <%= t ".logout" %>
             <% end %>
           </div>
