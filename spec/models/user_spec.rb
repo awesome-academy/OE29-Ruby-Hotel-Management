@@ -17,14 +17,6 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe ".remember" do
-    context "update remember_digest success" do
-      it "return true" do
-        expect(user.remember).to eq(true)
-      end
-    end
-  end
-
   describe ".activated" do
     context "update activated success" do
       it "return true" do

@@ -1,0 +1,21 @@
+<div class="container form-login">
+  <div class ="content-login">
+      <h2 class=" text-center text-bold"><%= t "devise.passwords.new.forgot" %></h2>
+    <div class="main-content">
+      <%= form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :post } do |f| %>
+
+        <div class="field">
+          <%= f.label :email, class: " label-required" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-input"%>
+          <%= render "users/shared/error_messages", field: :email %>
+        </div>
+
+        <div class="actions d-flex justify-content-center">
+          <%= f.submit t("devise.passwords.new.send"), class: "btn btn-secondary btn-reset" %>
+        </div>
+      <% end %>
+
+      <%= render "users/shared/links" %>
+    </div>
+</div>
+</div>

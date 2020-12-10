@@ -1,0 +1,30 @@
+<div class="container form-login">
+  <div class ="content-login">
+    <h2 class=" text-center text-bold"><%= t "devise.passwords.edit.change" %></h2>
+    <div class="main-content">
+      <%= form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :put } do |f| %>
+        <%= f.hidden_field :reset_password_token %>
+
+        <div class="field">
+          <%= f.label :password, t("devise.passwords.edit.newpass"), class: " label-required" %><br />
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %><%= t "devise.passwords.new.minimum" %>)</em><br />
+          <% end %>
+          <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control form-input"%>
+          <%= render "users/shared/error_messages", field: :password %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, t("devise.passwords.edit.confirm"), class: " label-required" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-input" %>
+          <%= render "users/shared/error_messages", field: :password_confirmation%>
+        </div>
+
+        <div class="actions d-flex justify-content-center">
+          <%= f.submit t("devise.passwords.edit.change"), class: "btn btn-secondary btn-reset" %>
+        </div>
+      <% end %>
+      <%= render "users/shared/links" %>
+    </div>
+  </div>
+</div>

@@ -33,7 +33,7 @@
           <i class="far fa-cog"></i> <%= t ".settings" %>
         <% end %>
         <div class="dropdown-divider"></div>
-        <%= link_to logout_path, method: :delete, class: "dropdown-item has-icon text-danger" do %>
+        <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item has-icon text-danger" do %>
           <i class="fas fa-sign-out-alt"></i> <%= t ".logout" %>
         <% end %>
       </div>

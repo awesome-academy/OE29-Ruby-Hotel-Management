@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
   layout "admins"
 
-  before_action :correct_admin
+  before_action :correct_admin, :authenticate_user!
 
   private
 
