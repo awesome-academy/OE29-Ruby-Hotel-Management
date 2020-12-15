@@ -22,8 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def find_user
-    @user = User.find params[:id]
-    return if @user
+    @resource = User.find params[:id]
   end
 
   def bill_range range
@@ -31,6 +30,6 @@ class ApplicationController < ActionController::Base
   end
 
   def select_range range
-    @user.bills.send range
+    @resource.bills.send range
   end
 end

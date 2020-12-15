@@ -1,6 +1,9 @@
 class Admin::ServicesController < AdminController
   before_action :load_service_by_id, only: %i(update edit destroy)
   before_action :load_unity_array, only: %i(index edit)
+
+  load_and_authorize_resource
+
   def index
     @service = Service.new
     @services = Service.all

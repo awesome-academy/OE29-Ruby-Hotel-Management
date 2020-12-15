@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
     devise_for :users, skip: :omniauth_callbacks, controllers: {
       sessions: "users/sessions",
+      registrations: "users/registrations",
     }
 
     get "/about", to: "static_pages#about"

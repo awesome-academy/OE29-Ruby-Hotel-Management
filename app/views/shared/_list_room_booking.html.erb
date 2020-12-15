@@ -1,10 +1,11 @@
 <tr class="bill">
   <th scope="row"><%= index_of_page(@bills) + bill_counter %></th>
+  <td><%= bill.id%></td>
   <td><%= bill.created_at %></td>
   <td><%= bill.price %></td>
   <td><%= bill.status %></td>
   <td>
-    <button class="btn btn-outline-info bill-view" data-url="<%= booking_path(bill.id)  %> " data-toggle="modal" data-target="#exampleModalCenterbill">
+    <button class="btn btn-outline-info bill-view" data-url="<%= bookings_path(bill_id: bill.id)  %> " data-toggle="modal" data-target="#exampleModalCenterbill">
       <i class="fa fa-eye" aria-hidden="true"></i>
     </button>
     <% if bill.waiting? %>

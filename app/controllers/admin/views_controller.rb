@@ -1,5 +1,8 @@
 class Admin::ViewsController < AdminController
   before_action :load_view_by_id, only: %i(update destroy edit)
+
+  load_and_authorize_resource
+
   def index
     @view = View.new
     @views = View.all

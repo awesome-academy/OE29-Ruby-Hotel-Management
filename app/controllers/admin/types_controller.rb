@@ -1,5 +1,8 @@
 class Admin::TypesController < AdminController
   before_action :load_type_by_id, only: %i(update destroy edit)
+
+  load_and_authorize_resource
+
   def index
     @type = Type.new
     @types = Type.all
