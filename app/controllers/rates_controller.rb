@@ -2,6 +2,8 @@ class RatesController < ApplicationController
   before_action :load_rate_by_id, only: :update
   before_action :find_room, only: %i(create update)
 
+  load_and_authorize_resource
+
   def create
     @rate = current_user.rates.build rate_params
     if @rate.save

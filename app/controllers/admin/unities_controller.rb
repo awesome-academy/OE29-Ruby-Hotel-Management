@@ -1,6 +1,8 @@
 class Admin::UnitiesController < AdminController
   before_action :load_unity_by_id, only: %i(update destroy edit)
 
+  load_and_authorize_resource
+
   def index
     @unity = Unity.new
     @unities = Unity.all

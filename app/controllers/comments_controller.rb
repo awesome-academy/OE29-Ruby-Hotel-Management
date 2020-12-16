@@ -2,6 +2,8 @@ class CommentsController < ApplicationController
   before_action :find_commentable, only: :create
   before_action :find_room, only: %i(destroy create)
 
+  load_and_authorize_resource
+
   def create
     @comment = @commentable.comments.build comment_params
     @comment.user = current_user

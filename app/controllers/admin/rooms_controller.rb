@@ -2,6 +2,8 @@ class Admin::RoomsController < AdminController
   before_action :load_room_by_id, only: %i(destroy edit update)
   before_action :load_type_view_room
 
+  load_and_authorize_resource
+
   def index
     @rooms = Room.all
     if params[:filter].blank?

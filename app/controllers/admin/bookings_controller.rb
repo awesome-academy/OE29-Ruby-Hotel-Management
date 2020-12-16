@@ -1,6 +1,9 @@
 class Admin::BookingsController < AdminController
   before_action :find_booking, only: %i(show edit)
   after_action :update_booking, only: :update
+
+  load_and_authorize_resource
+
   def index
     @service = Service.new
     @user = User.find params[:user_id]

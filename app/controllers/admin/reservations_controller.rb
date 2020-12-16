@@ -2,6 +2,7 @@ class Admin::ReservationsController < AdminController
   before_action :find_bill, only: %i(show update)
 
   def index
+    authorize! :read, :reservation
     @reservations = reser_bill_range(params[:range])
                     .bill_created_at
                     .page(params[:page])
@@ -13,10 +14,12 @@ class Admin::ReservationsController < AdminController
   end
 
   def show
+    authorize! :read, :reservation
     @bookings = @bill.bookings.page(params[:page]).per Settings.bills_per_page
   end
 
   def update
+    authorize! :update, :reservation
     @user = @bill.user
     status_params params[:data]
   end

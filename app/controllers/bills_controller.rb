@@ -1,4 +1,6 @@
 class BillsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @data = {total: params[:total],
              count: params[:count],
