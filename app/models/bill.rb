@@ -3,12 +3,13 @@ class Bill < ApplicationRecord
                   bookings_attributes: [:id, :price,
                                         :status, :checkin,
                                         :checkout,
-                                        :room_id].freeze].freeze
+                                        :room_id, :_destroy].freeze].freeze
   belongs_to :user
 
   has_many :bookings, dependent: :destroy
-  accepts_nested_attributes_for :bookings, allow_destroy: true
-
+  accepts_nested_attributes_for :bookings, reject_if: :all_blank,
+                                allow_destroy: true
+  after_update :update_bill
   enum status: {
     waiting: 0,
     accept: 1,
@@ -26,4 +27,8 @@ class Bill < ApplicationRecord
       where("created_at > '#{start_date}' AND created_at < '#{end_date}'")
     end
   end)
+
+  def update_bill
+    update_column :price, bookings.sum(:price)
+  end
 end

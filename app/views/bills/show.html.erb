@@ -1,0 +1,32 @@
+<% provide :title, t(".list_view") %>
+<div class="container">
+  <h3 class="title mt-5 text-center"><%= t ".list" %></h3>
+  <%= link_to t(".back"), user_path(current_user.id), class: "back_url" %>
+  <%= link_to t(".edit"), bookings_path(bill_id: @bill.id), class: "back_url" %>
+  <div class="">
+    <ul class=" bill_info">
+      <li> <strong><%= t ".id_bill" %></strong> <%= @bill.id %></li>
+      <li><strong><%= t ".bill_create" %></strong><%= @bill.created_at.to_formatted_s(:db)   %></li>
+      <li><strong><%= t ".bill_price" %></strong><%= number_with_delimiter @bill.price , delimiter: "." %><%= t ".vnd" %></li>
+      <li><strong><%= t ".bill_status" %></strong><%= @bill.status %></li>
+    </ul>
+  </div>
+  <table class="table text-center pt-5" id="table-bill">
+    <thead class="thead-light">
+    <tr>
+      <th scope="col"><%= t ".id" %></th>
+      <th scope="col"><%= t ".anh" %></th>
+      <th scope="col"><%= t ".ten" %></th>
+      <th scope="col"><%= t ".view" %></th>
+      <th scope="col"><%= t ".price" %></th>
+      <th scope="col"><%= t ".type" %></th>
+      <th scope="col"><%= t ".ci" %></th>
+      <th scope="col"><%= t ".co" %></th>
+      <th scope="col"><%= t ".rent" %></th>
+    </tr>
+    </thead>
+    <tbody>
+      <%=  render partial:"bills/list_booking", collection: @bookings, as: :booking %>
+    </tbody>
+  </table>
+</div>

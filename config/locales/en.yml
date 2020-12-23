@@ -95,13 +95,14 @@ en:
       welcome: "Welcome to the MonaLisa ! Click on the link below to activate your account:"
   users:
     show:
+      id: "Bill id"
       waiting: "Waiting"
       accept: "Accept"
       cancelled: "Cancelled"
       complete: "Complete"
       list: "List Booking"
       stt: "STT"
-      ci: "Checkin"
+      book: "Created at"
       co: "Checkout"
       price: "Price "
       status: "Status"
@@ -142,6 +143,7 @@ en:
     search_room_form:
       fail: "Checkout must be than checkin!"
       error: "You must enter full information !"
+      dayy: "Checkin must equal or lest than current time !"
       checkin: "CHECKIN"
       checkout: "CHECKOUT"
       check: "CHECK AVAILABILITY"
@@ -196,14 +198,30 @@ en:
       view: "View : "
       price_book: "Rent"
       vnd: " VNĐ"
-  bookings:
+  bills:
+    show:
+      edit: "Edit"
+      id_bill: "Bill id: "
+      bill_create: "Created at: "
+      bill_price: "Total price:  "
+      bill_status: "Status:  "
+      list: " List Bill's room"
+      id: "Room id"
+      ten: "Room name"
+      ci: "Checkin"
+      co: "Chẹckout"
+      anh: "Image"
+      action: "Action"
+      view: "View"
+      price: "Price"
+      rent: "Rent"
+      vnd: "VNĐ"
     list_booking:
-      view: "View: "
-      price: "Price: "
-      checkin: "Checkin: "
-      checkout: "Checkout: "
-      type: "Type: "
-      price_book: "Rent"
+      vnd: "VNĐ"
+  bookings:
+    index:
+      list: "Update Bill"
+    list_booking:
       vnd: "VND"
   static_pages:
     home:
