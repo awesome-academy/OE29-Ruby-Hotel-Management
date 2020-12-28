@@ -1,4 +1,19 @@
 <% provide :title, t(".list_view") %>
 <div class="container">
-  <%= render partial: "shared/list_room_booking", collection: @bills, as: :bill %>
+  <h3 class="title mt-5 text-center"><%= t ".list" %></h3>
+  <%= link_to t(".back"), bill_path(@bill.id), class: "back_url" %>
+  <h2 class="text-center pt-5 "> </h2>
+    <%= form_for @bill, url:  bill_path(@bill.id) do |f| %>
+      <div class="booking_services">
+        <%= f.fields_for :bookings do |booking| %>
+          <%= render 'booking_fields', f: booking %>
+        <% end %>
+        <div class="links">
+          <%= link_to_add_association t(".add_booking"), f, :bookings, class:"btn btn-outline-info btn-booking-edit" %>
+        </div>
+        <div class="button-service text-right">
+          <%= f.submit class: "btn btn-outline-info" %>
+        </div>
+      </div>
+    <% end %>
 </div>

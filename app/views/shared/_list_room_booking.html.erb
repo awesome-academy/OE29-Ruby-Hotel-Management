@@ -5,28 +5,17 @@
   <td><%= bill.price %></td>
   <td><%= bill.status %></td>
   <td>
-    <button class="btn btn-outline-info bill-view" data-url="<%= bookings_path(bill_id: bill.id)  %> " data-toggle="modal" data-target="#exampleModalCenterbill">
+    <%= link_to bill_path(id: bill.id), class:"btn btn-outline-info bill-view" do %>
       <i class="fa fa-eye" aria-hidden="true"></i>
-    </button>
+    <% end %>
     <% if bill.waiting? %>
-      <button class="btn btn-outline-danger bill-cancle" data-url="<%= bill_path(bill.id) %>">
+      <%= link_to bookings_path(bill_id: bill.id), class:"btn btn-outline-info bill-view" do %>
+        <i class="fas fa-edit"></i>
+      <% end %>
+      <button class="btn btn-outline-danger bill-cancle" data-url="<%= reservation_path(bill.id) %>">
         <i class="fa fa-trash" aria-hidden="true"></i>
       </button>
-  <% end %>
+    <% end %>
   </td>
 
 </tr>
-<div class="modal" id="exampleModalCenterbill" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-bill modal-dialog-centered" role="document">
-
-    <div class="modal-content">
-      <div class="modal-header main-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-main">
-      </div>
-    </div>
-  </div>
-</div>

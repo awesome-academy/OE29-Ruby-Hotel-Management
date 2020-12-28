@@ -130,6 +130,7 @@ vi:
       rails_logo: "Rails Logo"
     search_room_form:
       fail: "checkout phải lớn hơn checkin"
+      dayy: "Checkin phải bằng hoặc nhỏ hơn ngày hiện tại !"
       error: "Phải nhập đầy đủ thông tin !"
       checkin: "NGÀY BẮT ĐẦU "
       checkout: "NGÀY KẾT THÚC "
@@ -160,25 +161,41 @@ vi:
       hi: "Chào"
       activate: "Kích hoạt"
       welcome: "Chào mừng bạn đến với MonaLisa! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn:"
-  bookings:
+  bills:
+    show:
+      edit: "Sửa"
+      id_bill: "Mã hóa đơn: "
+      bill_create: "Ngày đặt: "
+      bill_price: "Tổng tiền: "
+      bill_status: "Trang thái: "
+      list: "Các phòng của hóa đơn "
+      id: "Mã phòng"
+      ten: "Tên phòng"
+      ci: "Ngày bắt đầu "
+      co: "Ngày kết thúc"
+      anh: "Ảnh"
+      action: "Hành động"
+      view: "Cảnh quan "
+      price: "Giá phòng "
+      rent: "Giá đặt"
+      vnd: "VNĐ"
     list_booking:
-      view: "Cảnh quan: "
-      price: "Giá : "
-      checkin: "Ngày bắt đầu: "
-      checkout: "Ngày kết thúc: "
-      type: "Kiểu : "
-      price_book: "Giá đặt"
+      vnd: "VNĐ"
+  bookings:
+    index:
+      list: "Cập nhập danh sách các phòng đặt "
+    list_booking:
       vnd: "VND"
   users:
     show:
+      id: "Mã hóa đơn"
       waiting: "Chờ"
       accept: "Xác nhận "
       cancelled: "Đã hủy"
       complete: "Hoàn thành"
       list: "Danh sách đặt phòng"
       stt: "STT"
-      ci: "Ngày bắt đầu"
-      co: "Ngày kết thúc"
+      book: "Ngày đặt"
       price: "Giá  "
       status: "Trạng thái "
       action: "Hành động "

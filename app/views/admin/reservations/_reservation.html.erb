@@ -4,8 +4,8 @@
   <td><%= reser.user_name %></td>
   <td><%= reser.user_email %></td>
   <td><%= reser.status %></td>
-  <td><%= reser.bookings[0].checkin.strftime Settings.date_time %></td>
-  <td><%= reser.bookings[0].checkout.strftime Settings.date_time %></td>
+  <td><%= reser.bookings.first.checkin.strftime Settings.date_time %></td>
+  <td><%= reser.bookings.first.checkout.strftime Settings.date_time %></td>
   <td><%= reser.created_at.strftime Settings.date_time %></td>
   <td><%= number_with_delimiter reser.price, delimiter: "." %></td>
   <td>

@@ -1,0 +1,13 @@
+<div class="form-group">
+  <tr class="booking">
+    <td><%= booking.room_id %></td>
+    <td><%= image_tag booking.room_pictures.first.picture_url, class: "image_booking" %></td>
+    <td><%= booking.room_name %></td>
+    <td><%= booking.room_view_name %></td>
+    <td><%= number_with_delimiter booking.room_price, delimiter: "." %><%= t ".vnd" %></td>
+    <td><%= booking.room_type_name %></td>
+    <td><%= booking.checkin %></td>
+    <td><%= booking.checkout %></td>
+    <td><%= number_with_delimiter booking.price, delimiter: "." %> <%= t ".vnd" %></td>
+  </tr>
+</div>

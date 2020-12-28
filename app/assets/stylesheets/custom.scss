@@ -887,12 +887,12 @@ footer {
 
     #reservation {
       position: fixed;
-      top: 28rem;
-      right: 7rem;
+      top: 55.5rem;
+      right: 19rem;
     }
 
     .room-main {
-      height: 40rem;
+      height: 42rem;
 
       .list-room {
         width: 60%;
@@ -913,11 +913,6 @@ footer {
 
         .image {
           padding: 0;
-
-          img {
-            width: 8.3rem;
-            height: 8.3rem;
-          }
         }
 
         .room-name {
@@ -991,10 +986,14 @@ footer {
   }
 
   .image-reser {
+    width: 140px;
+    height: 100px;
+  }
+
+  .img_reser {
     width: 8.3rem;
     height: 8.3rem;
   }
-
   .detail {
     font-size: 1.65rem;
     color: $yel;
@@ -1148,4 +1147,19 @@ footer {
     width: 60%;
     margin-top: 20px;
   }
+}
+
+.image_booking {
+  width: 60px;
+  height: 60px;
+}
+
+.select-room {
+  height: 26px !important;
+  background: white !important;
+  border: 1px solid $grayy !important;
+}
+
+.bill_info {
+  list-style: none;
 }

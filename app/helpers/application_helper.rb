@@ -41,6 +41,10 @@ module ApplicationHelper
     bill.push [t("global.all"), t("global.all").downcase]
   end
 
+  def option_room_empty checkin, checkout
+    Room.valid_room checkin, checkout
+  end
+
   def option_service
     service = Service.all.map{|key, _value| [t("global.#{key}"), key]}
     service.push [t("global.all"), t("global.all").downcase]

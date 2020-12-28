@@ -20,4 +20,15 @@ class ReservationsController < ApplicationController
       format.js
     end
   end
+
+  def update
+    @bill = Bill.find params[:id]
+    if @bill.cancelled!
+      flash[:info] = t "global.cancel_success"
+      @bills = current_user.bills.waiting.bill_created_at.page(params[:page])
+                           .per Settings.bill.page
+    else
+      flash[:danger] = t "global.cancel_error"
+    end
+  end
 end

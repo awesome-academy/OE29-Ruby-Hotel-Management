@@ -30,6 +30,6 @@ class ApplicationController < ActionController::Base
   end
 
   def select_range range
-    @resource.bills.send range
+    current_user.bills.send range
   end
 end
