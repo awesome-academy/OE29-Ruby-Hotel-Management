@@ -45,11 +45,23 @@ class Room < ApplicationRecord
   scope :by_name, ->(name){where "name LIKE ?", "%#{name}%" if name.present?}
   scope :by_price, ->(type){order price: type if type.present?}
 
+  ransack_alias :info_room, :name_or_des
+
   def check_score
     rates.average :score
   end
 
   def average_score
     rates.average(:score).round(1, :truncate)
+  end
+
+  class << self
+    def ransackable_attributes auth_object
+      if auth_object.eql? :admin
+        super
+      else
+        super & %w(des price)
+      end
+    end
   end
 end

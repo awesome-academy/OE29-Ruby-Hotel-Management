@@ -37,8 +37,8 @@ module ApplicationHelper
   end
 
   def option_status_bill
-    bill = Bill.statuses.map{|key, _value| [t("global.#{key}"), key]}
-    bill.push [t("global.all"), t("global.all").downcase]
+    bill = Bill.statuses.map{|key, value| [t("global.#{key}"), value]}
+    bill.push [t("global.all"), ""]
   end
 
   def option_room_empty checkin, checkout

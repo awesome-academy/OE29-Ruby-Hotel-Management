@@ -32,4 +32,8 @@ class ApplicationController < ActionController::Base
   def select_range range
     current_user.bills.send range
   end
+
+  def set_ransackable_auth_object
+    current_user&.admin? ? :admin : nil
+  end
 end

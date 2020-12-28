@@ -31,4 +31,8 @@ class Bill < ApplicationRecord
   def update_bill
     update_column :price, bookings.sum(:price)
   end
+
+  ransacker :created_at do
+    Arel.sql"date(created_at)"
+  end
 end

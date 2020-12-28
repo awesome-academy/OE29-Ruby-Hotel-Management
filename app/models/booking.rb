@@ -21,4 +21,10 @@ class Booking < ApplicationRecord
            prefix: true
 
   scope :by_bill_id, ->(bill_id){where bill_id: bill_id if bill_id.present?}
+
+  private
+
+  def image_room
+    room_pictures.first.picture_url
+  end
 end
