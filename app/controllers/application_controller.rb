@@ -1,10 +1,21 @@
 class ApplicationController < ActionController::Base
+  rescue_from CanCan::AccessDenied, with: :rescue_can3_exception
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
   before_action :set_locale
 
   def render_404
     render file: Rails.root.join("public", "404.html").to_s, layout: false,
            status: :not_found
+  end
+
+  def rescue_can3_exception
+    respond_to do |format|
+      format.json{head :forbidden}
+      format.html do
+        render file: Rails.root.join("public", "403.html").to_s, layout: false,
+               status: :forbidden
+      end
+    end
   end
 
   private

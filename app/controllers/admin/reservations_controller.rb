@@ -35,7 +35,7 @@ class Admin::ReservationsController < AdminController
       cancel_action @bill
     elsif status == Settings.accept
       if @bill.accept!
-        @user.send_activation_reservation @bill
+        UsersWorker.perform_async @bill.id
         flash[:info] = t "global.accept"
         @reservations = Bill.waiting.bill_created_at.page(params[:page])
                             .per Settings.booking_per_page
