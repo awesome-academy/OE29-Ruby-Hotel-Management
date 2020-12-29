@@ -3,6 +3,8 @@ Rails.application.routes.draw do
              controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
+    require "sidekiq/web"
+    mount Sidekiq::Web => "/sidekiq"
 
     devise_for :users, skip: :omniauth_callbacks, controllers: {
       sessions: "users/sessions",

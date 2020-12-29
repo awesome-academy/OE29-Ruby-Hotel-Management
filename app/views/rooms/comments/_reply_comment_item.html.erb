@@ -6,12 +6,14 @@
     <div class="comment-head">
       <h6 class="comment-name"><%= comment.user_name %></h6>
       <span><%= time_ago_in_words comment.created_at %></span>
-      <%= link_to comment,
-                  class: "btn-comment-action",
-                  method: :delete,
-                  data: { confirm: t("global.you_sure") },
-                  remote: true do %>
-        <i class="fa fa-trash"></i>
+      <% if can? :destroy, comment %>
+        <%= link_to comment,
+            class: "btn-comment-action",
+            method: :delete,
+            data: { confirm: t("global.you_sure") },
+            remote: true do %>
+          <i class="fa fa-trash"></i>
+        <% end %>
       <% end %>
     </div>
     <div class="comment-content">

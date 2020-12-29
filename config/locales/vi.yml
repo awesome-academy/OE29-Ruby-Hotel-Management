@@ -114,6 +114,9 @@ vi:
       contact: "Liên hệ"
       follow: "Follow us"
   mailers:
+    admin_user:
+      reservation_error:
+        reservation_error: ! "Không thể gửi mail cho bill có id là : %{bill}"
     user_mailer:
       account_activation: "Kích hoạt tài khoản"
       password_reset: "Đặt lại mật khẩu"
@@ -140,6 +143,10 @@ vi:
       type: "Kiểu : "
       view: "View : "
       vnd: " VNĐ"
+  admin_user:
+    reservation_error:
+      hi: "Hi Admin"
+      error: "Can't send mail to bill:"
   user_mailer:
     reservation_activation:
       title: "Monalisa"

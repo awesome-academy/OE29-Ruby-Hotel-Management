@@ -1,9 +1,11 @@
 <%= form_for [commentable, @comment], remote: true do |f| %>
-  <%= render "shared/show_comment_error", object: @comment, field: :content %>
-  <div class="form-group col-md-11">
-    <%= f.text_field :content, class: "form-control comment-parent-input" %>
-  </div>
-  <%= f.button class: "btn btn-primary col-md-1 comment-button" do %>
-    <i class="fas fa-paper-plane"></i>
+  <% if current_user.present? %>
+    <%= render "shared/show_comment_error", object: @comment, field: :content %>
+    <div class="form-group col-md-11">
+      <%= f.text_field :content, class: "form-control comment-parent-input" %>
+    </div>
+    <%= f.button class: "btn btn-primary col-md-1 comment-button" do %>
+      <i class="fas fa-paper-plane"></i>
+    <% end %>
   <% end %>
 <% end %>

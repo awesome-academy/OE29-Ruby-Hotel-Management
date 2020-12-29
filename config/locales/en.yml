@@ -72,6 +72,12 @@ en:
       account_activation: "Account Activation"
       password_reset: "Password Reset"
       reservation_activation: "Reservation success"
+    admin_mailer:
+      reservation_error: ! "Can't send mail to bill's id: %{bill}"
+  admin_mailer:
+    reservation_error:
+      hi: "Hi Admin"
+      error: "Can't send mail to bill:"
   user_mailer:
     reservation_activation:
       title: "Monalisa"
