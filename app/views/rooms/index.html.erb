@@ -1,6 +1,58 @@
 <% provide :title, t(".our_rooms") %>
-<div class="container-fluid">
-  <div id="list_room" class="row">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <%= search_form_for @q do |f| %>
+        <div class="row">
+          <div class="col-md-4">
+            <% if current_user&.admin? %>
+              <%= f.label :info_room_cont, class: "pt-3" %>
+              <%= f.search_field :info_room_cont, class: "form-control form-input" %>
+            <% else %>
+              <%= f.label :des_cont, class: "pt-3" %>
+              <%= f.search_field :des_cont, class: "form-control form-input" %>
+            <% end %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :price_gteq, class: "pt-3" %>
+            <%= f.search_field :price_gteq, class: "form-control form-input"  %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :price_lteq, class: "pt-3" %>
+            <%= f.search_field :price_lteq, class: "form-control form-input"  %>
+          </div>
+        </div>
+      <div class="row">
+        <div class="pt-3 col-md-4 offset-md-4 ">
+          <%= f.submit class: "pt-3 btn btn-outline-success" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <%= search_form_for @q, url: views_path, html: {method: :get , remote: :true}  do |f| %>
+          <div class="col-md-8">
+            <%= f.label :view_name_cont, class: "pt-3" %>
+            <%= f.search_field :view_name_cont, class: "form-control form-input"  %>
+          </div>
+          <div class="col-md-4 mt-5">
+            <%= f.submit class: "btn btn-outline-success" %>
+          </div>
+        <% end %>
+        <%= search_form_for @q, url: types_path, html: {method: :get , remote: :true}  do |f| %>
+          <div class="col-md-8">
+            <%= f.label :type_name_cont, class: "pt-3" %>
+            <%= f.search_field :type_name_cont, class: "form-control form-input"  %>
+          </div>
+          <div class="col-md-4 mt-5">
+            <%= f.submit class: "btn btn-outline-success" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div id="list_room" class="row pt-5">
     <%= render @rooms %>
   </div>
   <div id="infinite-scrolling" style="display: none">

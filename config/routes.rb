@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     end
     resources :reservations
     resources :users
+    resources :views
+    resources :types
+    resources :orders
     resources :bills
     resources :bookings
     resources :rates, only: %i(create update)

@@ -1,7 +1,9 @@
 class RoomsController < ApplicationController
   before_action :load_room_by_id, :get_star, only: :show
   def index
-    @rooms = Room.page(params[:page]).per Settings.rooms.rooms_to_show
+    @q = Room.ransack params[:q], auth_object: set_ransackable_auth_object
+    @rooms = @q.result(distinct: true)
+               .page(params[:page]).per Settings.rooms.rooms_to_show
   end
 
   def show

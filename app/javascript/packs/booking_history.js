@@ -1,14 +1,6 @@
 $(document).on('turbolinks:load', function() {
-  $('#main-content').on('change','#bill_filter', function() {
-    let range = $(this).val();
-    let url = $(this).data('url');
-    $.ajax({
-      url: url,
-      method: 'GET',
-      data: {
-        range: range
-      }
-    });
+  $( '#main-content' ).change(function() {
+    $('#submit-status').click();
   });
 
   $('#table-bill').on('click', '.bill-view', function() {

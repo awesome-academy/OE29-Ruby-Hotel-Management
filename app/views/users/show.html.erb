@@ -1,9 +1,28 @@
 <% provide :title, t(".list_view") %>
 <div class="main-history container" >
-  <% if user_signed_in? %>
-  <div id="main-content" >
-    <%= select_tag "bill_filter",options_for_select(option_status_bill),
-                  { class: "browser-default custom-select select-bill", "data-url" => "#{user_path(current_user.id)}"} %>
+  <div class="row">
+    <% if user_signed_in? %>
+    <div class="col-md-6">
+      <div id="main-content" >
+        <%= search_form_for @q, url: user_path(current_user.id), html: {method: :get , remote: :true}  do |f| %>
+          <%= f.select :status_eq, options_for_select(option_status_bill), {}, {class: "filter-bill" , id: "bill_filter"} %>
+          <%= f.submit class: "d-none", id: "submit-status" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-6 pt-4">
+      <div class="row pt-2">
+        <%= search_form_for @q, url: order_path(current_user.id), html: {method: :get , remote: :true}  do |f| %>
+        <div class= "col-md-8">
+          <%= f.label :created_at_date %>
+          <%= f.search_field :created_at_date_equals, type: "date", class: "created_at form-control form-input" %>
+        </div>
+        <div class="col-md-4 pt-4 search-date">
+          <%= f.submit class: "btn btn-success search-date", id: "submit-status" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
   <% end %>
   <div id ="main-show">
@@ -13,8 +32,8 @@
       <tr>
         <th scope="col"><%= t ".stt" %></th>
         <th scope="col"><%= t ".id" %></th>
-        <th scope="col"><%= t ".book" %></th>
-        <th scope="col"><%= t ".price" %></th>
+        <th scope="col"><%= sort_link @q, :created_at, default_order: :desc %></th>
+        <th scope="col"><%= sort_link @q, :price, default_order: :desc %></th>
         <th scope="col"><%= t ".status" %></th>
         <th scope="col"><%= t ".action" %></th>
       </tr>

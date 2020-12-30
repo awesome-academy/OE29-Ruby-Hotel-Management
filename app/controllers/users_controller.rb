@@ -7,8 +7,8 @@ class UsersController < ApplicationController
 
   def show
     @resource = User.find params[:id]
-    @bills = bill_range(params[:range]).bill_created_at.page(params[:page])
-                                       .per Settings.user.page
+    @q = @resource.bills.ransack params[:q]
+    @bills = @q.result.page(params[:page]).per Settings.user.page
     respond_to do |format|
       format.js
       format.html
