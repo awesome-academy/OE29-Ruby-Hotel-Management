@@ -10,6 +10,7 @@ en:
         no_receive: "Didn't receive confirmation instructions?"
         unlock: "Didn't receive unlock instructions?"
         sign_in_with: "Sign in with Google"
+        sign_in_fb: "Sign in with Facebook"
     confirmations:
       new:
         resend: "Resend confirmation instructionst "

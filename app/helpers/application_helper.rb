@@ -41,8 +41,9 @@ module ApplicationHelper
     bill.push [t("global.all"), ""]
   end
 
-  def option_room_empty checkin, checkout
-    Room.valid_room checkin, checkout
+  def
+  option_selected object, room_options
+    room_options.select {|k, v| v==object.room_id}
   end
 
   def option_service
