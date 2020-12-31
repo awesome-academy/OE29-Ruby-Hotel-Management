@@ -9,10 +9,13 @@ class Ability
       can :crud, :reservation
       can :manage, :all
     else
-      can :read, [:reservation, Room]
+      # can :read, [:reservation], Bill.ids do |id|
+      #   user.bills.pluck(:id).include? id
+      # end
+      can :read, [Room, :reservation]
       can :manage, Rate
-      can :create, [Comment, Bill]
-      can :destroy, Comment, user: {id: user.id}
+      can :create, [Comment, Bill,:reservation]
+      can :destroy, Comment, user_id: user.id
       can :read, Booking, bill: {user: {id: user.id}}
       can :crud, Bill, user: {id: user.id}
     end

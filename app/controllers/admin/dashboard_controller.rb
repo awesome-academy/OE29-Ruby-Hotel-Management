@@ -1,4 +1,5 @@
 class Admin::DashboardController < AdminController
+  before_action :correct_admin
   def index
     @clients = User.client
     @rooms = Room.all

@@ -1,4 +1,5 @@
 class Admin::BookingsController < AdminController
+  before_action :correct_admin
   before_action :find_booking, only: %i(show edit)
   after_action :update_booking, only: :update
 

@@ -41,6 +41,6 @@ class UsersController < ApplicationController
   private
 
   def bill_range range
-    range.present? ? select_range(range) : @resource.bills
+    range.present? ? select_range(range) : @user.bills
   end
 end

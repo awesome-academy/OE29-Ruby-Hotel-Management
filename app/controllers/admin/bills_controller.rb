@@ -1,4 +1,5 @@
 class Admin::BillsController < AdminController
+  before_action :correct_admin
   load_and_authorize_resource
 
   def index

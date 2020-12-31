@@ -31,11 +31,11 @@ class Admin::ReservationsController < AdminController
   end
 
   def status_params status
-    if status == Settings.cancel
+    if status.eql? Settings.cancel
       cancel_action @bill
-    elsif status == Settings.accept
+    elsif status.eql? Settings.accept
       if @bill.accept!
-        @user.send_activation_reservation @bill
+        UsersWorker.perform_async 200000
         flash[:info] = t "global.accept"
         @reservations = Bill.waiting.bill_created_at.page(params[:page])
                             .per Settings.booking_per_page
