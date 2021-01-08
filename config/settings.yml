@@ -62,6 +62,8 @@ asc: "asc"
 desc: "desc"
 cancel: "cancelled"
 accept: "accept"
+waiting: "waiting"
+comple: "complete"
 mini: 86400
 tm: 1
 destroy: "1"

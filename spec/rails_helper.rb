@@ -5,6 +5,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require "rspec/rails"
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 require "support/session_rspec_helper"
+require "sidekiq/testing"
+Sidekiq::Testing.fake!
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e

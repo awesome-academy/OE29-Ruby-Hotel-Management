@@ -10,6 +10,8 @@ RSpec.configure do |config|
 end
 require "simplecov"
 require "simplecov-rcov"
+require "sidekiq/testing"
+Sidekiq::Testing.fake!
 class SimpleCov::Formatter::MergedFormatter
   def format(result)
     SimpleCov::Formatter::HTMLFormatter.new.format(result)

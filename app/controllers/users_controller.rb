@@ -29,9 +29,10 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    if @user.update user_params
+    @resource = User.find params[:id]
+    if @resource.update user_params
       flash[:success] = t "global.update_success"
-      redirect_to @user
+      redirect_to @resource
     else
       flash.now[:danger] = t "global.update_error"
       render :edit
