@@ -1,9 +1,10 @@
 require "rails_helper"
 RSpec.describe TypesController , type: :controller do
   let!(:room) {FactoryBot.create :room}
+
   describe "GET #index" do
     before do
-      get :index, params: { page: 1}, format: :js
+      get :index, params: {page: 1}, format: :js
     end
 
     it "should response js" do

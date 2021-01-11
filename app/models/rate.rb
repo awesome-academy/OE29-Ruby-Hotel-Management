@@ -3,6 +3,8 @@ class Rate < ApplicationRecord
 
   belongs_to :user
   belongs_to :room
+  validates :score, presence: true,
+            numericality: {only_integer: true, other_than: 0}
 
   scope :by_room_id, ->(room_id){where room_id: room_id}
 end

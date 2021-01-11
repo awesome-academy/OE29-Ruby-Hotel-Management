@@ -8,4 +8,3 @@ run Rack::URLMap.new(
   "/" => Rails.application,
   "/sidekiq" => Sidekiq::Web
 )
-

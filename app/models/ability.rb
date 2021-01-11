@@ -13,6 +13,7 @@ class Ability
         user.bills.pluck(:id).include? id
       end
       can :manage, Rate
+      can :create, :reservation
       can :create, [Comment, Bill]
       can :destroy, Comment, user_id: user.id
       can :read, Booking, bill: {user: {id: user.id}}

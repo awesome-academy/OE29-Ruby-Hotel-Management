@@ -6,8 +6,10 @@ RSpec.describe Admin::BillsController , type: :controller do
 
   context "When normal user login" do
     before {log_in user}
+
     describe "GET #index" do
       before{get :index, params: {user_id: user.id, page: 1}, format: :js}
+
       it "should redirect to page client" do
         expect(response).to redirect_to root_path
       end
@@ -15,6 +17,7 @@ RSpec.describe Admin::BillsController , type: :controller do
 
     describe "GET #show" do
       before{get :show, params: {id: bill.id, page: 1}}
+
       it "should redirect to page client" do
         expect(response).to redirect_to root_path
       end
@@ -22,6 +25,7 @@ RSpec.describe Admin::BillsController , type: :controller do
 
     describe "PATCH #update" do
       before{ patch :update, params: {id: bill.id,price: bill.price, status: "complete", page: 1}}
+
       it "should redirect to page client" do
         expect(response).to redirect_to root_path
       end

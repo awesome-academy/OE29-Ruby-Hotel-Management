@@ -8,6 +8,7 @@ RSpec.describe Admin::BookingsController, type: :controller do
 
   describe "GET #index" do
     before {get :index, params: {user_id: user.id,bill_id: bill.id, page: 1}}
+
     it "should render template index" do
       expect(response).to render_template :index
     end
