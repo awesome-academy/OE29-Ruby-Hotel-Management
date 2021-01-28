@@ -1,7 +1,6 @@
 class Room < ApplicationRecord
   ROOMS_PARAMS = [:name, :price, :des, :view_id, :type_id,
-                  pictures_attributes: [:id, :room_id,
-                                        :picture, :_destroy].freeze].freeze
+                  pictures_attributes: [:picture].freeze].freeze
 
   belongs_to :view
   belongs_to :type
