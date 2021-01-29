@@ -5,12 +5,12 @@ Rails.application.routes.draw do
     root "static_pages#home"
     require "sidekiq/web"
     mount Sidekiq::Web => "/sidekiq"
-
     devise_for :users, skip: :omniauth_callbacks, controllers: {
+
       sessions: "users/sessions",
       registrations: "users/registrations",
     }
-
+    mount API::Base, at: "/"
     get "/about", to: "static_pages#about"
     get "/contact", to: "static_pages#contact"
     resources :account_activations, only: :edit
